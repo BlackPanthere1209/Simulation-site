@@ -1,4 +1,18 @@
-<style>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- Prevent mobile browsers from automatically turning phone numbers blue -->
+  <meta name="format-detection" content="telephone=no">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#061b12">
+
+  <title>Fatih Boutique — Canon Beach | 7 Novembre 2026</title>
+
+  <link rel="stylesheet" href="styles.css">
+   <style>
 
 /* =========================================================
    FATIH BOUTIQUE — PREMIUM CANON BEACH
@@ -2195,3 +2209,1092 @@ footer {
 }
 
 </style>
+
+  <!-- =======================================================
+       LANGUAGE
+       ======================================================== -->
+
+  <div class="language-switch">
+    <button id="frBtn" class="active" onclick="setLanguage('fr')">FR</button>
+    <button id="enBtn" onclick="setLanguage('en')">EN</button>
+  </div>
+
+  <!-- =======================================================
+       HERO
+       ======================================================== -->
+
+  <header class="hero">
+
+    <div class="hero-content">
+
+      <img
+        src="images/logo.png"
+        alt="Fatih Boutique"
+        class="logo"
+      >
+
+      <div class="edition">
+        2ème édition de cette année
+      </div>
+
+      <h1>CANON BEACH</h1>
+
+      <p
+        class="hero-subtitle"
+        data-fr="Partager • Créer • Se souvenir ! Une aventure ensemble..."
+        data-en="Share • Create • Remember! An adventure together..."
+      >
+        Partager • Créer • Se souvenir !
+        Une aventure ensemble...
+      </p>
+
+      <div class="hero-date">
+        <span>07</span> NOVEMBRE 2026
+        <br>
+        <small>08:00</small>
+      </div>
+
+      <div class="countdown" id="countdown">
+
+        <div class="time-box">
+          <strong id="days">00</strong>
+          <span data-fr="Jours" data-en="Days">Jours</span>
+        </div>
+
+        <div class="time-box">
+          <strong id="hours">00</strong>
+          <span data-fr="Heures" data-en="Hours">Heures</span>
+        </div>
+
+        <div class="time-box">
+          <strong id="minutes">00</strong>
+          <span data-fr="Minutes" data-en="Minutes">Minutes</span>
+        </div>
+
+        <div class="time-box">
+          <strong id="seconds">00</strong>
+          <span data-fr="Secondes" data-en="Seconds">Secondes</span>
+        </div>
+
+      </div>
+
+      <div class="progress-container">
+        <div class="progress-bar">
+          <div id="progress"></div>
+        </div>
+      </div>
+
+      <div class="buttons">
+
+        <a
+          href="https://wa.me/243825247502?text=Bonjour%20Fatih%20Boutique%2C%20je%20souhaite%20avoir%20plus%20d%27informations%20sur%20l%27excursion%20du%207%20Novembre%20%C3%A0%20Canon%20Beach."
+          class="btn btn-primary"
+          target="_blank"
+          rel="noopener"
+          data-fr="Réserver sur WhatsApp"
+          data-en="Book on WhatsApp"
+        >
+          Réserver sur WhatsApp
+        </a>
+
+        <a
+          href="gallery.html"
+          class="btn btn-secondary"
+          data-fr="Voir les souvenirs"
+          data-en="View memories"
+        >
+          Voir les souvenirs
+        </a>
+
+      </div>
+
+      <div class="event-finished" id="eventFinished">
+        <h3>🎉 L'excursion a commencé !</h3>
+        <p>
+          Merci à tous pour votre participation.
+        </p>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- =======================================================
+       EXPERIENCE
+       ======================================================== -->
+
+  <section id="experience">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <small data-fr="L'expérience" data-en="The experience">
+          L'expérience
+        </small>
+
+        <h2
+          data-fr="Une journée à vivre pleinement"
+          data-en="A day to fully experience"
+        >
+          Une journée à vivre pleinement
+        </h2>
+
+        <p
+          data-fr="Une escapade pensée pour profiter, partager et créer de beaux souvenirs ensemble."
+          data-en="A getaway designed to enjoy, share and create beautiful memories together."
+        >
+          Une escapade pensée pour profiter,
+          partager et créer de beaux souvenirs ensemble.
+        </p>
+
+      </div>
+
+      <div class="experience-grid">
+
+        <div class="glass-card">
+          <div class="card-icon">🏖️</div>
+          <h3>Canon Beach</h3>
+          <p
+            data-fr="Une destination idéale pour changer d'air et profiter pleinement de la journée."
+            data-en="An ideal destination to get away and fully enjoy the day."
+          >
+            Une destination idéale pour changer d'air
+            et profiter pleinement de la journée.
+          </p>
+        </div>
+
+        <div class="glass-card">
+          <div class="card-icon">🎶</div>
+          <h3
+            data-fr="Ambiance"
+            data-en="Atmosphere"
+          >
+            Ambiance
+          </h3>
+          <p
+            data-fr="Musique, bonne humeur et moments de partage au programme."
+            data-en="Music, good vibes and memorable moments are on the program."
+          >
+            Musique, bonne humeur et moments de partage
+            au programme.
+          </p>
+        </div>
+
+        <div class="glass-card">
+          <div class="card-icon">🍽️</div>
+          <h3
+            data-fr="Gourmandise"
+            data-en="Gourmet"
+          >
+            Gourmandise
+          </h3>
+          <p
+            data-fr="Des formules pensées pour accompagner votre journée avec de bons plats."
+            data-en="Food options designed to make your day even more enjoyable."
+          >
+            Des formules pensées pour accompagner
+            votre journée avec de bons plats.
+          </p>
+        </div>
+
+        <div class="glass-card">
+          <div class="card-icon">📸</div>
+          <h3
+            data-fr="Souvenirs"
+            data-en="Memories"
+          >
+            Souvenirs
+          </h3>
+          <p
+            data-fr="Des moments à immortaliser et à partager longtemps après l'excursion."
+            data-en="Moments to capture and share long after the excursion."
+          >
+            Des moments à immortaliser et à partager
+            longtemps après l'excursion.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =======================================================
+       TICKETS
+       ======================================================== -->
+
+  <section id="tickets">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <small
+          data-fr="Billetterie"
+          data-en="Tickets"
+        >
+          Billetterie
+        </small>
+
+        <h2
+          data-fr="Choisissez votre formule"
+          data-en="Choose your package"
+        >
+          Choisissez votre formule
+        </h2>
+
+        <p
+          data-fr="Deux expériences pour profiter de Canon Beach à votre manière."
+          data-en="Two experiences to enjoy Canon Beach your way."
+        >
+          Deux expériences pour profiter de Canon Beach
+          à votre manière.
+        </p>
+
+      </div>
+
+      <div class="ticket-grid">
+
+        <!-- ESSENTIAL -->
+
+        <div class="ticket-card">
+
+          <h3>Essential</h3>
+
+          <div class="price">$25</div>
+
+          <p class="ticket-description">
+            L’essentiel pour savourer la journée.
+          </p>
+
+          <ul class="ticket-list">
+
+            <li>Plat complet + Salade</li>
+
+            <li>Accompagnement</li>
+
+            <li>Boisson offerte</li>
+
+            <li>Shooting photo</li>
+
+          </ul>
+
+          <a
+            href="https://wa.me/243825247502?text=Bonjour%20Fatih%20Boutique%2C%20je%20souhaite%20r%C3%A9server%20une%20formule%20Essential%20%C3%A0%2025%20%24%20pour%20l%27excursion%20du%207%20Novembre%20%C3%A0%20Canon%20Beach."
+            class="btn btn-primary"
+            target="_blank"
+            rel="noopener"
+          >
+            Réserver — $25
+          </a>
+
+        </div>
+
+        <!-- VIP -->
+
+        <div class="ticket-card vip">
+
+          <h3>Gourmand V.I.P</h3>
+
+          <div class="price">$30</div>
+
+          <p class="ticket-description">
+            L’expérience complète et festive.
+          </p>
+
+          <ul class="ticket-list">
+
+            <li>Plat complet + Salade</li>
+
+            <li>Accompagnement</li>
+
+            <li>
+              Special Miami Liboke + Accompagnement
+            </li>
+
+            <li>
+              À déguster sur place ou à emporter
+              pour partager avec la famille
+            </li>
+
+            <li>Boisson offerte</li>
+
+            <li>Shooting photo</li>
+
+          </ul>
+
+          <a
+            href="https://wa.me/243825247502?text=Bonjour%20Fatih%20Boutique%2C%20je%20souhaite%20r%C3%A9server%20une%20formule%20Gourmand%20V.I.P%20%C3%A0%2030%20%24%20pour%20l%27excursion%20du%207%20Novembre%20%C3%A0%20Canon%20Beach."
+            class="btn btn-primary"
+            target="_blank"
+            rel="noopener"
+          >
+            Réserver — $30
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =======================================================
+       PAYMENT
+       ======================================================== -->
+
+  <!-- =======================================================
+     PAYMENT
+     ======================================================== -->
+
+<section id="payment">
+
+  <div class="container">
+
+    <div class="section-title">
+
+      <small
+        data-fr="Paiement"
+        data-en="Payment"
+      >
+        Paiement
+      </small>
+
+      <h2
+        data-fr="Payez comme vous le souhaitez"
+        data-en="Pay your way"
+      >
+        Payez comme vous le souhaitez
+      </h2>
+
+      <p
+        data-fr="Plusieurs moyens de paiement sont disponibles."
+        data-en="Several payment methods are available."
+      >
+        Plusieurs moyens de paiement sont disponibles.
+      </p>
+
+    </div>
+
+
+    <div class="payment-grid">
+
+
+      <!-- ================= M-PESA ================= -->
+
+      <div class="payment-card">
+
+        <img
+          src="images/mpesa.png"
+          alt="M-Pesa"
+          class="payment-icon"
+        >
+
+        <h3>M-Pesa</h3>
+
+        <p
+          data-fr="USD uniquement"
+          data-en="USD only"
+        >
+          USD uniquement
+        </p>
+
+        <p>
+          <a
+            href="tel:+243825247502"
+            class="phone-number"
+          >
+            +243 825 247 502
+          </a>
+        </p>
+
+      </div>
+
+
+      <!-- ================= ILLICO CASH ================= -->
+
+      <div class="payment-card">
+
+        <img
+          src="images/illico-cash.png"
+          alt="Illico Cash"
+          class="payment-icon"
+        >
+
+        <h3>Illico Cash</h3>
+
+        <p>
+          <a
+            href="tel:+243825247502"
+            class="phone-number"
+          >
+            +243 825 247 502
+          </a>
+        </p>
+
+      </div>
+
+
+      <!-- ================= AIRTEL MONEY ================= -->
+
+      <div class="payment-card">
+
+        <img
+          src="images/airtel-money.png"
+          alt="Airtel Money"
+          class="payment-icon"
+        >
+
+        <h3>Airtel Money</h3>
+
+        <p>
+          <a
+            href="tel:+243990977844"
+            class="phone-number"
+          >
+            +243 990 977 844
+          </a>
+        </p>
+
+      </div>
+
+
+      <!-- ================= CASH ================= -->
+
+      <div class="payment-card">
+
+        <img
+          src="images/cash.png"
+          alt="Cash"
+          class="payment-icon"
+        >
+
+        <h3
+          data-fr="Cash"
+          data-en="Cash"
+        >
+          Cash
+        </h3>
+
+        <p
+          data-fr="Paiement en espèces accepté."
+          data-en="Cash payment accepted."
+        >
+          Paiement en espèces accepté.
+        </p>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+</section>
+
+  <!-- =======================================================
+       RESERVATION
+       ======================================================== -->
+
+  <section id="reservation">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <small
+          data-fr="Réservation"
+          data-en="Booking"
+        >
+          Réservation
+        </small>
+
+        <h2
+          data-fr="Réservez en quelques étapes"
+          data-en="Book in a few steps"
+        >
+          Réservez en quelques étapes
+        </h2>
+
+      </div>
+
+      <div class="steps">
+
+        <div class="step">
+
+          <div class="step-number">1</div>
+
+          <h3
+            data-fr="Choisissez"
+            data-en="Choose"
+          >
+            Choisissez
+          </h3>
+
+          <p
+            data-fr="Choisissez votre formule Essential ou Gourmand V.I.P."
+            data-en="Choose your Essential or Gourmand V.I.P package."
+          >
+            Choisissez votre formule Essential
+            ou Gourmand V.I.P.
+          </p>
+
+        </div>
+
+        <div class="step">
+
+          <div class="step-number">2</div>
+
+          <h3
+            data-fr="Payez"
+            data-en="Pay"
+          >
+            Payez
+          </h3>
+
+          <p
+            data-fr="Effectuez votre paiement avec le moyen de paiement de votre choix."
+            data-en="Make your payment using your preferred payment method."
+          >
+            Effectuez votre paiement avec le moyen
+            de paiement de votre choix.
+          </p>
+
+        </div>
+
+        <div class="step">
+
+          <div class="step-number">3</div>
+
+          <h3
+            data-fr="Confirmez"
+            data-en="Confirm"
+          >
+            Confirmez
+          </h3>
+
+          <p
+            data-fr="Envoyez votre preuve de paiement sur WhatsApp pour confirmer votre réservation."
+            data-en="Send your payment proof on WhatsApp to confirm your booking."
+          >
+            Envoyez votre preuve de paiement sur WhatsApp
+            pour confirmer votre réservation.
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="buttons">
+
+        <a
+          href="https://wa.me/243825247502?text=Bonjour%20Fatih%20Boutique%2C%20je%20souhaite%20avoir%20plus%20d%27informations%20sur%20l%27excursion%20du%207%20Novembre%20%C3%A0%20Canon%20Beach."
+          class="btn btn-primary"
+          target="_blank"
+          rel="noopener"
+        >
+          💬 WhatsApp
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =======================================================
+       FAQ
+       ======================================================== -->
+
+  <section id="faq">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <small>FAQ</small>
+
+        <h2
+          data-fr="Questions fréquentes"
+          data-en="Frequently asked questions"
+        >
+          Questions fréquentes
+        </h2>
+
+      </div>
+
+      <div class="faq">
+
+        <div class="faq-item">
+
+          <button class="faq-question">
+            <span
+              data-fr="Quels sont les prix des billets ?"
+              data-en="What are the ticket prices?"
+            >
+              Quels sont les prix des billets ?
+            </span>
+
+            <span class="faq-arrow">⌄</span>
+          </button>
+
+          <div class="faq-answer">
+
+            <p>
+              Essential : <strong>$25</strong><br>
+              Gourmand V.I.P : <strong>$30</strong>
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="faq-item">
+
+          <button class="faq-question">
+
+            <span
+              data-fr="Quels moyens de paiement sont disponibles ?"
+              data-en="What payment methods are available?"
+            >
+              Quels moyens de paiement sont disponibles ?
+            </span>
+
+            <span class="faq-arrow">⌄</span>
+
+          </button>
+
+          <div class="faq-answer">
+
+            <p>
+              M-Pesa USD uniquement, Illico Cash,
+              Airtel Money et paiement en espèces.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="faq-item">
+
+          <button class="faq-question">
+
+            <span
+              data-fr="À quelle heure est le départ ?"
+              data-en="What time is departure?"
+            >
+              À quelle heure est le départ ?
+            </span>
+
+            <span class="faq-arrow">⌄</span>
+
+          </button>
+
+          <div class="faq-answer">
+
+            <p>
+              Le départ est prévu à <strong>08:00</strong>
+              le 7 Novembre 2026.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="faq-item">
+
+          <button class="faq-question">
+
+            <span
+              data-fr="Où se trouve le point de rendez-vous ?"
+              data-en="Where is the meeting point?"
+            >
+              Où se trouve le point de rendez-vous ?
+            </span>
+
+            <span class="faq-arrow">⌄</span>
+
+          </button>
+
+          <div class="faq-answer">
+
+            <p>
+              Le point de rendez-vous sera communiqué
+              prochainement.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="faq-item">
+
+          <button class="faq-question">
+
+            <span
+              data-fr="Comment confirmer ma réservation ?"
+              data-en="How do I confirm my booking?"
+            >
+              Comment confirmer ma réservation ?
+            </span>
+
+            <span class="faq-arrow">⌄</span>
+
+          </button>
+
+          <div class="faq-answer">
+
+            <p>
+              Après paiement, envoyez votre preuve
+              de paiement sur WhatsApp au
+              <a
+                href="tel:+243825247502"
+                class="phone-number"
+              >
+                +243 825 247 502
+              </a>.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="faq-item">
+
+          <button class="faq-question">
+
+            <span
+              data-fr="Puis-je voir les photos de l'excursion ?"
+              data-en="Can I see photos from the excursion?"
+            >
+              Puis-je voir les photos de l'excursion ?
+            </span>
+
+            <span class="faq-arrow">⌄</span>
+
+          </button>
+
+          <div class="faq-answer">
+
+            <p>
+              Oui. Rendez-vous dans la galerie
+              pour découvrir les souvenirs.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =======================================================
+       FINAL CTA
+       ======================================================== -->
+
+  <section class="final-section">
+
+    <div class="container">
+
+      <h2
+        data-fr="Prêt pour l'aventure ?"
+        data-en="Ready for the adventure?"
+      >
+        Prêt pour l'aventure ?
+      </h2>
+
+      <p
+        data-fr="Le 7 Novembre, direction Canon Beach avec Fatih Boutique. Réservez votre place et préparez-vous à vivre une journée mémorable."
+        data-en="On November 7, head to Canon Beach with Fatih Boutique. Book your spot and get ready for a memorable day."
+      >
+        Le 7 Novembre, direction Canon Beach
+        avec Fatih Boutique.
+        Réservez votre place et préparez-vous
+        à vivre une journée mémorable.
+      </p>
+
+      <div class="buttons">
+
+        <a
+          href="https://wa.me/243825247502?text=Bonjour%20Fatih%20Boutique%2C%20je%20souhaite%20avoir%20plus%20d%27informations%20sur%20l%27excursion%20du%207%20Novembre%20%C3%A0%20Canon%20Beach."
+          class="btn btn-primary"
+          target="_blank"
+          rel="noopener"
+        >
+          💬 Réserver sur WhatsApp
+        </a>
+
+        <a
+          href="gallery.html"
+          class="btn btn-secondary"
+        >
+          📸 Voir la galerie
+        </a>
+
+      </div>
+
+      <!-- SOCIALS — INDEX ONLY -->
+
+      <div class="socials">
+
+        <a
+          href="https://chat.whatsapp.com/KhP6900A1910Hkmkbttcsa"
+          class="social-btn"
+          target="_blank"
+          rel="noopener"
+        >
+          WhatsApp Group
+        </a>
+
+        <a
+          href="https://www.instagram.com/fatihboutique01?stkn=N2ppaGRxY2l1cjVt"
+          class="social-btn"
+          target="_blank"
+          rel="noopener"
+        >
+          Instagram
+        </a>
+
+        <a
+          href="https://www.facebook.com/share/18WRLsjThe/?mibextid=wwXIfr"
+          class="social-btn"
+          target="_blank"
+          rel="noopener"
+        >
+          Facebook
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- =======================================================
+       FOOTER
+       ======================================================== -->
+
+  <footer>
+
+    © 2026 Fatih Boutique — Canon Beach
+    <br>
+    07 Novembre 2026
+
+  </footer>
+
+  <!-- =======================================================
+       JAVASCRIPT
+       ======================================================== -->
+
+  <script>
+
+    /* =======================================================
+       COUNTDOWN
+       ======================================================== */
+
+    const eventDate =
+      new Date("2026-11-07T08:00:00+01:00").getTime();
+
+    const startDate =
+      new Date("2026-10-01T00:00:00+01:00").getTime();
+
+    function updateCountdown() {
+
+      const now = new Date().getTime();
+
+      const distance = eventDate - now;
+
+      const totalDuration = eventDate - startDate;
+
+      const elapsed = now - startDate;
+
+      let progress =
+        (elapsed / totalDuration) * 100;
+
+      progress =
+        Math.max(0, Math.min(100, progress));
+
+      document.getElementById("progress").style.width =
+        progress + "%";
+
+      if (distance <= 0) {
+
+        document.getElementById("days").textContent = "00";
+        document.getElementById("hours").textContent = "00";
+        document.getElementById("minutes").textContent = "00";
+        document.getElementById("seconds").textContent = "00";
+
+        document.getElementById("countdown").style.display =
+          "none";
+
+        document.querySelector(".progress-container").style.display =
+          "none";
+
+        document.getElementById("eventFinished").style.display =
+          "block";
+
+        return;
+      }
+
+      const days =
+        Math.floor(distance / (1000 * 60 * 60 * 24));
+
+      const hours =
+        Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) /
+          (1000 * 60 * 60)
+        );
+
+      const minutes =
+        Math.floor(
+          (distance % (1000 * 60 * 60)) /
+          (1000 * 60)
+        );
+
+      const seconds =
+        Math.floor(
+          (distance % (1000 * 60)) /
+          1000
+        );
+
+      document.getElementById("days").textContent =
+        String(days).padStart(2, "0");
+
+      document.getElementById("hours").textContent =
+        String(hours).padStart(2, "0");
+
+      document.getElementById("minutes").textContent =
+        String(minutes).padStart(2, "0");
+
+      document.getElementById("seconds").textContent =
+        String(seconds).padStart(2, "0");
+    }
+
+    updateCountdown();
+
+    setInterval(updateCountdown, 1000);
+
+
+    /* =======================================================
+       FAQ
+       ======================================================== */
+
+    document.querySelectorAll(".faq-question")
+      .forEach(button => {
+
+        button.addEventListener("click", () => {
+
+          const item =
+            button.parentElement;
+
+          item.classList.toggle("open");
+
+        });
+
+      });
+
+
+    /* =======================================================
+       LANGUAGE
+       ======================================================== */
+
+    function setLanguage(language) {
+
+      document.querySelectorAll(
+        "[data-fr][data-en]"
+      ).forEach(element => {
+
+        element.textContent =
+          element.getAttribute(
+            "data-" + language
+          );
+
+      });
+
+      document.documentElement.lang =
+        language;
+
+      document.getElementById("frBtn")
+        .classList.toggle(
+          "active",
+          language === "fr"
+        );
+
+      document.getElementById("enBtn")
+        .classList.toggle(
+          "active",
+          language === "en"
+        );
+
+      localStorage.setItem(
+        "fatihLanguage",
+        language
+      );
+    }
+
+
+    /* Restore saved language */
+
+    const savedLanguage =
+      localStorage.getItem(
+        "fatihLanguage"
+      );
+
+    if (savedLanguage) {
+      setLanguage(savedLanguage);
+    }
+
+
+    /* =======================================================
+       PARTICLES
+       ======================================================== */
+
+    function createParticle() {
+
+      const particle =
+        document.createElement("div");
+
+      particle.className =
+        "particle";
+
+      particle.style.left =
+        Math.random() * 100 + "vw";
+
+      particle.style.animationDuration =
+        (Math.random() * 7 + 7) + "s";
+
+      particle.style.animationDelay =
+        Math.random() * 5 + "s";
+
+      const size =
+        Math.random() * 4 + 2;
+
+      particle.style.width =
+        size + "px";
+
+      particle.style.height =
+        size + "px";
+
+      document.body.appendChild(
+        particle
+      );
+
+      setTimeout(() => {
+        particle.remove();
+      }, 15000);
+    }
+
+    setInterval(
+      createParticle,
+      650
+    );
+
+    for (let i = 0; i < 12; i++) {
+      createParticle();
+    }
+
+  </script>
+
+</body>
+</html>
