@@ -12,14 +12,34 @@
   <title>Fatih Boutique — Canon Beach | 7 Novembre 2026</title>
 
   <link rel="stylesheet" href="styles.css">
-   <style>
-
+  <style>
 /* =========================================================
-   ORIGINAL FATIH BOUTIQUE DESIGN
+   FATIH BOUTIQUE — CANON BEACH
+   JOYFUL WEEKEND / PARTY EDITION
    ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap');
+
+:root {
+  --blue: #08b8ff;
+  --cyan: #20e0d2;
+  --purple: #8b5cf6;
+  --pink: #ff4fa3;
+  --orange: #ff8a3d;
+  --yellow: #ffd84d;
+  --white: #ffffff;
+  --text: #f8fbff;
+  --muted: rgba(255,255,255,.72);
+  --glass: rgba(255,255,255,.09);
+  --glass-border: rgba(255,255,255,.18);
+  --dark: #071525;
+  --dark2: #0c1e35;
+}
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
@@ -27,72 +47,85 @@ html {
 }
 
 body {
-  margin: 0;
-  background: #061b12;
-  color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "DM Sans", sans-serif;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(8,184,255,.16), transparent 30%),
+    radial-gradient(circle at 90% 20%, rgba(255,79,163,.14), transparent 30%),
+    radial-gradient(circle at 50% 90%, rgba(139,92,246,.14), transparent 35%),
+    linear-gradient(135deg, #061321, #0a1c31 45%, #10152d);
+  color: var(--text);
+  min-height: 100vh;
   overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   BACKGROUND GLOW
+   ========================================================= */
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: .18;
+  pointer-events: none;
+  z-index: -1;
+}
+
+body::before {
+  background: var(--blue);
+  top: -180px;
+  left: -160px;
+  animation: floatGlow 8s ease-in-out infinite alternate;
+}
+
+body::after {
+  background: var(--pink);
+  right: -180px;
+  bottom: -160px;
+  animation: floatGlow 10s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes floatGlow {
+  from {
+    transform: translate(0,0) scale(1);
+  }
+
+  to {
+    transform: translate(50px,30px) scale(1.15);
+  }
+}
+
+/* =========================================================
+   GENERAL
+   ========================================================= */
+
+.container {
+  width: min(1180px, 92%);
+  margin: auto;
+}
+
+section {
+  padding: 85px 0;
+  position: relative;
 }
 
 a {
   color: inherit;
 }
 
-.container {
-  width: min(1100px, calc(100% - 30px));
-  margin: auto;
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
 }
 
-section {
-  padding: 75px 0;
-  position: relative;
+img {
+  max-width: 100%;
 }
-
-
-/* =========================================================
-   LANGUAGE SWITCH
-   ========================================================= */
-
-.language-switch {
-  position: fixed;
-  top: 18px;
-  right: 18px;
-  z-index: 9999;
-
-  display: flex;
-  gap: 4px;
-
-  padding: 4px;
-
-  border-radius: 30px;
-
-  background: rgba(0, 0, 0, 0.45);
-  border: 1px solid rgba(255, 215, 90, 0.35);
-
-  backdrop-filter: blur(12px);
-}
-
-.language-switch button {
-  border: none;
-  background: transparent;
-
-  color: #fff;
-
-  padding: 7px 11px;
-
-  border-radius: 20px;
-
-  cursor: pointer;
-
-  font-weight: 700;
-  font-size: 12px;
-}
-
-.language-switch button.active {
-  background: #d8b44a;
-  color: #07160e;
-}
-
 
 /* =========================================================
    HERO
@@ -100,316 +133,310 @@ section {
 
 .hero {
   min-height: 100vh;
-
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-
   text-align: center;
-
-  position: relative;
   overflow: hidden;
 
   background:
     linear-gradient(
-      rgba(2, 20, 12, 0.62),
-      rgba(2, 20, 12, 0.88)
+      180deg,
+      rgba(4,15,28,.28),
+      rgba(4,15,28,.75)
     ),
-    url("images/excursion.jpg.jpeg")
-    center/cover no-repeat;
+    url("images/excursion.jpg.jpeg") center/cover no-repeat;
 }
 
 .hero::before {
   content: "";
-
   position: absolute;
   inset: 0;
 
   background:
-    radial-gradient(
-      circle at center,
-      rgba(213, 180, 74, 0.15),
-      transparent 45%
-    );
+    radial-gradient(circle at 20% 30%, rgba(8,184,255,.35), transparent 25%),
+    radial-gradient(circle at 80% 40%, rgba(255,79,163,.25), transparent 25%);
+  
+  mix-blend-mode: screen;
+}
 
-  pointer-events: none;
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      transparent 55%,
+      rgba(5,14,26,.9)
+    );
 }
 
 .hero-content {
   position: relative;
-  z-index: 3;
-
-  width: min(900px, 92%);
-
-  padding: 35px 20px;
+  z-index: 2;
+  width: min(950px, 92%);
+  animation: heroAppear 1.2s ease;
 }
 
-.logo {
-  width: min(210px, 52vw);
-  max-width: 100%;
+@keyframes heroAppear {
+  from {
+    opacity: 0;
+    transform: translateY(35px);
+  }
 
-  margin-bottom: 20px;
-
-  filter:
-    drop-shadow(
-      0 10px 25px rgba(0,0,0,.45)
-    );
-
-  animation:
-    logoFloat 4s ease-in-out infinite;
-}
-
-@keyframes logoFloat {
-
-  0%,
-  100% {
+  to {
+    opacity: 1;
     transform: translateY(0);
   }
-
-  50% {
-    transform: translateY(-7px);
-  }
-
 }
 
-.edition {
-  color: #e5c65d;
+/* =========================================================
+   HERO BADGE
+   ========================================================= */
 
-  letter-spacing: 4px;
+.hero small {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 9px 18px;
+
+  border-radius: 999px;
+
+  background: rgba(255,255,255,.12);
+  border: 1px solid rgba(255,255,255,.25);
+
+  backdrop-filter: blur(15px);
 
   font-size: 13px;
-
   font-weight: 800;
-
+  letter-spacing: 1.5px;
   text-transform: uppercase;
 
-  margin-bottom: 12px;
+  color: #fff;
+
+  box-shadow:
+    0 8px 30px rgba(0,0,0,.2),
+    0 0 25px rgba(8,184,255,.12);
+
+  margin-bottom: 22px;
 }
 
 .hero h1 {
-  margin: 0;
+  font-family: "Montserrat", sans-serif;
 
-  font-size:
-    clamp(42px, 8vw, 86px);
-
+  font-size: clamp(48px, 8vw, 105px);
   line-height: .95;
 
   font-weight: 900;
+  letter-spacing: -4px;
 
-  letter-spacing: -3px;
+  margin-bottom: 20px;
 
   background:
     linear-gradient(
-      120deg,
+      90deg,
       #ffffff,
-      #e6c75b,
+      #7de7ff,
+      #ffffff,
+      #ff9dca,
       #ffffff
     );
 
+  background-size: 300% auto;
+
   -webkit-background-clip: text;
   background-clip: text;
-
   color: transparent;
 
-  text-shadow:
-    0 15px 35px rgba(0,0,0,.25);
+  animation: titleShine 6s linear infinite;
+
+  text-shadow: 0 15px 50px rgba(0,0,0,.25);
 }
 
-.hero-subtitle {
-  margin:
-    22px auto 0;
-
-  max-width: 700px;
-
-  font-size:
-    clamp(16px, 2.5vw, 22px);
-
-  color:
-    rgba(255,255,255,.9);
-
-  line-height: 1.6;
+@keyframes titleShine {
+  to {
+    background-position: 300% center;
+  }
 }
 
-.hero-date {
-  margin-top: 20px;
+.hero p {
+  max-width: 650px;
+  margin: auto;
 
-  font-size: 20px;
-
-  font-weight: 800;
-
-  color: #e4c45b;
+  font-size: clamp(16px, 2vw, 21px);
+  color: rgba(255,255,255,.88);
 }
-
-.hero-date span {
-  color: white;
-}
-
 
 /* =========================================================
    COUNTDOWN
    ========================================================= */
 
 .countdown {
-  margin:
-    35px auto 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
 
-  display: grid;
-
-  grid-template-columns:
-    repeat(4, 1fr);
-
-  gap: 10px;
-
-  max-width: 650px;
+  margin: 35px auto 25px;
 }
 
-.time-box {
-  padding:
-    17px 8px;
-
-  border-radius: 16px;
-
-  background:
-    rgba(255,255,255,.08);
-
-  border:
-    1px solid rgba(255,215,90,.25);
-
-  backdrop-filter:
-    blur(12px);
-}
-
-.time-box strong {
-  display: block;
-
-  font-size:
-    clamp(25px, 5vw, 42px);
-
-  color: #e3c25a;
-
-  line-height: 1;
-}
-
-.time-box span {
-  display: block;
-
-  margin-top: 8px;
-
-  font-size: 11px;
-
-  text-transform: uppercase;
-
-  letter-spacing: 1px;
-
-  opacity: .75;
-}
-
-
-/* =========================================================
-   PROGRESS
-   ========================================================= */
-
-.progress-container {
-  max-width: 650px;
-
-  margin:
-    22px auto 0;
-}
-
-.progress-bar {
-  height: 5px;
+.countdown div {
+  min-width: 85px;
+  padding: 15px 12px;
 
   border-radius: 20px;
 
-  overflow: hidden;
+  background: rgba(255,255,255,.10);
+  border: 1px solid rgba(255,255,255,.2);
 
-  background:
-    rgba(255,255,255,.15);
+  backdrop-filter: blur(15px);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.18),
+    inset 0 1px 0 rgba(255,255,255,.15);
+
+  transition: .3s ease;
 }
 
-#progress {
-  width: 0%;
-
-  height: 100%;
-
-  background:
-    linear-gradient(
-      90deg,
-      #d6b54c,
-      #fff0a3
-    );
-
-  border-radius: inherit;
-
-  transition:
-    width 1s linear;
+.countdown div:hover {
+  transform: translateY(-6px) scale(1.04);
 }
 
+.countdown strong {
+  display: block;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+
+  background: linear-gradient(
+    135deg,
+    var(--cyan),
+    var(--blue),
+    #fff
+  );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.countdown span {
+  display: block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255,255,255,.65);
+}
 
 /* =========================================================
    BUTTONS
    ========================================================= */
 
-.buttons {
-  display: flex;
-
-  flex-wrap: wrap;
-
-  justify-content: center;
-
-  gap: 12px;
-
-  margin-top: 30px;
-}
-
-.btn {
+.btn,
+button {
   display: inline-flex;
-
   align-items: center;
   justify-content: center;
 
-  min-height: 48px;
+  gap: 8px;
 
-  padding:
-    13px 22px;
+  padding: 14px 25px;
 
-  border-radius: 50px;
+  border: none;
+  border-radius: 999px;
+
+  font-family: inherit;
+  font-weight: 800;
+
+  cursor: pointer;
 
   text-decoration: none;
 
-  font-weight: 800;
-
-  transition: .25s ease;
-
-  border:
-    1px solid rgba(255,255,255,.18);
-}
-
-.btn:hover {
-  transform:
-    translateY(-3px);
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    background .25s ease;
 }
 
 .btn-primary {
-  background: #d8b64e;
+  color: #061321;
 
-  color: #07160e !important;
+  background:
+    linear-gradient(
+      135deg,
+      #7ff4ff,
+      #20e0d2,
+      #08b8ff
+    );
 
   box-shadow:
-    0 12px 30px
-    rgba(216,182,78,.22);
+    0 10px 30px rgba(8,184,255,.3);
+}
+
+.btn-primary:hover {
+  transform: translateY(-4px) scale(1.03);
+
+  box-shadow:
+    0 16px 40px rgba(8,184,255,.45);
 }
 
 .btn-secondary {
-  background:
-    rgba(255,255,255,.08);
+  color: #fff;
 
-  color: white !important;
+  background: rgba(255,255,255,.10);
 
-  backdrop-filter:
-    blur(10px);
+  border: 1px solid rgba(255,255,255,.22);
+
+  backdrop-filter: blur(15px);
 }
 
+.btn-secondary:hover {
+  transform: translateY(-4px);
+
+  background: rgba(255,255,255,.16);
+}
+
+/* =========================================================
+   PROGRESS BAR
+   ========================================================= */
+
+.progress-container {
+  width: min(600px, 90%);
+  height: 7px;
+
+  margin: 25px auto;
+
+  border-radius: 999px;
+
+  background: rgba(255,255,255,.15);
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+
+  width: 0%;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--cyan),
+      var(--blue),
+      var(--purple),
+      var(--pink)
+    );
+
+  box-shadow:
+    0 0 20px rgba(32,224,210,.5);
+
+  transition: width 1s ease;
+}
 
 /* =========================================================
    SECTION TITLES
@@ -417,42 +444,51 @@ section {
 
 .section-title {
   text-align: center;
-
-  margin-bottom: 45px;
+  max-width: 720px;
+  margin: 0 auto 50px;
 }
 
 .section-title small {
-  color: #d9b84f;
+  display: block;
+
+  font-size: 12px;
+  font-weight: 900;
 
   text-transform: uppercase;
-
   letter-spacing: 3px;
 
-  font-weight: 800;
+  margin-bottom: 10px;
+
+  color: var(--cyan);
 }
 
 .section-title h2 {
-  margin:
-    10px 0 12px;
+  font-family: "Montserrat", sans-serif;
 
-  font-size:
-    clamp(30px, 5vw, 52px);
+  font-size: clamp(30px, 5vw, 52px);
+  line-height: 1.05;
+
+  margin-bottom: 15px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #fff,
+      #6ceaff,
+      #fff
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .section-title p {
-  max-width: 650px;
-
-  margin: auto;
-
-  color:
-    rgba(255,255,255,.7);
-
-  line-height: 1.7;
+  color: var(--muted);
 }
 
-
 /* =========================================================
-   EXPERIENCE
+   EXPERIENCE CARDS
    ========================================================= */
 
 .experience-grid {
@@ -464,59 +500,85 @@ section {
   gap: 18px;
 }
 
-.glass-card {
-  padding:
-    28px 22px;
+.experience-card {
+  position: relative;
 
-  border-radius: 22px;
+  padding: 30px 22px;
 
-  background:
-    rgba(255,255,255,.06);
-
-  border:
-    1px solid rgba(255,215,90,.14);
-
-  backdrop-filter:
-    blur(14px);
-
-  transition: .3s ease;
-}
-
-.glass-card:hover {
-  transform:
-    translateY(-7px);
-
-  border-color:
-    rgba(255,215,90,.4);
+  border-radius: 26px;
 
   background:
-    rgba(255,255,255,.09);
+    linear-gradient(
+      145deg,
+      rgba(255,255,255,.11),
+      rgba(255,255,255,.04)
+    );
+
+  border: 1px solid rgba(255,255,255,.13);
+
+  backdrop-filter: blur(18px);
+
+  overflow: hidden;
+
+  transition:
+    transform .35s ease,
+    border-color .35s ease,
+    box-shadow .35s ease;
 }
 
-.card-icon {
-  font-size: 32px;
+.experience-card::before {
+  content: "";
 
-  margin-bottom: 15px;
+  position: absolute;
+
+  width: 100px;
+  height: 100px;
+
+  border-radius: 50%;
+
+  background: var(--blue);
+
+  filter: blur(55px);
+
+  opacity: .18;
+
+  top: -50px;
+  right: -50px;
 }
 
-.glass-card h3 {
-  margin:
-    0 0 10px;
-
-  font-size: 20px;
+.experience-card:nth-child(2)::before {
+  background: var(--pink);
 }
 
-.glass-card p {
-  margin: 0;
+.experience-card:nth-child(3)::before {
+  background: var(--orange);
+}
 
-  color:
-    rgba(255,255,255,.68);
+.experience-card:nth-child(4)::before {
+  background: var(--purple);
+}
 
-  line-height: 1.6;
+.experience-card:hover {
+  transform: translateY(-10px);
 
+  border-color: rgba(255,255,255,.3);
+
+  box-shadow:
+    0 25px 60px rgba(0,0,0,.25),
+    0 0 35px rgba(8,184,255,.08);
+}
+
+.experience-card h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 21px;
+
+  margin-bottom: 10px;
+}
+
+.experience-card p {
+  color: var(--muted);
   font-size: 14px;
 }
-
 
 /* =========================================================
    TICKETS
@@ -536,85 +598,92 @@ section {
 
   padding: 35px;
 
-  border-radius: 25px;
+  border-radius: 28px;
 
   overflow: hidden;
 
   background:
     linear-gradient(
-      145deg,
-      rgba(255,255,255,.10),
-      rgba(255,255,255,.035)
+      135deg,
+      rgba(255,255,255,.12),
+      rgba(255,255,255,.04)
     );
 
-  border:
-    1px solid rgba(255,215,90,.2);
+  border: 1px solid rgba(255,255,255,.16);
 
-  backdrop-filter:
-    blur(15px);
-}
-
-.ticket-card.vip {
-  border-color:
-    rgba(255,215,90,.5);
+  backdrop-filter: blur(20px);
 
   box-shadow:
-    0 20px 50px
-    rgba(0,0,0,.22);
+    0 20px 60px rgba(0,0,0,.2);
+
+  transition: .35s ease;
+}
+
+.ticket-card:hover {
+  transform: translateY(-8px) rotate(.3deg);
+}
+
+.ticket-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 220px;
+  height: 220px;
+
+  border-radius: 50%;
+
+  background: var(--cyan);
+
+  filter: blur(90px);
+
+  opacity: .14;
+
+  top: -100px;
+  right: -80px;
+}
+
+.ticket-card.vip::before {
+  background: var(--pink);
 }
 
 .ticket-card h3 {
-  margin: 0;
+  font-family: "Montserrat", sans-serif;
 
   font-size: 27px;
+
+  margin-bottom: 10px;
 }
 
-.price {
-  margin:
-    14px 0 20px;
+.ticket-price {
+  font-family: "Montserrat", sans-serif;
 
-  font-size: 46px;
-
+  font-size: 48px;
   font-weight: 900;
 
-  color: #e2c056;
+  margin: 15px 0;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--yellow),
+      #fff,
+      var(--cyan)
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
-.ticket-description {
-  color:
-    rgba(255,255,255,.7);
-
-  margin-bottom: 22px;
+.ticket-card ul {
+  padding-left: 20px;
+  color: var(--muted);
 }
 
-.ticket-list {
-  list-style: none;
-
-  padding: 0;
-
-  margin:
-    0 0 25px;
+.ticket-card li {
+  margin: 8px 0;
 }
-
-.ticket-list li {
-  margin: 11px 0;
-
-  color:
-    rgba(255,255,255,.85);
-
-  line-height: 1.5;
-}
-
-.ticket-list li::before {
-  content: "✓";
-
-  color: #dfc15c;
-
-  font-weight: 900;
-
-  margin-right: 10px;
-}
-
 
 /* =========================================================
    PAYMENT
@@ -626,96 +695,77 @@ section {
   grid-template-columns:
     repeat(4, 1fr);
 
-  gap: 15px;
+  gap: 18px;
 }
 
 .payment-card {
   text-align: center;
 
-  padding:
-    25px 15px;
+  padding: 28px 18px;
 
-  border-radius: 20px;
+  border-radius: 24px;
 
   background:
-    rgba(255,255,255,.06);
+    rgba(255,255,255,.07);
 
-  border:
-    1px solid rgba(255,255,255,.09);
+  border: 1px solid rgba(255,255,255,.13);
+
+  backdrop-filter: blur(16px);
 
   transition: .3s ease;
 }
 
 .payment-card:hover {
-  transform:
-    translateY(-5px);
-
-  border-color:
-    rgba(255,215,90,.35);
+  transform: translateY(-8px);
 
   background:
-    rgba(255,255,255,.08);
+    rgba(255,255,255,.11);
+
+  box-shadow:
+    0 20px 45px rgba(0,0,0,.2);
 }
 
-
-/* PAYMENT ICONS */
-
 .payment-icon {
-  width: 65px;
-  height: 65px;
+  width: 70px;
+  height: 70px;
 
   object-fit: contain;
 
-  display: block;
+  margin: 0 auto 15px;
 
-  margin:
-    0 auto 16px;
-
-  border-radius: 14px;
+  border-radius: 18px;
 
   filter:
-    drop-shadow(
-      0 8px 15px rgba(0,0,0,.18)
-    );
+    drop-shadow(0 10px 20px rgba(0,0,0,.2));
 
   transition: .3s ease;
 }
 
 .payment-card:hover .payment-icon {
-  transform:
-    translateY(-4px)
-    scale(1.05);
+  transform: scale(1.08) rotate(-3deg);
 }
 
 .payment-card h3 {
-  color: #dfc05b;
+  margin-bottom: 8px;
 
-  margin:
-    5px 0 12px;
+  font-family: "Montserrat", sans-serif;
+
+  font-size: 18px;
 }
 
 .payment-card p {
-  margin: 5px 0;
-
-  color:
-    rgba(255,255,255,.75);
-
+  color: var(--muted);
   font-size: 14px;
 }
 
-
-/* =========================================================
-   PHONE NUMBERS
-   ========================================================= */
+/* PHONE NUMBERS */
 
 .phone-number,
 .phone-number:visited,
 .phone-number:hover,
 .phone-number:active {
   color: inherit !important;
-
   text-decoration: none !important;
-
   -webkit-text-decoration: none !important;
 }
 
@@ -723,67 +773,75 @@ section {
   cursor: pointer;
 }
 
-
 /* =========================================================
    RESERVATION
    ========================================================= */
 
-.steps {
+.reservation-grid {
   display: grid;
 
   grid-template-columns:
     repeat(3, 1fr);
 
   gap: 20px;
-
-  max-width: 850px;
-
-  margin: auto;
 }
 
-.step {
-  text-align: center;
+.reservation-step {
+  position: relative;
 
-  padding:
-    28px 18px;
+  padding: 30px;
+
+  border-radius: 25px;
+
+  background: rgba(255,255,255,.07);
+
+  border: 1px solid rgba(255,255,255,.12);
+
+  backdrop-filter: blur(15px);
+
+  transition: .3s ease;
 }
 
-.step-number {
-  width: 50px;
-  height: 50px;
+.reservation-step:hover {
+  transform: translateY(-7px);
+}
+
+.reservation-step-number {
+  width: 48px;
+  height: 48px;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 
-  margin:
-    0 auto 15px;
-
   border-radius: 50%;
 
-  background: #d8b64e;
+  background:
+    linear-gradient(
+      135deg,
+      var(--cyan),
+      var(--blue)
+    );
 
-  color: #07160e;
+  color: #061321;
 
   font-weight: 900;
 
-  font-size: 20px;
+  margin-bottom: 20px;
+
+  box-shadow:
+    0 10px 25px rgba(8,184,255,.25);
 }
 
-.step h3 {
+.reservation-step h3 {
   margin-bottom: 8px;
+
+  font-family: "Montserrat", sans-serif;
 }
 
-.step p {
-  color:
-    rgba(255,255,255,.68);
-
-  font-size: 14px;
-
-  line-height: 1.6;
+.reservation-step p {
+  color: var(--muted);
 }
-
 
 /* =========================================================
    FAQ
@@ -791,48 +849,43 @@ section {
 
 .faq {
   max-width: 850px;
-
   margin: auto;
 }
 
 .faq-item {
   margin-bottom: 12px;
 
-  border:
-    1px solid rgba(255,255,255,.1);
+  border-radius: 18px;
 
-  border-radius: 15px;
+  background: rgba(255,255,255,.06);
+
+  border: 1px solid rgba(255,255,255,.11);
 
   overflow: hidden;
 
-  background:
-    rgba(255,255,255,.045);
+  backdrop-filter: blur(15px);
 }
 
 .faq-question {
   width: 100%;
 
-  padding: 19px;
-
-  border: none;
+  padding: 20px;
 
   background: transparent;
 
-  color: white;
+  color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
   text-align: left;
 
+  font-family: inherit;
   font-size: 15px;
-
   font-weight: 800;
 
   cursor: pointer;
-
-  display: flex;
-
-  align-items: center;
-
-  justify-content: space-between;
 }
 
 .faq-answer {
@@ -840,152 +893,162 @@ section {
 
   overflow: hidden;
 
+  padding: 0 20px;
+
+  color: var(--muted);
+
   transition:
-    max-height .3s ease;
+    max-height .4s ease,
+    padding .4s ease;
 }
 
-.faq-answer p {
-  margin: 0;
+.faq-item.active .faq-answer {
+  max-height: 300px;
 
   padding:
-    0 19px 19px;
-
-  color:
-    rgba(255,255,255,.68);
-
-  line-height: 1.7;
-
-  font-size: 14px;
+    0 20px 20px;
 }
-
-.faq-item.open .faq-answer {
-  max-height: 300px;
-}
-
-.faq-item.open .faq-arrow {
-  transform:
-    rotate(180deg);
-}
-
-.faq-arrow {
-  transition:
-    .25s ease;
-}
-
 
 /* =========================================================
-   FINAL SECTION
+   FINAL CTA
    ========================================================= */
 
 .final-section {
+  position: relative;
+
   text-align: center;
 
-  padding:
-    90px 20px;
+  padding: 100px 20px;
+
+  overflow: hidden;
 
   background:
     radial-gradient(
       circle at center,
-      rgba(205,170,55,.12),
+      rgba(8,184,255,.14),
       transparent 55%
     );
 }
 
-.final-section h2 {
-  font-size:
-    clamp(36px, 7vw, 65px);
+.final-section::before {
+  content: "";
 
-  margin:
-    0 0 15px;
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  border-radius: 50%;
+
+  background: var(--pink);
+
+  filter: blur(100px);
+
+  opacity: .12;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%,-50%);
+}
+
+.final-section h2 {
+  position: relative;
+
+  font-family: "Montserrat", sans-serif;
+
+  font-size: clamp(38px, 7vw, 70px);
+
+  line-height: 1;
+
+  margin-bottom: 20px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #fff,
+      #7de7ff,
+      #ff9dca,
+      #fff
+    );
+
+  background-size: 250% auto;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  animation: titleShine 5s linear infinite;
 }
 
 .final-section p {
-  color:
-    rgba(255,255,255,.7);
+  position: relative;
 
   max-width: 650px;
 
-  margin:
-    0 auto 28px;
+  margin: 0 auto 30px;
 
-  line-height: 1.7;
+  color: var(--muted);
 }
 
-
 /* =========================================================
-   SOCIAL MEDIA
+   SOCIAL BUTTONS
    ========================================================= */
 
-.socials {
+.social-buttons {
   display: flex;
 
   justify-content: center;
 
   flex-wrap: wrap;
 
-  gap: 10px;
+  gap: 12px;
 
   margin-top: 25px;
 }
 
-.social-btn {
-  display: inline-flex;
+.social-buttons a {
+  padding: 12px 20px;
 
-  align-items: center;
-  justify-content: center;
+  border-radius: 999px;
 
-  min-height: 44px;
+  background: rgba(255,255,255,.08);
 
-  padding:
-    10px 18px;
+  border: 1px solid rgba(255,255,255,.15);
 
-  border-radius: 50px;
-
-  border:
-    1px solid rgba(255,255,255,.15);
-
-  background:
-    rgba(255,255,255,.06);
-
-  color: white !important;
-
-  text-decoration: none !important;
-
-  font-size: 13px;
+  text-decoration: none;
 
   font-weight: 700;
 
-  transition: .25s ease;
+  transition: .3s ease;
+
+  backdrop-filter: blur(10px);
 }
 
-.social-btn:hover {
-  transform:
-    translateY(-3px);
+.social-buttons a:hover {
+  transform: translateY(-4px);
 
-  background:
-    rgba(255,255,255,.11);
+  background: rgba(255,255,255,.15);
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,.2);
 }
-
 
 /* =========================================================
    FOOTER
    ========================================================= */
 
 footer {
-  padding:
-    30px 20px;
+  padding: 30px 20px;
 
   text-align: center;
 
-  border-top:
-    1px solid rgba(255,255,255,.08);
+  border-top: 1px solid rgba(255,255,255,.08);
 
-  color:
-    rgba(255,255,255,.45);
+  color: rgba(255,255,255,.5);
 
   font-size: 13px;
 }
-
 
 /* =========================================================
    PARTICLES
@@ -994,93 +1057,78 @@ footer {
 .particle {
   position: fixed;
 
-  width: 4px;
-  height: 4px;
+  width: 5px;
+  height: 5px;
 
   border-radius: 50%;
 
-  background:
-    rgba(226,194,87,.55);
+  background: #fff;
+
+  opacity: .4;
 
   pointer-events: none;
 
-  z-index: 1;
+  z-index: 0;
 
   animation:
-    particleMove
-    linear
-    infinite;
+    particleFloat linear infinite;
 }
 
-@keyframes particleMove {
-
+@keyframes particleFloat {
   from {
     transform:
-      translateY(105vh);
-
-    opacity: 0;
-  }
-
-  15% {
-    opacity: 1;
-  }
-
-  85% {
-    opacity: 1;
+      translateY(100vh)
+      scale(.5);
   }
 
   to {
     transform:
-      translateY(-10vh);
-
-    opacity: 0;
+      translateY(-10vh)
+      scale(1.2);
   }
-
 }
-
 
 /* =========================================================
    FINISHED EVENT
    ========================================================= */
 
-.event-finished {
-  display: none;
+.finished-event {
+  min-height: 70vh;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
 
   text-align: center;
+}
 
-  margin-top: 30px;
+.finished-event h2 {
+  font-family: "Montserrat", sans-serif;
 
-  padding: 25px;
-
-  border-radius: 20px;
+  font-size: clamp(35px, 7vw, 70px);
 
   background:
-    rgba(216,182,78,.1);
+    linear-gradient(
+      90deg,
+      var(--cyan),
+      #fff,
+      var(--pink)
+    );
 
-  border:
-    1px solid rgba(216,182,78,.3);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
-
-.event-finished h3 {
-  margin-bottom: 8px;
-
-  color: #e3c25a;
-}
-
-.event-finished p {
-  color:
-    rgba(255,255,255,.7);
-}
-
 
 /* =========================================================
-   MOBILE — TABLET
+   MOBILE
    ========================================================= */
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
 
   section {
-    padding: 60px 0;
+    padding: 70px 0;
   }
 
   .experience-grid {
@@ -1093,114 +1141,104 @@ footer {
       repeat(2, 1fr);
   }
 
-  .ticket-grid {
-    grid-template-columns:
-      1fr;
-  }
-
 }
 
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media (max-width: 600px) {
-
-  .language-switch {
-    top: 10px;
-    right: 10px;
-  }
+@media (max-width: 700px) {
 
   .hero {
-    min-height: 100svh;
-  }
-
-  .hero-content {
-    padding-top: 65px;
+    min-height: 95vh;
   }
 
   .hero h1 {
     letter-spacing: -2px;
   }
 
+  .ticket-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reservation-grid {
+    grid-template-columns: 1fr;
+  }
+
   .countdown {
-    gap: 6px;
+    gap: 8px;
   }
 
-  .time-box {
-    padding:
-      14px 5px;
+  .countdown div {
+    min-width: 72px;
+    padding: 12px 8px;
   }
 
-  .time-box strong {
-    font-size: 27px;
+  .countdown strong {
+    font-size: 25px;
   }
 
-  .time-box span {
-    font-size: 9px;
+}
+
+@media (max-width: 520px) {
+
+  .container {
+    width: 90%;
   }
 
-  .buttons {
-    flex-direction: column;
+  section {
+    padding: 60px 0;
+  }
 
-    align-items: stretch;
+  .experience-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .payment-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .payment-card {
+    padding: 22px 10px;
+  }
+
+  .payment-icon {
+    width: 58px;
+    height: 58px;
+  }
+
+  .ticket-card {
+    padding: 27px 22px;
+  }
+
+  .ticket-price {
+    font-size: 40px;
+  }
+
+  .hero p {
+    font-size: 15px;
   }
 
   .btn {
     width: 100%;
   }
 
-  .experience-grid {
-    grid-template-columns:
-      1fr;
-  }
-
-  .payment-grid {
-    grid-template-columns:
-      1fr 1fr;
-  }
-
-  .steps {
-    grid-template-columns:
-      1fr;
-  }
-
-  .ticket-card {
-    padding:
-      27px 21px;
-  }
-
-  .price {
-    font-size: 40px;
+  .hero-content > div {
+    width: 100%;
   }
 
 }
 
-
-/* =========================================================
-   VERY SMALL PHONES
-   ========================================================= */
-
-@media (max-width: 400px) {
+@media (max-width: 380px) {
 
   .payment-grid {
-    grid-template-columns:
-      1fr;
+    grid-template-columns: 1fr;
   }
 
-  .hero-subtitle {
-    font-size: 15px;
-  }
-
-  .hero-date {
-    font-size: 17px;
+  .countdown div {
+    min-width: 65px;
   }
 
 }
-
-</style>
-
+  </style>
   <!-- =======================================================
        LANGUAGE
        ======================================================== -->
