@@ -1,1 +1,1339 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta
+        name="description"
+        content="Revivez les souvenirs des excursions Fatih Boutique."
+    >
+
+    <title>Souvenirs | Fatih Boutique</title>
+
+    <style>
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #061a13;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+
+        /* =====================================================
+           NAVIGATION
+        ===================================================== */
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            padding: 16px 5%;
+
+            background: rgba(3, 25, 17, 0.72);
+            backdrop-filter: blur(16px);
+
+            border-bottom: 1px solid rgba(255, 210, 31, 0.15);
+
+            transition: background .3s ease;
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: auto;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            gap: 30px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            font-weight: 900;
+            letter-spacing: 1px;
+        }
+
+        .brand img {
+            width: 55px;
+            height: auto;
+
+            filter:
+                drop-shadow(
+                    0 5px 12px rgba(0,0,0,.35)
+                );
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            position: relative;
+
+            color: #e8f3ed;
+
+            font-size: .9rem;
+            font-weight: 600;
+
+            transition:
+                color .3s ease;
+        }
+
+        .nav-links a::after {
+            content: "";
+
+            position: absolute;
+            left: 0;
+            bottom: -7px;
+
+            width: 0;
+            height: 2px;
+
+            background: #ffd21f;
+
+            transition:
+                width .3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ffd21f;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .hero {
+            position: relative;
+
+            min-height: 75vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 130px 20px 90px;
+
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    rgba(2, 30, 20, .68),
+                    rgba(2, 20, 14, .90)
+                ),
+                url("images/excursion.jpg.jpeg");
+
+            background-size: cover;
+            background-position: center;
+
+            background-attachment: fixed;
+        }
+
+        .hero::after {
+            content: "";
+
+            position: absolute;
+            inset: 0;
+
+            background:
+                radial-gradient(
+                    circle at 50% 30%,
+                    rgba(255, 193, 7, .16),
+                    transparent 40%
+                );
+
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+
+            max-width: 900px;
+
+            animation:
+                heroAppear 1.2s ease both;
+        }
+
+        @keyframes heroAppear {
+
+            from {
+                opacity: 0;
+                transform: translateY(45px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+        .edition {
+            display: inline-block;
+
+            padding: 8px 18px;
+
+            margin-bottom: 20px;
+
+            border-radius: 50px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffcc00,
+                    #ff8c00
+                );
+
+            color: #10251b;
+
+            font-size: .75rem;
+            font-weight: 900;
+
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size:
+                clamp(3.2rem, 9vw, 7rem);
+
+            line-height: .9;
+
+            font-weight: 900;
+
+            text-transform: uppercase;
+
+            letter-spacing: -3px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #ffffff,
+                    #ffd21f,
+                    #ff8c00,
+                    #ffffff
+                );
+
+            background-size: 300%;
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            color: transparent;
+
+            animation:
+                gradientText 5s ease infinite;
+        }
+
+        @keyframes gradientText {
+
+            0% {
+                background-position: 0%;
+            }
+
+            50% {
+                background-position: 100%;
+            }
+
+            100% {
+                background-position: 0%;
+            }
+
+        }
+
+        .hero p {
+            max-width: 680px;
+
+            margin: 28px auto 0;
+
+            color: #e8f3ed;
+
+            font-size:
+                clamp(1rem, 2vw, 1.2rem);
+
+            line-height: 1.7;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+
+            bottom: 30px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            z-index: 2;
+
+            color: #ffd21f;
+
+            font-size: .8rem;
+
+            letter-spacing: 2px;
+
+            animation:
+                scrollBounce 2s ease-in-out infinite;
+        }
+
+        @keyframes scrollBounce {
+
+            0%, 100% {
+                transform:
+                    translate(-50%, 0);
+            }
+
+            50% {
+                transform:
+                    translate(-50%, 10px);
+            }
+
+        }
+
+
+        /* =====================================================
+           GENERAL SECTIONS
+        ===================================================== */
+
+        .section {
+            position: relative;
+            z-index: 2;
+
+            max-width: 1200px;
+
+            margin: auto;
+
+            padding:
+                100px 25px;
+        }
+
+        .section-header {
+            text-align: center;
+
+            margin-bottom: 55px;
+        }
+
+        .section-header h2 {
+            font-size:
+                clamp(2.2rem, 5vw, 3.5rem);
+
+            font-weight: 900;
+        }
+
+        .section-header h2 span {
+            color: #ffd21f;
+        }
+
+        .section-header p {
+            margin-top: 12px;
+
+            color: #aebeb6;
+
+            font-size: 1rem;
+        }
+
+
+        /* =====================================================
+           MEMORY GALLERY
+        ===================================================== */
+
+        .gallery {
+            columns: 3 280px;
+            column-gap: 18px;
+        }
+
+        .gallery-item {
+            position: relative;
+
+            display: block;
+
+            margin-bottom: 18px;
+
+            overflow: hidden;
+
+            border-radius: 20px;
+
+            cursor: pointer;
+
+            break-inside: avoid;
+
+            opacity: 0;
+            transform:
+                translateY(50px)
+                scale(.96);
+
+            animation:
+                galleryAppear .8s ease forwards;
+
+            box-shadow:
+                0 15px 40px rgba(0,0,0,.30);
+        }
+
+        .gallery-item:nth-child(1) {
+            animation-delay: .1s;
+        }
+
+        .gallery-item:nth-child(2) {
+            animation-delay: .2s;
+        }
+
+        .gallery-item:nth-child(3) {
+            animation-delay: .3s;
+        }
+
+        .gallery-item:nth-child(4) {
+            animation-delay: .4s;
+        }
+
+        .gallery-item:nth-child(5) {
+            animation-delay: .5s;
+        }
+
+        .gallery-item:nth-child(6) {
+            animation-delay: .6s;
+        }
+
+        @keyframes galleryAppear {
+
+            to {
+                opacity: 1;
+
+                transform:
+                    translateY(0)
+                    scale(1);
+            }
+
+        }
+
+        .gallery-item img {
+            display: block;
+
+            width: 100%;
+            height: auto;
+
+            transition:
+                transform .8s cubic-bezier(.2,.7,.2,1),
+                filter .5s ease;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+
+            display: flex;
+            align-items: flex-end;
+
+            padding: 25px;
+
+            background:
+                linear-gradient(
+                    transparent 35%,
+                    rgba(0,0,0,.75)
+                );
+
+            opacity: 0;
+
+            transition:
+                opacity .4s ease;
+        }
+
+        .gallery-overlay span {
+            font-size: .9rem;
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+
+            transform:
+                translateY(15px);
+
+            transition:
+                transform .4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.09);
+
+            filter: brightness(.78);
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-item:hover .gallery-overlay span {
+            transform:
+                translateY(0);
+        }
+
+
+        /* =====================================================
+           STAFF
+        ===================================================== */
+
+        .staff-section {
+            background:
+                linear-gradient(
+                    180deg,
+                    #061a13,
+                    #082419,
+                    #061a13
+                );
+        }
+
+        .staff-card {
+            position: relative;
+
+            max-width: 1050px;
+
+            margin: auto;
+
+            padding: 10px;
+
+            border-radius: 28px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255,210,31,.35),
+                    rgba(0,168,107,.18),
+                    rgba(255,255,255,.08)
+                );
+
+            box-shadow:
+                0 35px 90px rgba(0,0,0,.5);
+
+            overflow: hidden;
+
+            animation:
+                staffFloat 5s ease-in-out infinite;
+        }
+
+        @keyframes staffFloat {
+
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+
+        }
+
+        .staff-card::before {
+            content: "";
+
+            position: absolute;
+
+            width: 300px;
+            height: 300px;
+
+            top: -150px;
+            left: -100px;
+
+            background:
+                rgba(255,210,31,.12);
+
+            border-radius: 50%;
+
+            filter: blur(20px);
+        }
+
+        .staff-card img {
+            position: relative;
+            z-index: 1;
+
+            display: block;
+
+            width: 100%;
+
+            border-radius: 20px;
+        }
+
+
+        /* =====================================================
+           SOCIAL SECTION
+        ===================================================== */
+
+        .social-section {
+            text-align: center;
+
+            padding:
+                90px 25px 100px;
+
+            background:
+                radial-gradient(
+                    circle at 50% 50%,
+                    rgba(255,210,31,.08),
+                    transparent 45%
+                );
+        }
+
+        .social-section h2 {
+            font-size:
+                clamp(2rem, 5vw, 3.2rem);
+
+            font-weight: 900;
+        }
+
+        .social-section p {
+            margin:
+                15px auto 35px;
+
+            max-width: 600px;
+
+            color: #b9c8c1;
+
+            line-height: 1.7;
+        }
+
+        .social-buttons {
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 15px;
+        }
+
+        .social-btn {
+            display: inline-flex;
+
+            align-items: center;
+            justify-content: center;
+
+            min-width: 190px;
+
+            padding:
+                15px 25px;
+
+            border-radius: 50px;
+
+            font-weight: 800;
+
+            transition:
+                transform .3s ease,
+                box-shadow .3s ease;
+        }
+
+        .social-btn:hover {
+            transform:
+                translateY(-6px);
+
+            box-shadow:
+                0 15px 35px rgba(0,0,0,.35);
+        }
+
+        .whatsapp {
+            background: #25d366;
+        }
+
+        .instagram {
+            background:
+                linear-gradient(
+                    135deg,
+                    #833ab4,
+                    #fd1d1d,
+                    #fcb045
+                );
+        }
+
+        .facebook {
+            background: #1877f2;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+            text-align: center;
+
+            padding:
+                30px 20px;
+
+            color: #91a29a;
+
+            font-size: .85rem;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,.08);
+        }
+
+        footer strong {
+            color: #ffd21f;
+        }
+
+
+        /* =====================================================
+           LIGHTBOX
+        ===================================================== */
+
+        .lightbox {
+            position: fixed;
+            inset: 0;
+
+            z-index: 2000;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            padding: 25px;
+
+            background:
+                rgba(0,0,0,.94);
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transition:
+                opacity .35s ease,
+                visibility .35s ease;
+        }
+
+        .lightbox.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .lightbox img {
+            max-width: 94vw;
+            max-height: 90vh;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 30px 100px rgba(0,0,0,.8);
+
+            transform: scale(.8);
+
+            transition:
+                transform .4s ease;
+        }
+
+        .lightbox.active img {
+            transform: scale(1);
+        }
+
+        .close-lightbox {
+            position: absolute;
+
+            top: 25px;
+            right: 30px;
+
+            width: 48px;
+            height: 48px;
+
+            border: none;
+
+            border-radius: 50%;
+
+            background:
+                rgba(255,255,255,.12);
+
+            color: white;
+
+            font-size: 30px;
+
+            cursor: pointer;
+
+            transition:
+                .3s ease;
+        }
+
+        .close-lightbox:hover {
+            background: #ffd21f;
+
+            color: #061a13;
+
+            transform:
+                rotate(90deg);
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 700px) {
+
+            .navbar {
+                padding: 13px 18px;
+            }
+
+            .nav-inner {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .nav-links {
+                gap: 18px;
+            }
+
+            .nav-links a {
+                font-size: .78rem;
+            }
+
+            .hero {
+                min-height: 70vh;
+
+                background-attachment: scroll;
+            }
+
+            .hero h1 {
+                letter-spacing: -1px;
+            }
+
+            .gallery {
+                columns: 2 150px;
+
+                column-gap: 10px;
+            }
+
+            .gallery-item {
+                margin-bottom: 10px;
+
+                border-radius: 12px;
+            }
+
+            .gallery-overlay {
+                padding: 12px;
+            }
+
+            .gallery-overlay span {
+                font-size: .7rem;
+            }
+
+            .social-buttons {
+                flex-direction: column;
+
+                align-items: center;
+            }
+
+            .social-btn {
+                width: 100%;
+
+                max-width: 320px;
+            }
+        }
+
+        @media (max-width: 400px) {
+
+            .gallery {
+                columns: 1;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVIGATION
+    ====================================================== -->
+
+    <nav class="navbar">
+
+        <div class="nav-inner">
+
+            <a href="index.html" class="brand">
+
+                <img
+                    src="images/logo.png"
+                    alt="Fatih Boutique"
+                >
+
+                <span>FATIH BOUTIQUE</span>
+
+            </a>
+
+
+            <div class="nav-links">
+
+                <a href="index.html">
+                    Accueil
+                </a>
+
+                <a href="gallery.html">
+                    Souvenirs
+                </a>
+
+                <a href="#staff">
+                    Notre équipe
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <header class="hero">
+
+        <div class="hero-content">
+
+            <div class="edition">
+                Nos souvenirs
+            </div>
+
+            <h1>
+                L'aventure<br>
+                continue
+            </h1>
+
+            <p>
+                Revivez les meilleurs moments de nos précédentes
+                aventures avec Fatih Boutique.
+                Des sourires, du partage et des souvenirs
+                qui restent pour toujours.
+            </p>
+
+        </div>
+
+
+        <div class="scroll-indicator">
+            ↓ &nbsp; DÉCOUVRIR NOS SOUVENIRS
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MEMORY GALLERY
+    ====================================================== -->
+
+    <section class="section">
+
+        <div class="section-header">
+
+            <h2>
+                Nos <span>souvenirs</span>
+            </h2>
+
+            <p>
+                Quelques moments capturés lors de nos précédentes excursions.
+            </p>
+
+        </div>
+
+
+        <div class="gallery">
+
+
+            <!-- MOSAIQUE -->
+
+            <div class="gallery-item">
+
+                <img
+                    src="images/mosaique.jpeg"
+                    alt="Souvenir Fatih Boutique"
+                >
+
+                <div class="gallery-overlay">
+                    <span>
+                        Un moment à partager
+                    </span>
+                </div>
+
+            </div>
+
+
+            <!-- OMBRE -->
+
+            <div class="gallery-item">
+
+                <img
+                    src="images/ombre.jpeg"
+                    alt="Souvenir Fatih Boutique"
+                >
+
+                <div class="gallery-overlay">
+                    <span>
+                        Des souvenirs inoubliables
+                    </span>
+                </div>
+
+            </div>
+
+
+            <!-- STEPHIE -->
+
+            <div class="gallery-item">
+
+                <img
+                    src="images/stephie.jpeg"
+                    alt="Souvenir Fatih Boutique"
+                >
+
+                <div class="gallery-overlay">
+                    <span>
+                        L'aventure ensemble
+                    </span>
+                </div>
+
+            </div>
+
+
+            <!-- BARBECUE -->
+
+            <div class="gallery-item">
+
+                <img
+                    src="images/barbecue.jpeg"
+                    alt="Barbecue excursion Fatih Boutique"
+                >
+
+                <div class="gallery-overlay">
+                    <span>
+                        Partage & convivialité
+                    </span>
+                </div>
+
+            </div>
+
+
+            <!-- CASSEROLE -->
+
+            <div class="gallery-item">
+
+                <img
+                    src="images/casseroute.jpeg"
+                    alt="Souvenir excursion Fatih Boutique"
+                >
+
+                <div class="gallery-overlay">
+                    <span>
+                        Une journée pleine de saveurs
+                    </span>
+                </div>
+
+            </div>
+
+
+            <!-- CHETHY -->
+
+            <div class="gallery-item">
+
+                <img
+                    src="images/chethy.jpeg"
+                    alt="Souvenir Fatih Boutique"
+                >
+
+                <div class="gallery-overlay">
+                    <span>
+                        Créer des souvenirs
+                    </span>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         STAFF
+    ====================================================== -->
+
+    <section
+        class="section staff-section"
+        id="staff"
+    >
+
+        <div class="section-header">
+
+            <h2>
+                Notre <span>équipe</span>
+            </h2>
+
+            <p>
+                Derrière chaque aventure, une équipe passionnée.
+            </p>
+
+        </div>
+
+
+        <div class="staff-card">
+
+            <img
+                src="images/staff.jpeg"
+                alt="Équipe Fatih Boutique"
+            >
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SOCIAL
+    ====================================================== -->
+
+    <section class="social-section">
+
+        <h2>
+            La prochaine aventure commence ici
+        </h2>
+
+        <p>
+            Rejoignez notre communauté pour recevoir les
+            prochaines informations et ne rien manquer
+            des aventures Fatih Boutique.
+        </p>
+
+
+        <div class="social-buttons">
+
+
+            <!-- WHATSAPP -->
+
+            <a
+                href="WHATSAPP_LINK_HERE"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-btn whatsapp"
+            >
+                💬 &nbsp; Rejoindre WhatsApp
+            </a>
+
+
+            <!-- INSTAGRAM -->
+
+            <a
+                href="INSTAGRAM_LINK_HERE"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-btn instagram"
+            >
+                ◎ &nbsp; Instagram
+            </a>
+
+
+            <!-- FACEBOOK -->
+
+            <a
+                href="FACEBOOK_LINK_HERE"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-btn facebook"
+            >
+                f &nbsp; Facebook
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+
+    <footer>
+
+        © 2026
+        <strong>Fatih Boutique</strong>.
+        Tous droits réservés.
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         LIGHTBOX
+    ====================================================== -->
+
+    <div
+        class="lightbox"
+        id="lightbox"
+    >
+
+        <button
+            class="close-lightbox"
+            id="closeLightbox"
+            aria-label="Fermer"
+        >
+            ×
+        </button>
+
+        <img
+            id="lightboxImage"
+            src=""
+            alt="Photo agrandie"
+        >
+
+    </div>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
+    <script>
+
+        const galleryItems =
+            document.querySelectorAll(
+                ".gallery-item"
+            );
+
+        const lightbox =
+            document.getElementById(
+                "lightbox"
+            );
+
+        const lightboxImage =
+            document.getElementById(
+                "lightboxImage"
+            );
+
+        const closeLightbox =
+            document.getElementById(
+                "closeLightbox"
+            );
+
+
+        /* ================================================
+           OPEN LIGHTBOX
+        ================================================= */
+
+        galleryItems.forEach(item => {
+
+            item.addEventListener(
+                "click",
+                () => {
+
+                    const image =
+                        item.querySelector("img");
+
+                    lightboxImage.src =
+                        image.src;
+
+                    lightboxImage.alt =
+                        image.alt;
+
+                    lightbox.classList.add(
+                        "active"
+                    );
+
+                    document.body.style.overflow =
+                        "hidden";
+
+                }
+            );
+
+        });
+
+
+        /* ================================================
+           CLOSE LIGHTBOX
+        ================================================= */
+
+        function closeGallery() {
+
+            lightbox.classList.remove(
+                "active"
+            );
+
+            document.body.style.overflow =
+                "";
+
+        }
+
+
+        closeLightbox.addEventListener(
+            "click",
+            closeGallery
+        );
+
+
+        lightbox.addEventListener(
+            "click",
+            event => {
+
+                if (
+                    event.target === lightbox
+                ) {
+                    closeGallery();
+                }
+
+            }
+        );
+
+
+        document.addEventListener(
+            "keydown",
+            event => {
+
+                if (
+                    event.key === "Escape"
+                ) {
+                    closeGallery();
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+</html>
