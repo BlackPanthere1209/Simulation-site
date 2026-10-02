@@ -11,13 +11,17 @@
 
   <meta
     name="description"
-    content="Excursion Fatih Boutique — Canon Beach — 07 Novembre 2026"
+    content="Compte à rebours officiel de l'Excursion Fatih Boutique - 2ème édition"
   >
 
   <title>Excursion Fatih Boutique | 07 Novembre 2026</title>
 
 
   <style>
+
+    /* =====================================================
+       RESET
+    ====================================================== */
 
     * {
       margin: 0;
@@ -32,110 +36,106 @@
 
 
     body {
-
-      font-family:
-        "Segoe UI",
-        Arial,
-        sans-serif;
-
+      font-family: "Segoe UI", Arial, sans-serif;
       min-height: 100vh;
-
-      color: white;
-
+      color: #fff;
       overflow-x: hidden;
-
       background: #061a13;
     }
 
 
     /* =====================================================
-       BACKGROUND
-    ===================================================== */
+       MAIN BACKGROUND
+    ====================================================== */
 
     .page {
-
       position: relative;
-
       min-height: 100vh;
 
-      padding: 40px 15px 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 30px 18px;
 
       overflow: hidden;
 
       background:
         linear-gradient(
-          rgba(2, 30, 20, 0.72),
-          rgba(2, 20, 14, 0.90)
+          135deg,
+          rgba(2, 25, 17, .78),
+          rgba(2, 15, 11, .90)
         ),
         url("images/excursion.jpg.jpeg");
 
       background-size: cover;
-
       background-position: center;
-
       background-attachment: fixed;
     }
 
 
     .page::before {
-
       content: "";
 
-      position: fixed;
-
+      position: absolute;
       inset: 0;
-
-      pointer-events: none;
 
       background:
         radial-gradient(
-          circle at 50% 10%,
-          rgba(255, 193, 7, 0.14),
-          transparent 35%
+          circle at 50% 25%,
+          rgba(255, 210, 31, .20),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 10% 80%,
+          rgba(0, 220, 150, .13),
+          transparent 28%
+        ),
+        radial-gradient(
+          circle at 90% 70%,
+          rgba(255, 92, 45, .12),
+          transparent 25%
         );
+
+      pointer-events: none;
     }
 
 
     /* =====================================================
        PARTICLES
-    ===================================================== */
+    ====================================================== */
 
     .particles {
-
-      position: fixed;
-
+      position: absolute;
       inset: 0;
-
       overflow: hidden;
-
       pointer-events: none;
-
-      z-index: 0;
     }
 
 
     .particle {
-
       position: absolute;
 
       width: 5px;
       height: 5px;
 
+      background: #ffd21f;
+
       border-radius: 50%;
 
       opacity: .7;
 
+      box-shadow:
+        0 0 10px rgba(255, 210, 31, .8);
+
       animation:
-        floatParticle
-        linear
-        infinite;
+        floatParticle linear infinite;
     }
 
 
     @keyframes floatParticle {
 
       0% {
-
         transform:
           translateY(110vh)
           translateX(0)
@@ -153,7 +153,6 @@
       }
 
       100% {
-
         transform:
           translateY(-10vh)
           translateX(80px)
@@ -166,148 +165,62 @@
 
 
     /* =====================================================
-       MAIN CARD
-    ===================================================== */
+       MAIN CONTAINER
+    ====================================================== */
 
     .container {
-
       position: relative;
-
       z-index: 2;
 
       width: 100%;
-
-      max-width: 1000px;
-
-      margin: auto;
+      max-width: 1050px;
 
       text-align: center;
 
-      padding: 35px 25px 45px;
+      padding: 30px 28px 38px;
 
-      border-radius: 30px;
+      border-radius: 32px;
 
       background:
-        rgba(3, 35, 24, .74);
+        linear-gradient(
+          145deg,
+          rgba(4, 40, 27, .78),
+          rgba(2, 23, 16, .68)
+        );
 
       border:
-        1px solid
-        rgba(255, 215, 0, .25);
-
-      backdrop-filter: blur(12px);
+        1px solid rgba(255, 210, 31, .30);
 
       box-shadow:
-        0 30px 80px
-        rgba(0,0,0,.55);
+        0 30px 80px rgba(0, 0, 0, .50),
+        inset 0 1px rgba(255, 255, 255, .08);
 
-      animation:
-        cardAppear
-        1s
-        ease-out;
-    }
-
-
-    @keyframes cardAppear {
-
-      from {
-
-        opacity: 0;
-
-        transform:
-          translateY(30px);
-      }
-
-      to {
-
-        opacity: 1;
-
-        transform:
-          translateY(0);
-      }
-
-    }
-
-
-    /* =====================================================
-       LANGUAGE SWITCH
-    ===================================================== */
-
-    .language-switch {
-
-      display: flex;
-
-      justify-content: flex-end;
-
-      margin-bottom: 15px;
-    }
-
-
-    .language-box {
-
-      display: flex;
-
-      border:
-        1px solid
-        rgba(255,255,255,.18);
-
-      border-radius: 50px;
-
-      overflow: hidden;
-
-      background:
-        rgba(0,0,0,.25);
-    }
-
-
-    .language-box button {
-
-      border: 0;
-
-      background: transparent;
-
-      color: #c9d5cf;
-
-      padding: 7px 13px;
-
-      cursor: pointer;
-
-      font-size: .72rem;
-
-      font-weight: 800;
-    }
-
-
-    .language-box button.active {
-
-      background: #ffd21f;
-
-      color: #10251b;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
     }
 
 
     /* =====================================================
        LOGO
-    ===================================================== */
+    ====================================================== */
 
     .logo {
+      display: block;
 
-      width: 210px;
+      width: min(190px, 42vw);
 
-      max-width: 65%;
+      height: auto;
 
-      margin-bottom: 15px;
+      margin:
+        0 auto 12px;
 
       filter:
         drop-shadow(
-          0 8px 15px
-          rgba(0,0,0,.35)
+          0 8px 22px rgba(0, 0, 0, .45)
         );
 
       animation:
-        logoFloat
-        4s
-        ease-in-out
-        infinite;
+        logoFloat 4s ease-in-out infinite;
     }
 
 
@@ -319,254 +232,414 @@
       }
 
       50% {
-        transform: translateY(-8px);
+        transform: translateY(-5px);
       }
 
     }
 
 
     /* =====================================================
-       HERO
-    ===================================================== */
+       EDITION
+    ====================================================== */
 
     .edition {
+      display: inline-flex;
 
-      display: inline-block;
+      align-items: center;
+      justify-content: center;
 
-      padding: 7px 16px;
+      padding: 8px 18px;
 
-      margin-bottom: 12px;
-
-      border-radius: 50px;
-
-      background:
-        linear-gradient(
-          135deg,
-          #ffcc00,
-          #ff8c00
-        );
-
-      color: #10251b;
-
-      font-weight: 800;
-
-      font-size: .8rem;
-
-      letter-spacing: 2px;
-
-      text-transform: uppercase;
-    }
-
-
-    h1 {
-
-      font-size:
-        clamp(
-          3rem,
-          9vw,
-          6.5rem
-        );
-
-      line-height: .95;
-
-      font-weight: 900;
-
-      text-transform: uppercase;
-
-      letter-spacing: -3px;
-
-      margin-bottom: 15px;
+      border-radius: 999px;
 
       background:
         linear-gradient(
           90deg,
-          #ffffff,
+          #00a86b,
           #ffd21f,
-          #ff7b00,
-          #ffffff
+          #ff7b00
         );
 
-      background-size: 300%;
+      color: #062016;
+
+      font-size: .78rem;
+
+      font-weight: 900;
+
+      letter-spacing: 1.5px;
+
+      text-transform: uppercase;
+
+      box-shadow:
+        0 8px 25px rgba(255, 210, 31, .22);
+
+      margin-bottom: 12px;
+    }
+
+
+    /* =====================================================
+       TITLE
+    ====================================================== */
+
+    h1 {
+      font-size:
+        clamp(3.2rem, 8vw, 6.5rem);
+
+      line-height: .95;
+
+      text-align: center;
+
+      text-transform: uppercase;
+
+      letter-spacing: -2px;
+
+      font-weight: 950;
+
+      margin:
+        4px 0 12px;
+
+      background:
+        linear-gradient(
+          90deg,
+          #fff,
+          #ffd21f 45%,
+          #ff7b00
+        );
 
       -webkit-background-clip: text;
-
       background-clip: text;
 
       color: transparent;
 
-      animation:
-        gradientText
-        5s
-        ease
-        infinite;
-    }
+      text-shadow:
+        0 0 35px rgba(255, 210, 31, .16);
 
-
-    @keyframes gradientText {
-
-      0% {
-        background-position: 0%;
-      }
-
-      50% {
-        background-position: 100%;
-      }
-
-      100% {
-        background-position: 0%;
-      }
-
+      filter:
+        drop-shadow(
+          0 8px 20px rgba(0, 0, 0, .35)
+        );
     }
 
 
     .subtitle {
-
       font-size:
-        clamp(
-          1rem,
-          2.5vw,
-          1.3rem
-        );
+        clamp(1rem, 2vw, 1.25rem);
 
-      color: #e8f3ed;
+      color: #e8f6ef;
 
-      margin-bottom: 10px;
+      line-height: 1.5;
+
+      margin-bottom: 6px;
     }
 
 
     .location {
+      font-size:
+        clamp(.95rem, 2vw, 1.15rem);
+
+      font-weight: 800;
 
       color: #ffd21f;
 
-      font-weight: 700;
-
-      margin-bottom: 30px;
+      margin-bottom: 24px;
     }
 
 
     /* =====================================================
        COUNTDOWN
-    ===================================================== */
+    ====================================================== */
 
     .countdown {
+      position: relative;
 
       display: grid;
 
       grid-template-columns:
-        repeat(4,1fr);
+        repeat(4, 1fr);
 
-      gap: 15px;
+      gap: 16px;
 
-      margin: 30px auto;
+      width: 100%;
 
-      max-width: 850px;
-    }
+      max-width: 960px;
 
+      margin:
+        8px auto 24px;
 
-    .time-box {
+      padding: 18px;
 
-      position: relative;
-
-      padding: 22px 10px;
-
-      border-radius: 20px;
+      border-radius: 30px;
 
       background:
         linear-gradient(
           145deg,
-          rgba(255,255,255,.13),
-          rgba(255,255,255,.04)
+          rgba(0, 0, 0, .30),
+          rgba(255, 255, 255, .035)
         );
 
       border:
-        1px solid
-        rgba(255,255,255,.13);
+        1px solid rgba(255, 255, 255, .10);
 
       box-shadow:
-        inset 0 1px
-        rgba(255,255,255,.12),
+        0 20px 55px rgba(0, 0, 0, .35),
+        0 0 55px rgba(255, 210, 31, .08);
 
-        0 10px 25px
-        rgba(0,0,0,.25);
-
-      overflow: hidden;
-
-      transition:
-        transform .3s ease,
-        border-color .3s ease;
+      isolation: isolate;
     }
 
 
-    .time-box:hover {
+    .countdown::before {
+      content: "";
 
-      transform:
-        translateY(-6px);
+      position: absolute;
 
-      border-color:
-        rgba(255,210,31,.6);
-    }
+      inset: -2px;
 
+      border-radius: 32px;
 
-    .number {
+      padding: 2px;
 
-      display: block;
-
-      font-size:
-        clamp(
-          2.5rem,
-          7vw,
-          4.5rem
+      background:
+        linear-gradient(
+          90deg,
+          #00a86b,
+          #ffd21f,
+          #ff7b00,
+          #ff4f81,
+          #00a86b
         );
 
-      line-height: 1;
+      background-size: 300% 100%;
 
-      font-weight: 900;
+      animation:
+        borderFlow 5s linear infinite;
 
-      color: white;
-
-      text-shadow:
-        0 0 20px
-        rgba(255,210,31,.25);
+      z-index: -2;
     }
 
 
-    .label {
+    .countdown::after {
+      content: "";
 
-      display: block;
+      position: absolute;
 
-      margin-top: 10px;
+      inset: 2px;
 
-      color: #ffd21f;
+      border-radius: 29px;
 
-      font-size: .8rem;
+      background:
+        rgba(2, 24, 16, .78);
 
-      font-weight: 700;
+      z-index: -1;
+    }
 
-      letter-spacing: 2px;
 
-      text-transform: uppercase;
+    @keyframes borderFlow {
+
+      to {
+        background-position: 300% 0;
+      }
+
     }
 
 
     /* =====================================================
-       PROGRESS
-    ===================================================== */
+       COUNTDOWN BOXES
+    ====================================================== */
+
+    .time-box {
+      position: relative;
+
+      min-height: 175px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding: 18px 10px;
+
+      border-radius: 24px;
+
+      background:
+        linear-gradient(
+          155deg,
+          rgba(255, 255, 255, .12),
+          rgba(255, 255, 255, .035)
+        );
+
+      border:
+        1px solid rgba(255, 255, 255, .14);
+
+      box-shadow:
+        inset 0 1px rgba(255, 255, 255, .10),
+        0 12px 28px rgba(0, 0, 0, .28);
+
+      overflow: hidden;
+
+      animation:
+        timeBoxPulse 3s ease-in-out infinite;
+    }
+
+
+    .time-box:nth-child(2) {
+      animation-delay: .35s;
+    }
+
+
+    .time-box:nth-child(3) {
+      animation-delay: .70s;
+    }
+
+
+    .time-box:nth-child(4) {
+      animation-delay: 1.05s;
+    }
+
+
+    .time-box::before {
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+
+      left: 12%;
+
+      right: 12%;
+
+      height: 3px;
+
+      border-radius: 99px;
+
+      background:
+        linear-gradient(
+          90deg,
+          #00a86b,
+          #ffd21f,
+          #ff7b00
+        );
+    }
+
+
+    @keyframes timeBoxPulse {
+
+      0%,
+      100% {
+        transform: translateY(0);
+
+        box-shadow:
+          inset 0 1px rgba(255, 255, 255, .10),
+          0 12px 28px rgba(0, 0, 0, .28);
+      }
+
+      50% {
+        transform: translateY(-5px);
+
+        box-shadow:
+          inset 0 1px rgba(255, 255, 255, .10),
+          0 18px 38px rgba(0, 0, 0, .35),
+          0 0 25px rgba(255, 210, 31, .10);
+      }
+
+    }
+
+
+    .number {
+      font-size:
+        clamp(3.4rem, 8vw, 6.8rem);
+
+      font-weight: 950;
+
+      line-height: .9;
+
+      letter-spacing: -3px;
+
+      font-variant-numeric:
+        tabular-nums;
+
+      background:
+        linear-gradient(
+          180deg,
+          #fff 0%,
+          #ffe77a 48%,
+          #ff9b38 100%
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      color: transparent;
+
+      text-shadow:
+        0 0 25px rgba(255, 210, 31, .28);
+
+      animation:
+        numberGlow 2s ease-in-out infinite alternate;
+    }
+
+
+    .label {
+      margin-top: 12px;
+
+      color: #fff;
+
+      font-size: .78rem;
+
+      font-weight: 900;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+
+      opacity: .86;
+    }
+
+
+    @keyframes numberGlow {
+
+      from {
+        filter:
+          drop-shadow(
+            0 0 5px rgba(255, 210, 31, .15)
+          );
+      }
+
+      to {
+        filter:
+          drop-shadow(
+            0 0 16px rgba(255, 210, 31, .38)
+          );
+      }
+
+    }
+
+
+    /* =====================================================
+       PROGRESS BAR
+    ====================================================== */
 
     .progress-section {
+      width: 100%;
 
-      max-width: 800px;
+      max-width: 900px;
 
-      margin: 35px auto 20px;
+      margin:
+        24px auto 18px;
 
       text-align: left;
     }
 
 
     .progress-header {
-
       display: flex;
 
       justify-content: space-between;
+
+      gap: 20px;
 
       margin-bottom: 9px;
 
@@ -576,17 +649,20 @@
     }
 
 
-    #progressPercent {
+    .progress-header span:first-child {
+      font-weight: 700;
+    }
 
+
+    #progressPercent {
       color: #ffd21f;
 
-      font-weight: 800;
+      font-weight: 900;
     }
 
 
     .progress-bar {
-
-      height: 13px;
+      height: 14px;
 
       width: 100%;
 
@@ -595,13 +671,18 @@
       overflow: hidden;
 
       background:
-        rgba(255,255,255,.12);
+        rgba(255, 255, 255, .12);
+
+      border:
+        1px solid rgba(255, 255, 255, .10);
+
+      box-shadow:
+        inset 0 2px 6px rgba(0, 0, 0, .25);
     }
 
 
     .progress-fill {
-
-      width: 0%;
+      width: 0;
 
       height: 100%;
 
@@ -612,54 +693,78 @@
           90deg,
           #00a86b,
           #ffd21f,
-          #ff7b00
+          #ff7b00,
+          #ff4f81
         );
 
+      background-size: 200% 100%;
+
+      animation:
+        progressFlow 3s linear infinite;
+
       box-shadow:
-        0 0 15px
-        rgba(255,210,31,.5);
+        0 0 18px rgba(255, 210, 31, .55);
 
       transition:
         width 1s linear;
     }
 
 
+    @keyframes progressFlow {
+
+      to {
+        background-position: 200% 0;
+      }
+
+    }
+
+
     /* =====================================================
-       DATE / MESSAGE
-    ===================================================== */
+       EVENT DATE
+    ====================================================== */
 
     .event-date {
-
       display: inline-flex;
 
       align-items: center;
 
       gap: 10px;
 
-      margin-top: 25px;
+      margin-top: 16px;
 
       padding: 12px 20px;
 
       border-radius: 50px;
 
       background:
-        rgba(0,0,0,.25);
+        rgba(0, 0, 0, .30);
 
-      color: white;
+      border:
+        1px solid rgba(255, 255, 255, .10);
 
-      font-weight: 600;
+      color: #fff;
+
+      font-weight: 700;
+
+      box-shadow:
+        0 8px 22px rgba(0, 0, 0, .20);
     }
 
 
     .event-date strong {
-
       color: #ffd21f;
     }
 
 
-    .message {
+    /* =====================================================
+       MESSAGE
+    ====================================================== */
 
-      margin-top: 25px;
+    .message {
+      margin:
+        22px auto 0;
+
+      max-width: 760px;
 
       color: #e6f1eb;
 
@@ -670,327 +775,15 @@
 
 
     .message strong {
-
       color: #ffd21f;
-    }
-
-
-    /* =====================================================
-       SECTION SYSTEM
-    ===================================================== */
-
-    .site-section {
-
-      margin-top: 85px;
-
-      padding-top: 60px;
-
-      border-top:
-        1px solid
-        rgba(255,255,255,.10);
-    }
-
-
-    .section-title {
-
-      margin-bottom: 10px;
-
-      color: #ffd21f;
-
-      font-size: .78rem;
-
-      font-weight: 800;
-
-      letter-spacing: 2px;
-
-      text-transform: uppercase;
-    }
-
-
-    .section-heading {
-
-      font-size:
-        clamp(
-          2rem,
-          5vw,
-          3.5rem
-        );
-
-      line-height: 1.05;
-
-      margin-bottom: 15px;
-
-      color: white;
-    }
-
-
-    .section-intro {
-
-      max-width: 700px;
-
-      margin: 0 auto 35px;
-
-      color: #cbd8d1;
-
-      line-height: 1.7;
-    }
-
-
-    /* =====================================================
-       1 — EXPERIENCE
-    ===================================================== */
-
-    .experience-grid {
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(4,1fr);
-
-      gap: 14px;
-    }
-
-
-    .experience-card {
-
-      padding: 25px 18px;
-
-      border-radius: 18px;
-
-      background:
-        rgba(255,255,255,.055);
-
-      border:
-        1px solid
-        rgba(255,255,255,.10);
-
-      transition:
-        transform .3s ease,
-        border-color .3s ease;
-    }
-
-
-    .experience-card:hover {
-
-      transform:
-        translateY(-5px);
-
-      border-color:
-        rgba(255,210,31,.45);
-    }
-
-
-    .experience-icon {
-
-      font-size: 2rem;
-
-      margin-bottom: 13px;
-    }
-
-
-    .experience-card h3 {
-
-      margin-bottom: 8px;
-
-      color: white;
-    }
-
-
-    .experience-card p {
-
-      color: #aebeb6;
-
-      font-size: .86rem;
-
-      line-height: 1.6;
-    }
-
-
-    /* =====================================================
-       2 — TICKETS
-    ===================================================== */
-
-    .tickets {
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(2,1fr);
-
-      gap: 20px;
-
-      text-align: left;
-    }
-
-
-    .ticket {
-
-      position: relative;
-
-      padding: 30px;
-
-      border-radius: 22px;
-
-      background:
-        rgba(255,255,255,.055);
-
-      border:
-        1px solid
-        rgba(255,255,255,.13);
-
-      box-shadow:
-        0 15px 40px
-        rgba(0,0,0,.20);
-
-      transition:
-        transform .3s ease;
-    }
-
-
-    .ticket:hover {
-
-      transform:
-        translateY(-6px);
-    }
-
-
-    .ticket.vip {
-
-      border:
-        1px solid
-        rgba(255,210,31,.55);
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(255,210,31,.10),
-          rgba(255,255,255,.04)
-        );
-    }
-
-
-    .vip-badge {
-
-      position: absolute;
-
-      top: 18px;
-
-      right: 18px;
-
-      padding: 5px 10px;
-
-      border-radius: 30px;
-
-      background: #ffd21f;
-
-      color: #10251b;
-
-      font-size: .65rem;
-
-      font-weight: 900;
-
-      letter-spacing: 1px;
-    }
-
-
-    .ticket-name {
-
-      color: #ffd21f;
-
-      font-size: .75rem;
-
-      font-weight: 800;
-
-      letter-spacing: 2px;
-
-      text-transform: uppercase;
-
-      margin-bottom: 8px;
-    }
-
-
-    .ticket h3 {
-
-      font-size: 1.8rem;
-
-      margin-bottom: 7px;
-    }
-
-
-    .ticket-description {
-
-      color: #aebeb6;
-
-      font-size: .85rem;
-
-      margin-bottom: 20px;
-    }
-
-
-    .price {
-
-      font-size: 3rem;
-
-      font-weight: 900;
-
-      margin-bottom: 20px;
-
-      line-height: 1;
-    }
-
-
-    .price small {
-
-      font-size: 1rem;
-
-      color: #ffd21f;
-    }
-
-
-    .ticket-list {
-
-      list-style: none;
-
-      margin-bottom: 25px;
-
-      border-top:
-        1px solid
-        rgba(255,255,255,.10);
-    }
-
-
-    .ticket-list li {
-
-      padding: 10px 0;
-
-      border-bottom:
-        1px solid
-        rgba(255,255,255,.08);
-
-      color: #d8e2dd;
-
-      font-size: .85rem;
-    }
-
-
-    .ticket-list li::before {
-
-      content: "✓";
-
-      color: #ffd21f;
-
-      margin-right: 9px;
-
-      font-weight: 900;
     }
 
 
     /* =====================================================
        BUTTONS
-    ===================================================== */
+    ====================================================== */
 
     .actions {
-
       display: flex;
 
       justify-content: center;
@@ -999,414 +792,102 @@
 
       flex-wrap: wrap;
 
-      gap: 14px;
+      gap: 12px;
 
-      margin-top: 30px;
+      margin-top: 22px;
     }
 
 
     .action-btn {
-
       display: inline-flex;
 
       align-items: center;
 
       justify-content: center;
 
-      min-width: 190px;
+      min-height: 48px;
 
-      padding: 14px 22px;
+      padding: 12px 20px;
 
-      border-radius: 50px;
-
-      font-size: .9rem;
-
-      font-weight: 800;
+      border-radius: 999px;
 
       text-decoration: none;
 
-      color: white;
+      color: #fff;
+
+      font-weight: 800;
+
+      font-size: .92rem;
 
       border:
-        1px solid
-        rgba(255,255,255,.15);
-
-      box-shadow:
-        0 8px 20px
-        rgba(0,0,0,.18);
+        1px solid rgba(255, 255, 255, .14);
 
       transition:
-        transform .3s ease,
-        box-shadow .3s ease;
+        transform .25s ease,
+        box-shadow .25s ease,
+        filter .25s ease;
     }
 
 
     .action-btn:hover {
+      transform: translateY(-3px);
 
-      transform:
-        translateY(-5px);
+      filter: brightness(1.08);
 
       box-shadow:
-        0 15px 35px
-        rgba(0,0,0,.35);
+        0 12px 25px rgba(0, 0, 0, .30);
     }
 
 
     .gallery-btn {
-
       background:
         linear-gradient(
           135deg,
-          #ffd21f,
-          #ff8c00
+          #00a86b,
+          #007c55
         );
-
-      color: #10251b;
     }
 
 
     .whatsapp-btn {
-
-      background: #25d366;
+      background:
+        linear-gradient(
+          135deg,
+          #25d366,
+          #0b9f4a
+        );
     }
 
 
     .instagram-btn {
-
       background:
         linear-gradient(
           135deg,
-          #833ab4,
-          #fd1d1d,
-          #fcb045
+          #f58529,
+          #dd2a7b,
+          #8134af
         );
     }
 
 
     .facebook-btn {
-
-      background: #1877f2;
-    }
-
-
-    .reservation-btn {
-
       background:
         linear-gradient(
           135deg,
-          #00a86b,
-          #087f56
+          #1877f2,
+          #0d56b5
         );
-    }
-
-
-    /* =====================================================
-       3 — PAYMENT
-    ===================================================== */
-
-    .payment-grid {
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(4,1fr);
-
-      gap: 14px;
-    }
-
-
-    .payment-card {
-
-      padding: 25px 15px;
-
-      border-radius: 18px;
-
-      background:
-        rgba(255,255,255,.055);
-
-      border:
-        1px solid
-        rgba(255,255,255,.10);
-    }
-
-
-    .payment-icon {
-
-      width: 48px;
-
-      height: 48px;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      margin:
-        0 auto 14px;
-
-      border-radius: 50%;
-
-      background:
-        rgba(255,210,31,.12);
-
-      color: #ffd21f;
-
-      font-weight: 900;
-    }
-
-
-    .payment-card h3 {
-
-      margin-bottom: 7px;
-    }
-
-
-    .payment-card p {
-
-      color: #aebeb6;
-
-      font-size: .78rem;
-    }
-
-
-    .payment-number {
-
-      color: white !important;
-
-      font-weight: 800;
-
-      margin-top: 7px;
-    }
-
-
-    .payment-note {
-
-      margin-top: 25px;
-
-      color: #aebeb6;
-
-      font-size: .85rem;
-    }
-
-
-    /* =====================================================
-       6 — RESERVATION
-    ===================================================== */
-
-    .reservation-steps {
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(3,1fr);
-
-      gap: 14px;
-
-      margin-bottom: 30px;
-    }
-
-
-    .reservation-step {
-
-      padding: 28px 20px;
-
-      border-radius: 18px;
-
-      background:
-        rgba(255,255,255,.055);
-
-      border:
-        1px solid
-        rgba(255,255,255,.10);
-    }
-
-
-    .step-number {
-
-      color: #ffd21f;
-
-      font-size: 1.7rem;
-
-      font-weight: 900;
-
-      margin-bottom: 12px;
-    }
-
-
-    .reservation-step h3 {
-
-      margin-bottom: 8px;
-    }
-
-
-    .reservation-step p {
-
-      color: #aebeb6;
-
-      font-size: .84rem;
-
-      line-height: 1.6;
-    }
-
-
-    /* =====================================================
-       4 — FAQ
-    ===================================================== */
-
-    .faq {
-
-      max-width: 800px;
-
-      margin: auto;
-
-      text-align: left;
-    }
-
-
-    .faq-item {
-
-      border-top:
-        1px solid
-        rgba(255,255,255,.12);
-    }
-
-
-    .faq-item:last-child {
-
-      border-bottom:
-        1px solid
-        rgba(255,255,255,.12);
-    }
-
-
-    .faq-question {
-
-      width: 100%;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: space-between;
-
-      gap: 20px;
-
-      padding: 20px 5px;
-
-      border: 0;
-
-      background: transparent;
-
-      color: white;
-
-      font: inherit;
-
-      font-weight: 700;
-
-      text-align: left;
-
-      cursor: pointer;
-    }
-
-
-    .faq-question span:last-child {
-
-      color: #ffd21f;
-
-      font-size: 1.4rem;
-    }
-
-
-    .faq-answer {
-
-      display: none;
-
-      padding:
-        0 30px
-        20px
-        5px;
-
-      color: #aebeb6;
-
-      font-size: .87rem;
-
-      line-height: 1.7;
-    }
-
-
-    .faq-item.open .faq-answer {
-
-      display: block;
-    }
-
-
-    /* =====================================================
-       7 — FINAL CTA
-    ===================================================== */
-
-    .final-section {
-
-      margin-top: 85px;
-
-      padding:
-        70px 25px
-        35px;
-
-      border-radius: 25px;
-
-      background:
-        linear-gradient(
-          135deg,
-          rgba(255,210,31,.10),
-          rgba(0,168,107,.10)
-        );
-
-      border:
-        1px solid
-        rgba(255,210,31,.20);
-    }
-
-
-    .final-section h2 {
-
-      font-size:
-        clamp(
-          2.2rem,
-          6vw,
-          4.5rem
-        );
-
-      line-height: 1;
-
-      margin-bottom: 15px;
-    }
-
-
-    .final-section p {
-
-      max-width: 650px;
-
-      margin:
-        0 auto 25px;
-
-      color: #cbd8d1;
-
-      line-height: 1.7;
     }
 
 
     .social-title {
-
-      margin-top: 35px;
-
-      margin-bottom: 10px;
+      margin-top: 25px;
 
       color: #ffd21f;
 
       font-size: .78rem;
 
-      font-weight: 800;
+      font-weight: 900;
 
       letter-spacing: 2px;
 
@@ -1415,21 +896,353 @@
 
 
     /* =====================================================
-       FINISHED EVENT
-    ===================================================== */
+       TICKETS
+    ====================================================== */
+
+    .ticket-payment-section {
+      margin:
+        30px auto 0;
+
+      max-width: 980px;
+
+      text-align: left;
+    }
+
+
+    .section-title {
+      font-size:
+        clamp(1.5rem, 4vw, 2.2rem);
+
+      text-align: center;
+
+      color: #ffd21f;
+
+      margin-bottom: 8px;
+
+      font-weight: 950;
+
+      text-transform: uppercase;
+
+      letter-spacing: .5px;
+    }
+
+
+    .section-subtitle {
+      text-align: center;
+
+      color: #dce9e2;
+
+      margin-bottom: 20px;
+    }
+
+
+    .ticket-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      gap: 16px;
+    }
+
+
+    .ticket-card {
+      position: relative;
+
+      padding: 24px 20px;
+
+      border-radius: 24px;
+
+      border:
+        1px solid rgba(255, 255, 255, .16);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255, 255, 255, .10),
+          rgba(0, 0, 0, .25)
+        );
+
+      box-shadow:
+        0 16px 35px rgba(0, 0, 0, .28);
+
+      overflow: hidden;
+    }
+
+
+    .ticket-card::before {
+      content: "";
+
+      position: absolute;
+
+      inset:
+        0 auto auto 0;
+
+      width: 100%;
+
+      height: 4px;
+
+      background:
+        linear-gradient(
+          90deg,
+          #00a86b,
+          #ffd21f,
+          #ff7b00,
+          #ff4f81
+        );
+    }
+
+
+    .ticket-card.vip::before {
+      background:
+        linear-gradient(
+          90deg,
+          #ff4f81,
+          #ffd21f,
+          #ff7b00
+        );
+    }
+
+
+    .ticket-name {
+      font-size: 1rem;
+
+      font-weight: 950;
+
+      letter-spacing: 1.5px;
+
+      text-transform: uppercase;
+
+      color: #fff;
+    }
+
+
+    .ticket-price {
+      font-size:
+        clamp(2.6rem, 7vw, 4.3rem);
+
+      font-weight: 950;
+
+      line-height: 1;
+
+      color: #ffd21f;
+
+      margin:
+        8px 0 12px;
+
+      text-shadow:
+        0 0 20px rgba(255, 210, 31, .22);
+    }
+
+
+    .ticket-card.vip .ticket-price {
+      color: #ff9b38;
+    }
+
+
+    .ticket-description {
+      color: #dce9e2;
+
+      line-height: 1.55;
+
+      font-size: .9rem;
+    }
+
+
+    .ticket-card ul {
+      margin:
+        13px 0 0;
+
+      padding-left: 18px;
+
+      color: #f3f7f4;
+
+      line-height: 1.65;
+
+      font-size: .88rem;
+    }
+
+
+    /* =====================================================
+       PAYMENT
+    ====================================================== */
+
+    .payment-section {
+      margin-top: 30px;
+
+      padding-top: 26px;
+
+      border-top:
+        1px solid rgba(255, 255, 255, .10);
+    }
+
+
+    .payment-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+      gap: 12px;
+    }
+
+
+    .payment-card {
+      padding: 15px 12px;
+
+      border-radius: 18px;
+
+      background:
+        rgba(0, 0, 0, .25);
+
+      border:
+        1px solid rgba(255, 255, 255, .10);
+
+      text-align: center;
+    }
+
+
+    .payment-card img {
+      width: 64px;
+
+      height: 44px;
+
+      object-fit: contain;
+
+      margin:
+        0 auto 8px;
+
+      display: block;
+    }
+
+
+    .payment-name {
+      font-weight: 900;
+
+      color: #fff;
+
+      font-size: .86rem;
+
+      margin-bottom: 5px;
+    }
+
+
+    /* =====================================================
+       CLICKABLE PHONE NUMBERS
+       IMPORTANT FOR MOBILE:
+       - still clickable
+       - no automatic blue color
+    ====================================================== */
+
+    .phone-number,
+    .phone-number:visited,
+    .phone-number:hover,
+    .phone-number:active,
+    .phone-number:focus {
+      color: inherit !important;
+
+      text-decoration: none !important;
+
+      -webkit-text-decoration: none !important;
+    }
+
+
+    .phone-number {
+      cursor: pointer;
+
+      font-weight: 800;
+
+      -webkit-tap-highlight-color:
+        rgba(255, 210, 31, .15);
+    }
+
+
+    .payment-note {
+      text-align: center;
+
+      margin-top: 14px;
+
+      color: #dce9e2;
+
+      font-size: .86rem;
+    }
+
+
+    /* =====================================================
+       RESERVATION
+    ====================================================== */
+
+    .reservation-box {
+      margin:
+        24px auto 0;
+
+      padding: 20px;
+
+      border-radius: 22px;
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(37, 211, 102, .12),
+          rgba(255, 210, 31, .08)
+        );
+
+      border:
+        1px solid rgba(37, 211, 102, .30);
+
+      text-align: center;
+    }
+
+
+    .reservation-box p {
+      color: #e8f6ef;
+
+      line-height: 1.5;
+
+      margin-bottom: 13px;
+    }
+
+
+    .reserve-btn {
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      min-height: 50px;
+
+      padding: 12px 24px;
+
+      border-radius: 999px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #25d366,
+          #0b9f4a
+        );
+
+      color: #fff !important;
+
+      text-decoration: none;
+
+      font-weight: 950;
+
+      box-shadow:
+        0 10px 25px rgba(37, 211, 102, .20);
+    }
+
+
+    /* =====================================================
+       FINISHED SCREEN
+    ====================================================== */
 
     .finished {
-
       display: none;
 
-      margin-top: 35px;
-
       animation:
-        celebration
-        1s
-        ease-in-out
-        infinite
-        alternate;
+        celebration 1s ease-in-out infinite alternate;
     }
 
 
@@ -1440,20 +1253,15 @@
       }
 
       to {
-        transform: scale(1.04);
+        transform: scale(1.035);
       }
 
     }
 
 
     .finished h2 {
-
       font-size:
-        clamp(
-          2rem,
-          7vw,
-          4rem
-        );
+        clamp(2rem, 7vw, 4rem);
 
       color: #ffd21f;
 
@@ -1462,164 +1270,260 @@
 
 
     .finished p {
+      font-size: 1.15rem;
 
-      font-size: 1.1rem;
+      color: #fff;
 
       line-height: 1.7;
     }
 
 
     /* =====================================================
-       MOBILE
-    ===================================================== */
+       TABLET / MOBILE
+    ====================================================== */
 
     @media (max-width: 800px) {
 
-      .experience-grid {
-
-        grid-template-columns:
-          repeat(2,1fr);
-      }
-
-
-      .payment-grid {
-
-        grid-template-columns:
-          repeat(2,1fr);
-      }
-
-
-      .tickets {
-
-        grid-template-columns: 1fr;
-      }
-
-
-      .reservation-steps {
-
-        grid-template-columns: 1fr;
-      }
-
-    }
-
-
-    @media (max-width: 600px) {
-
       .page {
+        padding: 18px 12px;
 
-        padding:
-          15px 10px 40px;
-
-        background-attachment:
-          scroll;
+        background-attachment: scroll;
       }
 
 
       .container {
-
         padding:
-          22px 14px 30px;
+          25px 14px 30px;
 
-        border-radius: 22px;
-      }
-
-
-      .language-switch {
-
-        margin-bottom: 10px;
+        border-radius: 24px;
       }
 
 
       .logo {
-
-        width: 160px;
-      }
-
-
-      h1 {
-
-        letter-spacing: -1px;
+        width: 155px;
       }
 
 
       .countdown {
-
         grid-template-columns:
-          repeat(2,1fr);
+          repeat(2, 1fr);
 
-        gap: 10px;
+        gap: 12px;
+
+        padding: 13px;
+
+        border-radius: 24px;
       }
 
 
       .time-box {
+        min-height: 145px;
 
-        padding:
-          20px 8px;
+        padding: 18px 8px;
+
+        border-radius: 20px;
       }
 
 
-      .experience-grid {
+      .number {
+        font-size:
+          clamp(3rem, 12vw, 5rem);
+      }
 
+
+      .label {
+        font-size: .68rem;
+
+        letter-spacing: 1.4px;
+      }
+
+
+      .progress-section {
+        margin-top: 20px;
+      }
+
+
+      .actions {
+        flex-direction: column;
+
+        width: 100%;
+      }
+
+
+      .action-btn {
+        width: 100%;
+
+        max-width: 340px;
+      }
+
+
+      .ticket-grid {
         grid-template-columns: 1fr;
       }
 
 
       .payment-grid {
-
         grid-template-columns:
-          repeat(2,1fr);
-      }
-
-
-      .ticket {
-
-        padding: 25px 20px;
-      }
-
-
-      .action-btn {
-
-        width: 100%;
-
-        max-width: 320px;
-      }
-
-
-      .event-date {
-
-        font-size: .82rem;
-
-        text-align: center;
-      }
-
-
-      .section-heading {
-
-        font-size: 2rem;
+          repeat(2, 1fr);
       }
 
     }
 
 
-    @media (max-width: 380px) {
+    /* =====================================================
+       SMALL PHONES
+    ====================================================== */
 
-      .payment-grid {
+    @media (max-width: 420px) {
 
-        grid-template-columns: 1fr;
+      .page {
+        padding: 10px 8px;
+      }
+
+
+      .container {
+        padding:
+          20px 10px 24px;
+      }
+
+
+      .logo {
+        width: 135px;
+
+        margin-bottom: 9px;
+      }
+
+
+      h1 {
+        font-size:
+          clamp(2.8rem, 15vw, 4rem);
+
+        letter-spacing: -1.5px;
+      }
+
+
+      .subtitle {
+        font-size: .92rem;
+      }
+
+
+      .location {
+        font-size: .90rem;
+
+        margin-bottom: 17px;
+      }
+
+
+      .countdown {
+        gap: 8px;
+
+        padding: 9px;
+
+        margin-bottom: 18px;
+      }
+
+
+      .time-box {
+        min-height: 125px;
+
+        padding: 15px 5px;
+
+        border-radius: 17px;
       }
 
 
       .number {
+        font-size:
+          clamp(2.7rem, 15vw, 4rem);
 
-        font-size: 2.2rem;
+        letter-spacing: -2px;
       }
 
 
       .label {
+        margin-top: 9px;
 
-        font-size: .65rem;
+        font-size: .58rem;
 
         letter-spacing: 1px;
+      }
+
+
+      .event-date {
+        font-size: .78rem;
+
+        padding:
+          10px 13px;
+      }
+
+
+      .message {
+        font-size: .90rem;
+      }
+
+
+      .action-btn {
+        min-height: 46px;
+
+        font-size: .85rem;
+      }
+
+
+      .ticket-card {
+        padding:
+          20px 16px;
+      }
+
+
+      .payment-grid {
+        gap: 9px;
+      }
+
+
+      .payment-card {
+        padding:
+          12px 7px;
+      }
+
+
+      .payment-card img {
+        width: 54px;
+
+        height: 38px;
+      }
+
+
+      .payment-name {
+        font-size: .78rem;
+      }
+
+
+      .phone-number {
+        font-size: .78rem;
+      }
+
+    }
+
+
+    /* =====================================================
+       REDUCED MOTION
+    ====================================================== */
+
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: .001ms !important;
+
+        animation-iteration-count: 1 !important;
+
+        scroll-behavior: auto !important;
+      }
+
+
+      .action-btn {
+        transition: none;
       }
 
     }
@@ -1632,8 +1536,16 @@
 <body>
 
 
+  <!-- =====================================================
+       MAIN PAGE
+  ====================================================== -->
+
   <main class="page">
 
+
+    <!-- =================================================
+         ANIMATED PARTICLES
+    ================================================== -->
 
     <div
       class="particles"
@@ -1641,35 +1553,11 @@
     ></div>
 
 
+    <!-- =================================================
+         MAIN CARD
+    ================================================== -->
+
     <section class="container">
-
-
-      <!-- =================================================
-           LANGUAGE
-      ================================================== -->
-
-      <div class="language-switch">
-
-        <div class="language-box">
-
-          <button
-            id="frBtn"
-            class="active"
-            onclick="setLanguage('fr')"
-          >
-            FR
-          </button>
-
-          <button
-            id="enBtn"
-            onclick="setLanguage('en')"
-          >
-            EN
-          </button>
-
-        </div>
-
-      </div>
 
 
       <!-- =================================================
@@ -1683,40 +1571,31 @@
       >
 
 
+      <!-- =================================================
+           EDITION
+      ================================================== -->
+
       <div class="edition">
-
         2ème édition
-
       </div>
 
 
+      <!-- =================================================
+           TITLE
+      ================================================== -->
+
       <h1>
-
         Excursion
-
       </h1>
 
 
-      <p
-        class="subtitle"
-        data-fr="Venez passer des moments inoubliables"
-        data-en="Come and enjoy unforgettable moments"
-      >
+      <p class="subtitle">
         Venez passer des moments inoubliables
       </p>
 
 
       <p class="location">
-
-        📍
-
-        <span
-          data-fr="Destination : Canon Beach"
-          data-en="Destination: Canon Beach"
-        >
-          Destination : Canon Beach
-        </span>
-
+        📍 Destination : Canon Beach
       </p>
 
 
@@ -1729,6 +1608,7 @@
         id="countdown"
       >
 
+
         <div class="time-box">
 
           <span
@@ -1738,11 +1618,7 @@
             00
           </span>
 
-          <span
-            class="label"
-            data-fr="Jours"
-            data-en="Days"
-          >
+          <span class="label">
             Jours
           </span>
 
@@ -1758,11 +1634,7 @@
             00
           </span>
 
-          <span
-            class="label"
-            data-fr="Heures"
-            data-en="Hours"
-          >
+          <span class="label">
             Heures
           </span>
 
@@ -1778,11 +1650,7 @@
             00
           </span>
 
-          <span
-            class="label"
-            data-fr="Minutes"
-            data-en="Minutes"
-          >
+          <span class="label">
             Minutes
           </span>
 
@@ -1798,15 +1666,12 @@
             00
           </span>
 
-          <span
-            class="label"
-            data-fr="Secondes"
-            data-en="Seconds"
-          >
+          <span class="label">
             Secondes
           </span>
 
         </div>
+
 
       </div>
 
@@ -1819,10 +1684,7 @@
 
         <div class="progress-header">
 
-          <span
-            data-fr="⏳ Temps restant avant l'aventure"
-            data-en="⏳ Time remaining before the adventure"
-          >
+          <span>
             ⏳ Temps restant avant l'aventure
           </span>
 
@@ -1866,46 +1728,35 @@
       </div>
 
 
+      <!-- =================================================
+           MESSAGE
+      ================================================== -->
+
       <p class="message">
 
-        <span
-          data-fr="Préparez-vous pour une journée de"
-          data-en="Get ready for a day of"
-        >
-          Préparez-vous pour une journée de
-        </span>
+        Préparez-vous pour une journée de
 
-        <strong
-          data-fr=" détente, partage, musique, photos "
-          data-en=" relaxation, connection, music and photos "
-        >
+        <strong>
           détente, partage, musique, photos
         </strong>
 
-        <span
-          data-fr="et surtout de beaux souvenirs. 🌴☀️"
-          data-en="and above all, beautiful memories. 🌴☀️"
-        >
-          et surtout de beaux souvenirs. 🌴☀️
-        </span>
+        et surtout de beaux souvenirs. 🌴☀️
 
       </p>
 
 
-
       <!-- =================================================
-           GALLERY / WHATSAPP
+           MAIN ACTIONS
       ================================================== -->
 
       <div class="actions">
 
+
         <a
           href="gallery.html"
           class="action-btn gallery-btn"
-          data-fr="📸 Voir nos souvenirs"
-          data-en="📸 View our memories"
         >
-          📸 Voir nos souvenirs
+          📸 &nbsp; Voir nos souvenirs
         </a>
 
 
@@ -1914,1015 +1765,377 @@
           target="_blank"
           rel="noopener noreferrer"
           class="action-btn whatsapp-btn"
-          data-fr="💬 Rejoindre WhatsApp"
-          data-en="💬 Join WhatsApp"
         >
-          💬 Rejoindre WhatsApp
+          💬 &nbsp; Rejoindre WhatsApp
         </a>
+
 
       </div>
 
 
-
       <!-- =================================================
-           1 — L'EXPERIENCE
+           SOCIAL MEDIA
       ================================================== -->
 
-      <section
-        class="site-section"
-        id="experience"
-      >
-
-        <div class="section-title"
-             data-fr="L'expérience"
-             data-en="The experience">
-          L'expérience
-        </div>
+      <div class="social-title">
+        Suivez-nous
+      </div>
 
 
-        <h2
-          class="section-heading"
-          data-fr="Une journée à vivre pleinement."
-          data-en="A day to fully enjoy."
+      <div class="actions">
+
+
+        <a
+          href="https://www.instagram.com/fatihboutique01?stkn=N2ppaGRxY2l1cjVt"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="action-btn instagram-btn"
         >
-          Une journée à vivre pleinement.
-        </h2>
+          ◎ &nbsp; Instagram
+        </a>
 
 
-        <p
-          class="section-intro"
-          data-fr="Une escapade à Canon Beach placée sous le signe de la détente, du partage, de la musique, de la gourmandise et des souvenirs."
-          data-en="A getaway to Canon Beach centered around relaxation, connection, music, good food and memories."
+        <a
+          href="https://www.facebook.com/share/18WRLsjThe/?mibextid=wwXIfr"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="action-btn facebook-btn"
         >
-          Une escapade à Canon Beach placée sous le signe de la détente, du partage, de la musique, de la gourmandise et des souvenirs.
-        </p>
+          f &nbsp; Facebook
+        </a>
 
 
-        <div class="experience-grid">
-
-
-          <article class="experience-card">
-
-            <div class="experience-icon">
-              🏝️
-            </div>
-
-            <h3
-              data-fr="Canon Beach"
-              data-en="Canon Beach"
-            >
-              Canon Beach
-            </h3>
-
-            <p
-              data-fr="Une destination pour changer d'air et profiter de la journée."
-              data-en="A destination to disconnect and enjoy the day."
-            >
-              Une destination pour changer d'air et profiter de la journée.
-            </p>
-
-          </article>
-
-
-          <article class="experience-card">
-
-            <div class="experience-icon">
-              🎶
-            </div>
-
-            <h3
-              data-fr="Ambiance"
-              data-en="Atmosphere"
-            >
-              Ambiance
-            </h3>
-
-            <p
-              data-fr="Musique, partage et bonne humeur tout au long de l'aventure."
-              data-en="Music, connection and good vibes throughout the adventure."
-            >
-              Musique, partage et bonne humeur tout au long de l'aventure.
-            </p>
-
-          </article>
-
-
-          <article class="experience-card">
-
-            <div class="experience-icon">
-              🍽️
-            </div>
-
-            <h3
-              data-fr="Gourmandise"
-              data-en="Food"
-            >
-              Gourmandise
-            </h3>
-
-            <p
-              data-fr="Des formules pensées pour accompagner votre journée."
-              data-en="Food options designed to complement your day."
-            >
-              Des formules pensées pour accompagner votre journée.
-            </p>
-
-          </article>
-
-
-          <article class="experience-card">
-
-            <div class="experience-icon">
-              📸
-            </div>
-
-            <h3
-              data-fr="Souvenirs"
-              data-en="Memories"
-            >
-              Souvenirs
-            </h3>
-
-            <p
-              data-fr="Photos et moments partagés à garder longtemps."
-              data-en="Photos and shared moments to remember for a long time."
-            >
-              Photos et moments partagés à garder longtemps.
-            </p>
-
-          </article>
-
-        </div>
-
-      </section>
-
+      </div>
 
 
       <!-- =================================================
-           2 — BILLETS
+           TICKETS & PRICES
       ================================================== -->
 
       <section
-        class="site-section"
-        id="tickets"
+        class="ticket-payment-section"
+        id="billets"
       >
 
-        <div class="section-title"
-             data-fr="Billets"
-             data-en="Tickets">
-          Billets
-        </div>
-
-
-        <h2
-          class="section-heading"
-          data-fr="Choisissez votre formule."
-          data-en="Choose your package."
-        >
-          Choisissez votre formule.
+        <h2 class="section-title">
+          🎟️ Billets
         </h2>
 
 
-        <p
-          class="section-intro"
-          data-fr="Deux formules sont disponibles pour l'excursion du 07 Novembre."
-          data-en="Two packages are available for the November 7 excursion."
-        >
-          Deux formules sont disponibles pour l'excursion du 07 Novembre.
+        <p class="section-subtitle">
+          Choisissez votre formule pour vivre l'aventure Canon Beach.
         </p>
 
 
-        <div class="tickets">
+        <div class="ticket-grid">
 
 
           <!-- ESSENTIAL -->
 
-          <article class="ticket">
+          <article class="ticket-card">
 
             <div class="ticket-name">
               Essential
             </div>
 
 
-            <h3>
-              Essential
-            </h3>
-
-
-            <p
-              class="ticket-description"
-              data-fr="L'essentiel pour savourer la journée."
-              data-en="The essentials for enjoying the day."
-            >
-              L'essentiel pour savourer la journée.
-            </p>
-
-
-            <div class="price">
-
-              25
-              <small>$</small>
-
+            <div class="ticket-price">
+              25 $
             </div>
 
 
-            <ul class="ticket-list">
+            <p class="ticket-description">
+              L’essentiel pour savourer la journée.
+            </p>
 
-              <li
-                data-fr="Plat complet + Salade"
-                data-en="Full meal + Salad"
-              >
-                Plat complet + Salade
+
+            <ul>
+
+              <li>
+                Plat complet + salade
               </li>
 
-              <li
-                data-fr="Accompagnement"
-                data-en="Side dish"
-              >
+              <li>
                 Accompagnement
               </li>
 
-              <li
-                data-fr="Boisson offerte"
-                data-en="Free drink"
-              >
-                Boisson offerte
-              </li>
-
-              <li
-                data-fr="Shooting photo"
-                data-en="Photo shoot"
-              >
-                Shooting photo
+              <li>
+                Boisson offerte + shooting photo
               </li>
 
             </ul>
 
-
-            <a
-              href="https://wa.me/243825247502?text=Bonjour%20Fatih%20Boutique%2C%20je%20souhaite%20r%C3%A9server%20une%20formule%20Essential%20%C3%A0%2025%20%24%20pour%20l%27excursion%20du%207%20Novembre%20%C3%A0%20Canon%20Beach."
-              target="_blank"
-              rel="noopener noreferrer"
-              class="action-btn reservation-btn"
-              data-fr="📲 Réserver — 25 $"
-              data-en="📲 Book — $25"
-            >
-              📲 Réserver — 25 $
-            </a>
-
           </article>
 
 
+          <!-- GOURMAND VIP -->
 
-          <!-- VIP -->
-
-          <article class="ticket vip">
-
-            <div class="vip-badge">
-              V.I.P
-            </div>
-
+          <article class="ticket-card vip">
 
             <div class="ticket-name">
               Gourmand V.I.P
             </div>
 
 
-            <h3>
-              Gourmand V.I.P
-            </h3>
-
-
-            <p
-              class="ticket-description"
-              data-fr="L'expérience complète et festive."
-              data-en="The complete and festive experience."
-            >
-              L'expérience complète et festive.
-            </p>
-
-
-            <div class="price">
-
-              30
-              <small>$</small>
-
+            <div class="ticket-price">
+              30 $
             </div>
 
 
-            <ul class="ticket-list">
+            <p class="ticket-description">
+              L’expérience complète et festive.
+            </p>
 
-              <li
-                data-fr="Plat complet + Salade"
-                data-en="Full meal + Salad"
-              >
-                Plat complet + Salade
+
+            <ul>
+
+              <li>
+                Plat complet + salade
               </li>
 
-              <li
-                data-fr="Accompagnement"
-                data-en="Side dish"
-              >
+              <li>
                 Accompagnement
               </li>
 
-              <li
-                data-fr="Special Miami Liboke + Accompagnement"
-                data-en="Special Miami Liboke + Side dish"
-              >
-                Special Miami Liboke + Accompagnement
+              <li>
+                Special Miami Liboke + accompagnement
               </li>
 
-              <li
-                data-fr="Boisson offerte"
-                data-en="Free drink"
-              >
-                Boisson offerte
+              <li>
+                À déguster sur place ou à emporter
+                pour partager avec la famille
               </li>
 
-              <li
-                data-fr="Shooting photo"
-                data-en="Photo shoot"
-              >
-                Shooting photo
+              <li>
+                Boisson offerte + shooting photo
               </li>
 
             </ul>
 
-
-            <a
-              href="https://wa.me/243825247502?text=Bonjour%20Fatih%20Boutique%2C%20je%20souhaite%20r%C3%A9server%20une%20formule%20Gourmand%20V.I.P%20%C3%A0%2030%20%24%20pour%20l%27excursion%20du%207%20Novembre%20%C3%A0%20Canon%20Beach."
-              target="_blank"
-              rel="noopener noreferrer"
-              class="action-btn reservation-btn"
-              data-fr="📲 Réserver — 30 $"
-              data-en="📲 Book — $30"
-            >
-              📲 Réserver — 30 $
-            </a>
-
           </article>
 
-        </div>
-
-      </section>
-
-
-
-      <!-- =================================================
-           3 — PAIEMENT
-      ================================================== -->
-
-      <section
-        class="site-section"
-        id="payment"
-      >
-
-        <div class="section-title"
-             data-fr="Paiement"
-             data-en="Payment">
-          Paiement
-        </div>
-
-
-        <h2
-          class="section-heading"
-          data-fr="Choisissez votre moyen de paiement."
-          data-en="Choose your payment method."
-        >
-          Choisissez votre moyen de paiement.
-        </h2>
-
-
-        <p
-          class="section-intro"
-          data-fr="Plusieurs moyens de paiement sont disponibles pour faciliter votre réservation."
-          data-en="Several payment methods are available to make your booking easier."
-        >
-          Plusieurs moyens de paiement sont disponibles pour faciliter votre réservation.
-        </p>
-
-
-        <div class="payment-grid">
-
-
-          <div class="payment-card">
-
-            <div class="payment-icon">
-              M
-            </div>
-
-            <h3>
-              M-Pesa
-            </h3>
-
-            <p
-              data-fr="USD uniquement"
-              data-en="USD only"
-            >
-              USD uniquement
-            </p>
-
-            <p class="payment-number">
-              +243 825 247 502
-            </p>
-
-          </div>
-
-
-          <div class="payment-card">
-
-            <div class="payment-icon">
-              IC
-            </div>
-
-            <h3>
-              Illico Cash
-            </h3>
-
-            <p
-              data-fr="Paiement mobile"
-              data-en="Mobile payment"
-            >
-              Paiement mobile
-            </p>
-
-            <p class="payment-number">
-              +243 825 247 502
-            </p>
-
-          </div>
-
-
-          <div class="payment-card">
-
-            <div class="payment-icon">
-              A
-            </div>
-
-            <h3>
-              Airtel Money
-            </h3>
-
-            <p
-              data-fr="Paiement mobile"
-              data-en="Mobile payment"
-            >
-              Paiement mobile
-            </p>
-
-            <p class="payment-number">
-              +243 990 977 844
-            </p>
-
-          </div>
-
-
-          <div class="payment-card">
-
-            <div class="payment-icon">
-              $
-            </div>
-
-            <h3
-              data-fr="Espèces"
-              data-en="Cash"
-            >
-              Espèces
-            </h3>
-
-            <p
-              data-fr="Paiement accepté"
-              data-en="Payment accepted"
-            >
-              Paiement accepté
-            </p>
-
-            <p class="payment-number">
-              Cash
-            </p>
-
-          </div>
 
         </div>
 
 
-        <p
-          class="payment-note"
-          data-fr="Après le paiement, envoyez votre preuve de paiement sur WhatsApp au +243 825 247 502 pour confirmer votre réservation."
-          data-en="After payment, send your payment proof on WhatsApp to +243 825 247 502 to confirm your booking."
-        >
-          Après le paiement, envoyez votre preuve de paiement sur WhatsApp au +243 825 247 502 pour confirmer votre réservation.
-        </p>
-
-      </section>
-
-
-
-      <!-- =================================================
-           6 — RESERVATION
-      ================================================== -->
-
-      <section
-        class="site-section"
-        id="reservation"
-      >
-
-        <div class="section-title"
-             data-fr="Réservation"
-             data-en="Booking">
-          Réservation
-        </div>
-
-
-        <h2
-          class="section-heading"
-          data-fr="Réservez simplement."
-          data-en="Book easily."
-        >
-          Réservez simplement.
-        </h2>
-
-
-        <p
-          class="section-intro"
-          data-fr="Votre réservation se fait rapidement directement via WhatsApp."
-          data-en="Your booking can be made quickly directly through WhatsApp."
-        >
-          Votre réservation se fait rapidement directement via WhatsApp.
-        </p>
-
-
-        <div class="reservation-steps">
-
-
-          <div class="reservation-step">
-
-            <div class="step-number">
-              01
-            </div>
-
-            <h3
-              data-fr="Choisissez"
-              data-en="Choose"
-            >
-              Choisissez
-            </h3>
-
-            <p
-              data-fr="Sélectionnez Essential à 25 $ ou Gourmand V.I.P à 30 $."
-              data-en="Select Essential at $25 or Gourmand V.I.P at $30."
-            >
-              Sélectionnez Essential à 25 $ ou Gourmand V.I.P à 30 $.
-            </p>
-
-          </div>
-
-
-          <div class="reservation-step">
-
-            <div class="step-number">
-              02
-            </div>
-
-            <h3
-              data-fr="Payez"
-              data-en="Pay"
-            >
-              Payez
-            </h3>
-
-            <p
-              data-fr="Utilisez M-Pesa, Illico Cash, Airtel Money ou payez en espèces."
-              data-en="Use M-Pesa, Illico Cash, Airtel Money or pay in cash."
-            >
-              Utilisez M-Pesa, Illico Cash, Airtel Money ou payez en espèces.
-            </p>
-
-          </div>
-
-
-          <div class="reservation-step">
-
-            <div class="step-number">
-              03
-            </div>
-
-            <h3
-              data-fr="Confirmez"
-              data-en="Confirm"
-            >
-              Confirmez
-            </h3>
-
-            <p
-              data-fr="Envoyez votre preuve de paiement sur WhatsApp pour confirmer votre place."
-              data-en="Send your payment proof on WhatsApp to confirm your place."
-            >
-              Envoyez votre preuve de paiement sur WhatsApp pour confirmer votre place.
-            </p>
-
-          </div>
-
-        </div>
-
-
-        <div class="actions">
-
-          <a
-            href="https://wa.me/243825247502?text=Bonjour%20Fatih%20Boutique%2C%20je%20souhaite%20r%C3%A9server%20une%20place%20pour%20l%27excursion%20du%207%20Novembre%20%C3%A0%20Canon%20Beach."
-            target="_blank"
-            rel="noopener noreferrer"
-            class="action-btn whatsapp-btn"
-            data-fr="💬 Réserver via WhatsApp"
-            data-en="💬 Book via WhatsApp"
-          >
-            💬 Réserver via WhatsApp
-          </a>
-
-        </div>
-
-      </section>
-
-
-
-      <!-- =================================================
-           4 — FAQ
-      ================================================== -->
-
-      <section
-        class="site-section"
-        id="faq"
-      >
-
-        <div class="section-title">
-          FAQ
-        </div>
-
-
-        <h2
-          class="section-heading"
-          data-fr="Questions fréquentes."
-          data-en="Frequently asked questions."
-        >
-          Questions fréquentes.
-        </h2>
-
-
-        <div class="faq">
-
-
-          <div class="faq-item">
-
-            <button
-              class="faq-question"
-              onclick="toggleFaq(this)"
-            >
-
-              <span
-                data-fr="Quels sont les prix des billets ?"
-                data-en="What are the ticket prices?"
-              >
-                Quels sont les prix des billets ?
-              </span>
-
-              <span>
-                +
-              </span>
-
-            </button>
-
-
-            <div
-              class="faq-answer"
-              data-fr="Essential est à 25 $ et Gourmand V.I.P est à 30 $."
-              data-en="Essential is $25 and Gourmand V.I.P is $30."
-            >
-              Essential est à 25 $ et Gourmand V.I.P est à 30 $.
-            </div>
-
-          </div>
-
-
-
-          <div class="faq-item">
-
-            <button
-              class="faq-question"
-              onclick="toggleFaq(this)"
-            >
-
-              <span
-                data-fr="Quels moyens de paiement sont acceptés ?"
-                data-en="Which payment methods are accepted?"
-              >
-                Quels moyens de paiement sont acceptés ?
-              </span>
-
-              <span>
-                +
-              </span>
-
-            </button>
-
-
-            <div
-              class="faq-answer"
-              data-fr="M-Pesa en USD uniquement, Illico Cash, Airtel Money et paiement en espèces."
-              data-en="M-Pesa in USD only, Illico Cash, Airtel Money and cash."
-            >
-              M-Pesa en USD uniquement, Illico Cash, Airtel Money et paiement en espèces.
-            </div>
-
-          </div>
-
-
-
-          <div class="faq-item">
-
-            <button
-              class="faq-question"
-              onclick="toggleFaq(this)"
-            >
-
-              <span
-                data-fr="À quelle heure est le départ ?"
-                data-en="What time is departure?"
-              >
-                À quelle heure est le départ ?
-              </span>
-
-              <span>
-                +
-              </span>
-
-            </button>
-
-
-            <div
-              class="faq-answer"
-              data-fr="Le départ est prévu à 08:00. Le point de rendez-vous sera communiqué prochainement."
-              data-en="Departure is scheduled for 08:00. The meeting point will be announced soon."
-            >
-              Le départ est prévu à 08:00. Le point de rendez-vous sera communiqué prochainement.
-            </div>
-
-          </div>
-
-
-
-          <div class="faq-item">
-
-            <button
-              class="faq-question"
-              onclick="toggleFaq(this)"
-            >
-
-              <span
-                data-fr="Comment confirmer ma réservation ?"
-                data-en="How do I confirm my booking?"
-              >
-                Comment confirmer ma réservation ?
-              </span>
-
-              <span>
-                +
-              </span>
-
-            </button>
-
-
-            <div
-              class="faq-answer"
-              data-fr="Après paiement, envoyez votre preuve de paiement sur WhatsApp au +243 825 247 502."
-              data-en="After payment, send your payment proof on WhatsApp to +243 825 247 502."
-            >
-              Après paiement, envoyez votre preuve de paiement sur WhatsApp au +243 825 247 502.
-            </div>
-
-          </div>
-
-
-
-          <div class="faq-item">
-
-            <button
-              class="faq-question"
-              onclick="toggleFaq(this)"
-            >
-
-              <span
-                data-fr="Où est le point de rendez-vous ?"
-                data-en="Where is the meeting point?"
-              >
-                Où est le point de rendez-vous ?
-              </span>
-
-              <span>
-                +
-              </span>
-
-            </button>
-
-
-            <div
-              class="faq-answer"
-              data-fr="Point de rendez-vous — communiqué prochainement."
-              data-en="Meeting point — to be announced soon."
-            >
-              Point de rendez-vous — communiqué prochainement.
-            </div>
-
-          </div>
-
-
-
-          <div class="faq-item">
-
-            <button
-              class="faq-question"
-              onclick="toggleFaq(this)"
-            >
-
-              <span
-                data-fr="Où puis-je voir les souvenirs ?"
-                data-en="Where can I see the memories?"
-              >
-                Où puis-je voir les souvenirs ?
-              </span>
-
-              <span>
-                +
-              </span>
-
-            </button>
-
-
-            <div
-              class="faq-answer"
-              data-fr="Cliquez sur « Voir nos souvenirs » pour accéder à la galerie."
-              data-en="Click “View our memories” to access the gallery."
-            >
-              Cliquez sur « Voir nos souvenirs » pour accéder à la galerie.
-            </div>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-
-      <!-- =================================================
-           7 — PRET POUR L'AVENTURE
-      ================================================== -->
-
-      <section class="final-section">
+        <!-- =================================================
+             PAYMENT METHODS
+        ================================================== -->
 
         <div
-          class="section-title"
-          data-fr="Canon Beach • 07 Novembre"
-          data-en="Canon Beach • November 7"
-        >
-          Canon Beach • 07 Novembre
-        </div>
-
-
-        <h2
-          data-fr="Prêt pour l'aventure ?"
-          data-en="Ready for the adventure?"
-        >
-          Prêt pour l'aventure ?
-        </h2>
-
-
-        <p
-          data-fr="Réservez votre formule et préparez-vous à vivre une journée spéciale avec Fatih Boutique."
-          data-en="Book your package and get ready for a special day with Fatih Boutique."
-        >
-          Réservez votre formule et préparez-vous à vivre une journée spéciale avec Fatih Boutique.
-        </p>
-
-
-        <div class="actions">
-
-
-          <a
-            href="https://wa.me/243825247502?text=Bonjour%20Fatih%20Boutique%2C%20je%20souhaite%20avoir%20plus%20d%27informations%20sur%20l%27excursion%20du%207%20Novembre%20%C3%A0%20Canon%20Beach."
-            target="_blank"
-            rel="noopener noreferrer"
-            class="action-btn whatsapp-btn"
-            data-fr="💬 Nous contacter sur WhatsApp"
-            data-en="💬 Contact us on WhatsApp"
-          >
-            💬 Nous contacter sur WhatsApp
-          </a>
-
-
-          <a
-            href="gallery.html"
-            class="action-btn gallery-btn"
-            data-fr="📸 Voir la galerie"
-            data-en="📸 View gallery"
-          >
-            📸 Voir la galerie
-          </a>
-
-        </div>
-
-
-        <!-- SOCIAL -->
-
-        <div
-          class="social-title"
-          data-fr="Suivez-nous"
-          data-en="Follow us"
-        >
-          Suivez-nous
-        </div>
-
-
-        <div class="actions">
-
-
-          <a
-            href="https://chat.whatsapp.com/KhP6900A1910Hkmkbttcsa"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="action-btn whatsapp-btn"
-            data-fr="💬 Groupe WhatsApp"
-            data-en="💬 WhatsApp Group"
-          >
-            💬 Groupe WhatsApp
-          </a>
-
-
-          <a
-            href="https://www.instagram.com/fatihboutique01?stkn=N2ppaGRxY2l1cjVt"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="action-btn instagram-btn"
-          >
-            ◎ Instagram
-          </a>
-
-
-          <a
-            href="https://www.facebook.com/share/18WRLsjThe/?mibextid=wwXIfr"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="action-btn facebook-btn"
-          >
-            f Facebook
-          </a>
-
-        </div>
-
-
-        <!-- FINISHED -->
-
-        <div
-          class="finished"
-          id="finished"
+          class="payment-section"
+          id="paiement"
         >
 
-          <h2
-            data-fr="🎉 C'est le grand jour !"
-            data-en="🎉 The big day is here!"
-          >
-            🎉 C'est le grand jour !
+          <h2 class="section-title">
+            💳 Paiement
           </h2>
 
 
-          <p
-            data-fr="L'attente est terminée ! Préparez-vous pour vivre une excursion inoubliable avec Fatih Boutique. 🌴☀️"
-            data-en="The wait is over! Get ready for an unforgettable excursion with Fatih Boutique. 🌴☀️"
-          >
-            L'attente est terminée !
-
-            <br>
-
-            Préparez-vous pour vivre une
-            <strong>excursion inoubliable</strong>
-            avec Fatih Boutique. 🌴☀️
+          <p class="section-subtitle">
+            Réglez votre billet avec l’un des moyens suivants.
           </p>
+
+
+          <div class="payment-grid">
+
+
+            <!-- M-PESA -->
+
+            <div class="payment-card">
+
+              <img
+                src="images/mpesa.png"
+                alt="M-Pesa"
+              >
+
+
+              <div class="payment-name">
+                M-Pesa · USD uniquement
+              </div>
+
+
+              <a
+                class="phone-number"
+                href="tel:+243825247502"
+              >
+                +243 825 247 502
+              </a>
+
+            </div>
+
+
+            <!-- ILLICO CASH -->
+
+            <div class="payment-card">
+
+              <img
+                src="images/illico-cash.png"
+                alt="Illico Cash"
+              >
+
+
+              <div class="payment-name">
+                Illico Cash
+              </div>
+
+
+              <a
+                class="phone-number"
+                href="tel:+243825247502"
+              >
+                +243 825 247 502
+              </a>
+
+            </div>
+
+
+            <!-- AIRTEL MONEY -->
+
+            <div class="payment-card">
+
+              <img
+                src="images/airtel-money.png"
+                alt="Airtel Money"
+              >
+
+
+              <div class="payment-name">
+                Airtel Money
+              </div>
+
+
+              <a
+                class="phone-number"
+                href="tel:+243990977844"
+              >
+                +243 990 977 844
+              </a>
+
+            </div>
+
+
+            <!-- CASH -->
+
+            <div class="payment-card">
+
+              <img
+                src="images/cash.png"
+                alt="Paiement en espèces"
+              >
+
+
+              <div class="payment-name">
+                Cash
+              </div>
+
+
+              <span>
+                Accepté
+              </span>
+
+            </div>
+
+
+          </div>
+
+
+          <p class="payment-note">
+
+            Après paiement, pensez à confirmer votre
+            réservation avec Fatih Boutique.
+
+          </p>
+
+
+          <!-- =================================================
+               RESERVATION
+          ================================================== -->
+
+          <div
+            class="reservation-box"
+            id="reservation"
+          >
+
+            <p>
+
+              <strong>
+                📲 Réservation
+              </strong>
+
+              <br>
+
+              Pour réserver votre place ou confirmer un paiement,
+              contactez-nous directement sur WhatsApp.
+
+            </p>
+
+
+            <a
+              class="reserve-btn"
+              href="https://wa.me/243825247502?text=Bonjour%20Fatih%20Boutique%2C%20je%20souhaite%20r%C3%A9server%20une%20place%20pour%20l%27excursion%20%C3%A0%20Canon%20Beach%20du%207%20novembre%202026."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              💬 Réserver sur WhatsApp
+            </a>
+
+          </div>
+
 
         </div>
 
       </section>
+
+
+      <!-- =================================================
+           FINISHED SCREEN
+      ================================================== -->
+
+      <div
+        class="finished"
+        id="finished"
+      >
+
+        <h2>
+          🎉 C'est le grand jour !
+        </h2>
+
+
+        <p>
+
+          L'attente est terminée !
+
+          <br>
+
+          Préparez-vous pour vivre une
+
+          <strong>
+            excursion inoubliable
+          </strong>
+
+          avec Fatih Boutique. 🌴☀️
+
+        </p>
+
+      </div>
 
 
     </section>
 
+
   </main>
 
 
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
 
   <script>
 
+
     /* =====================================================
-       COUNTDOWN
+       EVENT DATE
     ===================================================== */
 
     const eventDate =
@@ -2931,36 +2144,55 @@
       ).getTime();
 
 
+    /* =====================================================
+       START DATE
+    ===================================================== */
+
     const startDate =
       new Date(
         "2026-10-01T00:00:00+01:00"
       ).getTime();
 
 
+    /* =====================================================
+       ELEMENTS
+    ===================================================== */
+
     const daysElement =
       document.getElementById("days");
+
 
     const hoursElement =
       document.getElementById("hours");
 
+
     const minutesElement =
       document.getElementById("minutes");
+
 
     const secondsElement =
       document.getElementById("seconds");
 
+
     const progressFill =
       document.getElementById("progressFill");
+
 
     const progressPercent =
       document.getElementById("progressPercent");
 
+
     const countdown =
       document.getElementById("countdown");
+
 
     const finished =
       document.getElementById("finished");
 
+
+    /* =====================================================
+       FORMAT NUMBER
+    ===================================================== */
 
     function formatNumber(number) {
 
@@ -2970,14 +2202,23 @@
     }
 
 
+    /* =====================================================
+       UPDATE COUNTDOWN
+    ===================================================== */
+
     function updateCountdown() {
 
       const now =
         new Date().getTime();
 
+
       const remaining =
         eventDate - now;
 
+
+      /* =================================================
+         EVENT FINISHED
+      ================================================= */
 
       if (remaining <= 0) {
 
@@ -2990,34 +2231,35 @@
         secondsElement.textContent = "00";
 
 
-        countdown.style.display =
-          "none";
+        countdown.style.display = "none";
 
 
         document.querySelector(
           ".progress-section"
-        ).style.display =
-          "none";
+        ).style.display = "none";
 
 
         document.querySelector(
           ".event-date"
-        ).style.display =
-          "none";
+        ).style.display = "none";
 
 
         document.querySelector(
           ".message"
-        ).style.display =
-          "none";
+        ).style.display = "none";
 
 
-        finished.style.display =
-          "block";
+        finished.style.display = "block";
+
 
         return;
+
       }
 
+
+      /* =================================================
+         CALCULATE TIME
+      ================================================== */
 
       const days =
         Math.floor(
@@ -3056,23 +2298,36 @@
         );
 
 
+      /* =================================================
+         DISPLAY
+      ================================================== */
+
       daysElement.textContent =
         formatNumber(days);
+
 
       hoursElement.textContent =
         formatNumber(hours);
 
+
       minutesElement.textContent =
         formatNumber(minutes);
+
 
       secondsElement.textContent =
         formatNumber(seconds);
 
 
-      /* Progress */
+      /* =================================================
+         PROGRESS BAR
+         
+         100% = beginning
+         0%   = event
+      ================================================== */
 
       const totalDuration =
         eventDate - startDate;
+
 
       const elapsed =
         now - startDate;
@@ -3111,28 +2366,23 @@
 
 
     /* =====================================================
-       PARTICLES
-    ===================================================== */
+       CREATE PARTICLES
+    ====================================================== */
 
     function createParticles() {
 
-      const container =
+      const particlesContainer =
         document.getElementById(
           "particles"
         );
 
 
-      const colors = [
-        "#ffd21f",
-        "#ff8c00",
-        "#00a86b",
-        "#ffffff"
-      ];
+      const numberOfParticles = 35;
 
 
       for (
         let i = 0;
-        i < 35;
+        i < numberOfParticles;
         i++
       ) {
 
@@ -3177,6 +2427,16 @@
           size + "px";
 
 
+        const colors = [
+
+          "#ffd21f",
+          "#ff8c00",
+          "#00a86b",
+          "#ffffff"
+
+        ];
+
+
         particle.style.background =
           colors[
             Math.floor(
@@ -3186,7 +2446,7 @@
           ];
 
 
-        container.appendChild(
+        particlesContainer.appendChild(
           particle
         );
 
@@ -3196,123 +2456,21 @@
 
 
     /* =====================================================
-       FAQ
-    ===================================================== */
-
-    function toggleFaq(button) {
-
-      const item =
-        button.parentElement;
-
-
-      const open =
-        item.classList.contains(
-          "open"
-        );
-
-
-      document
-        .querySelectorAll(".faq-item")
-        .forEach(
-          faq => {
-
-            faq.classList.remove(
-              "open"
-            );
-
-
-            const icon =
-              faq.querySelector(
-                ".faq-question span:last-child"
-              );
-
-
-            if (icon) {
-              icon.textContent = "+";
-            }
-
-          }
-        );
-
-
-      if (!open) {
-
-        item.classList.add(
-          "open"
-        );
-
-
-        const icon =
-          button.querySelector(
-            "span:last-child"
-          );
-
-
-        if (icon) {
-          icon.textContent = "−";
-        }
-
-      }
-
-    }
-
-
-    /* =====================================================
-       LANGUAGE
-    ===================================================== */
-
-    function setLanguage(language) {
-
-      document.documentElement.lang =
-        language;
-
-
-      document
-        .querySelectorAll(
-          "[data-fr][data-en]"
-        )
-        .forEach(
-          element => {
-
-            element.textContent =
-              element.dataset[
-                language
-              ];
-
-          }
-        );
-
-
-      document
-        .getElementById("frBtn")
-        .classList.toggle(
-          "active",
-          language === "fr"
-        );
-
-
-      document
-        .getElementById("enBtn")
-        .classList.toggle(
-          "active",
-          language === "en"
-        );
-
-    }
-
-
-    /* =====================================================
        START
-    ===================================================== */
+    ====================================================== */
 
     createParticles();
 
     updateCountdown();
 
+
+    /* Update every second */
+
     setInterval(
       updateCountdown,
       1000
     );
+
 
   </script>
 
