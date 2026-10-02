@@ -1527,6 +1527,52 @@
       }
 
     }
+    .reserve-btn {
+  display: block;
+  width: 100%;
+  margin-top: 25px;
+  padding: 14px 18px;
+
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: #fff !important;
+
+  text-decoration: none !important;
+  text-align: center;
+  font-weight: 800;
+  font-size: 15px;
+
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.25);
+
+  box-shadow:
+    0 8px 25px rgba(37,211,102,.25);
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    filter .25s ease;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+.reserve-btn:visited,
+.reserve-btn:hover,
+.reserve-btn:active,
+.reserve-btn:focus {
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+.reserve-btn:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.08);
+  box-shadow:
+    0 12px 30px rgba(37,211,102,.4);
+}
+
+.reserve-btn:active {
+  transform: scale(.97);
+}
 
   </style>
 
@@ -1812,111 +1858,62 @@
            TICKETS & PRICES
       ================================================== -->
 
-      <section
-        class="ticket-payment-section"
-        id="billets"
-      >
+      <section class="tickets-section">
+  <h2>🎟️ Nos billets</h2>
 
-        <h2 class="section-title">
-          🎟️ Billets
-        </h2>
+  <div class="tickets-grid">
 
+    <!-- Essential -->
+    <div class="ticket-card">
+      <div class="ticket-content">
+        <h3>Essential</h3>
+        <div class="ticket-price">25 $</div>
 
-        <p class="section-subtitle">
-          Choisissez votre formule pour vivre l'aventure Canon Beach.
-        </p>
+        <ul>
+          <li>Plat complet + salade</li>
+          <li>Accompagnement</li>
+          <li>Boisson offerte + shooting photo</li>
+        </ul>
 
-
-        <div class="ticket-grid">
-
-
-          <!-- ESSENTIAL -->
-
-          <article class="ticket-card">
-
-            <div class="ticket-name">
-              Essential
-            </div>
-
-
-            <div class="ticket-price">
-              25 $
-            </div>
+        <a
+          class="reserve-btn"
+          href="https://wa.me/243825247502?text=Bonjour%20Fatih%20Boutique%2C%20je%20souhaite%20r%C3%A9server%20une%20place%20pour%20la%20cat%C3%A9gorie%20Essential%20%C3%A0%2025%24%20pour%20l%27excursion%20%C3%A0%20Canon%20Beach%20du%207%20novembre%202026."
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          📲 Réserver — Essential
+        </a>
+      </div>
+    </div>
 
 
-            <p class="ticket-description">
-              L’essentiel pour savourer la journée.
-            </p>
+    <!-- Gourmand VIP -->
+    <div class="ticket-card vip-ticket">
+      <div class="ticket-content">
+        <h3>Gourmand V.I.P</h3>
+        <div class="ticket-price">30 $</div>
 
+        <ul>
+          <li>Plat complet + salade</li>
+          <li>Accompagnement</li>
+          <li>Special Miami Liboke + accompagnement</li>
+          <li>À déguster sur place ou à emporter</li>
+          <li>Boisson offerte + shooting photo</li>
+        </ul>
 
-            <ul>
+        <a
+          class="reserve-btn"
+          href="https://wa.me/243825247502?text=Bonjour%20Fatih%20Boutique%2C%20je%20souhaite%20r%C3%A9server%20une%20place%20pour%20la%20cat%C3%A9gorie%20Gourmand%20V.I.P%20%C3%A0%2030%24%20pour%20l%27excursion%20%C3%A0%20Canon%20Beach%20du%207%20novembre%202026."
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          📲 Réserver — Gourmand V.I.P
+        </a>
+      </div>
+    </div>
 
-              <li>
-                Plat complet + salade
-              </li>
-
-              <li>
-                Accompagnement
-              </li>
-
-              <li>
-                Boisson offerte + shooting photo
-              </li>
-
-            </ul>
-
-          </article>
-
-
-          <!-- GOURMAND VIP -->
-
-          <article class="ticket-card vip">
-
-            <div class="ticket-name">
-              Gourmand V.I.P
-            </div>
-
-
-            <div class="ticket-price">
-              30 $
-            </div>
-
-
-            <p class="ticket-description">
-              L’expérience complète et festive.
-            </p>
-
-
-            <ul>
-
-              <li>
-                Plat complet + salade
-              </li>
-
-              <li>
-                Accompagnement
-              </li>
-
-              <li>
-                Special Miami Liboke + accompagnement
-              </li>
-
-              <li>
-                À déguster sur place ou à emporter
-                pour partager avec la famille
-              </li>
-
-              <li>
-                Boisson offerte + shooting photo
-              </li>
-
-            </ul>
-
-          </article>
-
-
-        </div>
-
+  </div>
+</section>
 
         <!-- =================================================
              PAYMENT METHODS
