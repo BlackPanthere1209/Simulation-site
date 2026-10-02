@@ -1,1 +1,3350 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
 
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Fatih Boutique — Excursion Canon Beach, 07 Novembre 2026."
+  >
+
+  <title>Fatih Boutique | Canon Beach — 07 Novembre 2026</title>
+
+
+  <style>
+
+    /* =====================================================
+       RESET
+    ===================================================== */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+      background: #111411;
+      color: #f4f1e8;
+
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+
+    /* =====================================================
+       VARIABLES
+    ===================================================== */
+
+    :root {
+
+      --dark: #111411;
+      --dark-2: #181c18;
+      --dark-3: #20251f;
+
+      --ivory: #f4f1e8;
+      --muted: #b8b7ad;
+
+      --champagne: #b49a62;
+      --champagne-light: #d2bf91;
+
+      --line: rgba(244, 241, 232, 0.12);
+
+      --white-soft: rgba(244, 241, 232, 0.07);
+
+      --whatsapp: #25d366;
+    }
+
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
+
+    header {
+
+      position: absolute;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+
+      z-index: 50;
+
+      padding: 20px 5%;
+    }
+
+    .nav {
+
+      max-width: 1200px;
+
+      margin: auto;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .nav-logo img {
+
+      width: 105px;
+
+      display: block;
+
+      filter:
+        drop-shadow(
+          0 5px 15px rgba(0,0,0,.35)
+        );
+    }
+
+    .nav-links {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 28px;
+
+      font-size: .85rem;
+
+      color: rgba(244,241,232,.85);
+    }
+
+    .nav-links a {
+
+      text-decoration: none;
+
+      transition: color .25s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--champagne-light);
+    }
+
+    .language-switch {
+
+      display: flex;
+
+      border: 1px solid var(--line);
+
+      border-radius: 30px;
+
+      overflow: hidden;
+
+      background:
+        rgba(17,20,17,.65);
+
+      backdrop-filter: blur(10px);
+    }
+
+    .language-switch button {
+
+      border: 0;
+
+      background: transparent;
+
+      color: var(--muted);
+
+      padding: 7px 11px;
+
+      cursor: pointer;
+
+      font-size: .72rem;
+
+      font-weight: 700;
+    }
+
+    .language-switch button.active {
+
+      background: var(--ivory);
+
+      color: var(--dark);
+    }
+
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+
+    .hero {
+
+      min-height: 100vh;
+
+      position: relative;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      text-align: center;
+
+      padding: 130px 20px 80px;
+
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          rgba(17,20,17,.58),
+          rgba(17,20,17,.9)
+        ),
+        url("images/excursion.jpg.jpeg");
+
+      background-size: cover;
+
+      background-position: center;
+
+      background-attachment: fixed;
+    }
+
+    .hero::after {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      background:
+        linear-gradient(
+          to bottom,
+          transparent 60%,
+          var(--dark) 100%
+        );
+
+      pointer-events: none;
+    }
+
+    .hero-content {
+
+      position: relative;
+
+      z-index: 2;
+
+      width: 100%;
+
+      max-width: 900px;
+
+      animation:
+        heroAppear
+        1s
+        ease both;
+    }
+
+    @keyframes heroAppear {
+
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+    }
+
+    .hero-logo {
+
+      width: 220px;
+
+      max-width: 65%;
+
+      margin-bottom: 25px;
+
+      filter:
+        drop-shadow(
+          0 12px 25px rgba(0,0,0,.4)
+        );
+    }
+
+    .eyebrow {
+
+      display: inline-block;
+
+      color: var(--champagne-light);
+
+      font-size: .75rem;
+
+      font-weight: 800;
+
+      letter-spacing: 3px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+
+      font-size:
+        clamp(
+          3.4rem,
+          11vw,
+          7.5rem
+        );
+
+      line-height: .88;
+
+      letter-spacing: -4px;
+
+      text-transform: uppercase;
+
+      font-weight: 900;
+
+      color: var(--ivory);
+
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+
+      display: block;
+
+      color: var(--champagne-light);
+
+      font-size: .35em;
+
+      letter-spacing: 5px;
+
+      margin-top: 20px;
+    }
+
+    .hero-subtitle {
+
+      max-width: 620px;
+
+      margin: 0 auto 30px;
+
+      color: rgba(244,241,232,.78);
+
+      font-size:
+        clamp(
+          1rem,
+          2.5vw,
+          1.2rem
+        );
+    }
+
+    .hero-meta {
+
+      display: flex;
+
+      justify-content: center;
+
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+      margin-bottom: 35px;
+    }
+
+    .meta-item {
+
+      padding: 9px 16px;
+
+      border: 1px solid rgba(244,241,232,.16);
+
+      border-radius: 50px;
+
+      background:
+        rgba(17,20,17,.5);
+
+      backdrop-filter: blur(10px);
+
+      font-size: .82rem;
+    }
+
+    .meta-item strong {
+      color: var(--champagne-light);
+    }
+
+
+    /* =====================================================
+       BUTTONS
+    ===================================================== */
+
+    .btn {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 8px;
+
+      padding: 14px 24px;
+
+      border-radius: 50px;
+
+      border: 1px solid transparent;
+
+      text-decoration: none;
+
+      font-size: .85rem;
+
+      font-weight: 800;
+
+      cursor: pointer;
+
+      transition:
+        transform .25s ease,
+        background .25s ease,
+        border-color .25s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-primary {
+
+      background: var(--ivory);
+
+      color: var(--dark);
+    }
+
+    .btn-secondary {
+
+      background: transparent;
+
+      color: var(--ivory);
+
+      border-color:
+        rgba(244,241,232,.25);
+    }
+
+    .btn-secondary:hover {
+
+      border-color:
+        var(--champagne);
+
+      color:
+        var(--champagne-light);
+    }
+
+    .btn-whatsapp {
+
+      background: var(--whatsapp);
+
+      color: #08130b;
+    }
+
+
+    /* =====================================================
+       GENERAL SECTIONS
+    ===================================================== */
+
+    section.content-section {
+
+      max-width: 1150px;
+
+      margin: auto;
+
+      padding: 100px 25px;
+    }
+
+    .section-heading {
+
+      max-width: 700px;
+
+      margin-bottom: 50px;
+    }
+
+    .section-label {
+
+      color: var(--champagne-light);
+
+      font-size: .72rem;
+
+      font-weight: 800;
+
+      letter-spacing: 3px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 12px;
+    }
+
+    .section-heading h2 {
+
+      font-size:
+        clamp(
+          2.2rem,
+          5vw,
+          4rem
+        );
+
+      line-height: 1;
+
+      letter-spacing: -1.5px;
+
+      margin-bottom: 18px;
+    }
+
+    .section-heading p {
+
+      color: var(--muted);
+
+      max-width: 650px;
+    }
+
+
+    /* =====================================================
+       EXPERIENCE
+    ===================================================== */
+
+    .experience-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 1px;
+
+      border: 1px solid var(--line);
+
+      background: var(--line);
+    }
+
+    .experience-card {
+
+      background: var(--dark-2);
+
+      padding: 32px 25px;
+
+      min-height: 190px;
+
+      transition:
+        background .25s ease;
+    }
+
+    .experience-card:hover {
+
+      background:
+        var(--dark-3);
+    }
+
+    .experience-number {
+
+      color: var(--champagne);
+
+      font-size: .75rem;
+
+      font-weight: 800;
+
+      margin-bottom: 35px;
+    }
+
+    .experience-card h3 {
+
+      font-size: 1.1rem;
+
+      margin-bottom: 8px;
+    }
+
+    .experience-card p {
+
+      color: var(--muted);
+
+      font-size: .86rem;
+    }
+
+
+    /* =====================================================
+       COUNTDOWN
+    ===================================================== */
+
+    .countdown-section {
+
+      text-align: center;
+
+      padding-top: 30px;
+    }
+
+    .countdown {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      max-width: 800px;
+
+      margin: 35px auto 0;
+
+      border-top: 1px solid var(--line);
+
+      border-bottom: 1px solid var(--line);
+    }
+
+    .time-box {
+
+      padding: 28px 10px;
+
+      border-right:
+        1px solid var(--line);
+    }
+
+    .time-box:last-child {
+      border-right: 0;
+    }
+
+    .number {
+
+      display: block;
+
+      font-size:
+        clamp(
+          2.2rem,
+          6vw,
+          4.2rem
+        );
+
+      font-weight: 800;
+
+      line-height: 1;
+
+      color: var(--ivory);
+    }
+
+    .label {
+
+      display: block;
+
+      margin-top: 10px;
+
+      color: var(--champagne-light);
+
+      font-size: .68rem;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+    }
+
+
+    /* =====================================================
+       TICKETS
+    ===================================================== */
+
+    .tickets {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 24px;
+    }
+
+    .ticket {
+
+      position: relative;
+
+      background: var(--dark-2);
+
+      border: 1px solid var(--line);
+
+      padding: 35px;
+
+      transition:
+        transform .3s ease,
+        border-color .3s ease;
+    }
+
+    .ticket:hover {
+
+      transform: translateY(-5px);
+
+      border-color:
+        rgba(180,154,98,.55);
+    }
+
+    .ticket.vip {
+
+      border-color:
+        rgba(180,154,98,.5);
+
+      background:
+        linear-gradient(
+          145deg,
+          #1d201b,
+          #141714
+        );
+    }
+
+    .vip-badge {
+
+      position: absolute;
+
+      top: 20px;
+
+      right: 20px;
+
+      padding: 5px 9px;
+
+      border: 1px solid var(--champagne);
+
+      color: var(--champagne-light);
+
+      font-size: .62rem;
+
+      font-weight: 800;
+
+      letter-spacing: 1.5px;
+    }
+
+    .ticket-name {
+
+      font-size: .75rem;
+
+      letter-spacing: 3px;
+
+      color: var(--champagne-light);
+
+      font-weight: 800;
+
+      text-transform: uppercase;
+
+      margin-bottom: 12px;
+    }
+
+    .ticket h3 {
+
+      font-size: 1.9rem;
+
+      margin-bottom: 6px;
+    }
+
+    .ticket-description {
+
+      color: var(--muted);
+
+      font-size: .85rem;
+
+      margin-bottom: 25px;
+    }
+
+    .price {
+
+      font-size: 3.3rem;
+
+      font-weight: 900;
+
+      line-height: 1;
+
+      margin-bottom: 25px;
+    }
+
+    .price small {
+
+      font-size: 1rem;
+
+      color: var(--champagne-light);
+
+      font-weight: 600;
+    }
+
+    .ticket-list {
+
+      list-style: none;
+
+      border-top: 1px solid var(--line);
+
+      margin-bottom: 25px;
+    }
+
+    .ticket-list li {
+
+      padding: 11px 0;
+
+      border-bottom: 1px solid var(--line);
+
+      color: rgba(244,241,232,.82);
+
+      font-size: .86rem;
+    }
+
+    .ticket-list li::before {
+
+      content: "✓";
+
+      color: var(--champagne-light);
+
+      margin-right: 10px;
+
+      font-weight: 800;
+    }
+
+    .ticket .btn {
+      width: 100%;
+    }
+
+
+    /* =====================================================
+       INCLUDED
+    ===================================================== */
+
+    .included-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 20px;
+    }
+
+    .included-card {
+
+      padding: 28px;
+
+      border: 1px solid var(--line);
+
+      background: var(--dark-2);
+    }
+
+    .included-card h3 {
+
+      margin-bottom: 15px;
+
+      font-size: 1rem;
+    }
+
+    .included-card ul {
+
+      list-style: none;
+    }
+
+    .included-card li {
+
+      color: var(--muted);
+
+      font-size: .86rem;
+
+      padding: 7px 0;
+    }
+
+    .included-card li::before {
+
+      content: "—";
+
+      color: var(--champagne);
+
+      margin-right: 8px;
+    }
+
+
+    /* =====================================================
+       RESERVATION STEPS
+    ===================================================== */
+
+    .steps {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 1px;
+
+      background: var(--line);
+
+      border: 1px solid var(--line);
+    }
+
+    .step {
+
+      padding: 35px 30px;
+
+      background: var(--dark-2);
+    }
+
+    .step-number {
+
+      color: var(--champagne);
+
+      font-size: .8rem;
+
+      font-weight: 900;
+
+      letter-spacing: 2px;
+
+      margin-bottom: 30px;
+    }
+
+    .step h3 {
+
+      margin-bottom: 10px;
+
+      font-size: 1.1rem;
+    }
+
+    .step p {
+
+      color: var(--muted);
+
+      font-size: .85rem;
+    }
+
+
+    /* =====================================================
+       PAYMENT
+    ===================================================== */
+
+    .payment-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 15px;
+    }
+
+    .payment-card {
+
+      border: 1px solid var(--line);
+
+      background: var(--dark-2);
+
+      padding: 25px 20px;
+
+      text-align: center;
+    }
+
+    .payment-icon {
+
+      width: 45px;
+
+      height: 45px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      margin: 0 auto 15px;
+
+      border: 1px solid var(--line);
+
+      border-radius: 50%;
+
+      color: var(--champagne-light);
+
+      font-weight: 800;
+    }
+
+    .payment-card h3 {
+
+      font-size: .95rem;
+
+      margin-bottom: 6px;
+    }
+
+    .payment-card p {
+
+      color: var(--muted);
+
+      font-size: .8rem;
+    }
+
+    .payment-number {
+
+      color: var(--ivory) !important;
+
+      margin-top: 8px;
+
+      font-weight: 700;
+    }
+
+    .payment-note {
+
+      max-width: 700px;
+
+      margin: 25px auto 0;
+
+      text-align: center;
+
+      color: var(--muted);
+
+      font-size: .84rem;
+    }
+
+
+    /* =====================================================
+       PRACTICAL INFO
+    ===================================================== */
+
+    .info-grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 20px;
+    }
+
+    .info-card {
+
+      border: 1px solid var(--line);
+
+      background: var(--dark-2);
+
+      padding: 30px;
+    }
+
+    .info-card .info-label {
+
+      color: var(--champagne-light);
+
+      font-size: .68rem;
+
+      text-transform: uppercase;
+
+      letter-spacing: 2px;
+
+      font-weight: 800;
+
+      margin-bottom: 10px;
+    }
+
+    .info-card h3 {
+
+      font-size: 1.15rem;
+
+      margin-bottom: 5px;
+    }
+
+    .info-card p {
+
+      color: var(--muted);
+
+      font-size: .85rem;
+    }
+
+
+    /* =====================================================
+       FAQ
+    ===================================================== */
+
+    .faq {
+
+      max-width: 850px;
+    }
+
+    .faq-item {
+
+      border-top: 1px solid var(--line);
+    }
+
+    .faq-item:last-child {
+
+      border-bottom: 1px solid var(--line);
+    }
+
+    .faq-question {
+
+      width: 100%;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 20px;
+
+      padding: 22px 0;
+
+      border: 0;
+
+      background: transparent;
+
+      color: var(--ivory);
+
+      text-align: left;
+
+      font: inherit;
+
+      font-weight: 700;
+
+      cursor: pointer;
+    }
+
+    .faq-question span:last-child {
+
+      color: var(--champagne);
+
+      font-size: 1.3rem;
+    }
+
+    .faq-answer {
+
+      display: none;
+
+      padding:
+        0 35px
+        20px
+        0;
+
+      color: var(--muted);
+
+      font-size: .87rem;
+    }
+
+    .faq-item.open .faq-answer {
+      display: block;
+    }
+
+
+    /* =====================================================
+       GALLERY CTA
+    ===================================================== */
+
+    .gallery-section {
+
+      position: relative;
+
+      overflow: hidden;
+
+      padding:
+        110px 25px;
+
+      background:
+        linear-gradient(
+          rgba(17,20,17,.72),
+          rgba(17,20,17,.94)
+        ),
+        url("images/mosaique.jpeg");
+
+      background-size: cover;
+
+      background-position: center;
+    }
+
+    .gallery-content {
+
+      max-width: 900px;
+
+      margin: auto;
+
+      text-align: center;
+    }
+
+    .gallery-content h2 {
+
+      font-size:
+        clamp(
+          2.2rem,
+          6vw,
+          4.5rem
+        );
+
+      line-height: 1;
+
+      margin-bottom: 18px;
+    }
+
+    .gallery-content p {
+
+      color: rgba(244,241,232,.72);
+
+      margin-bottom: 30px;
+    }
+
+
+    /* =====================================================
+       FINAL CTA
+    ===================================================== */
+
+    .final-cta {
+
+      max-width: 1000px;
+
+      margin: 0 auto;
+
+      padding: 90px 25px;
+
+      text-align: center;
+    }
+
+    .final-cta h2 {
+
+      font-size:
+        clamp(
+          2.2rem,
+          6vw,
+          4.5rem
+        );
+
+      line-height: 1;
+
+      margin-bottom: 18px;
+    }
+
+    .final-cta p {
+
+      color: var(--muted);
+
+      max-width: 600px;
+
+      margin: 0 auto 30px;
+    }
+
+
+    /* =====================================================
+       SOCIAL
+    ===================================================== */
+
+    .social {
+
+      display: flex;
+
+      justify-content: center;
+
+      flex-wrap: wrap;
+
+      gap: 10px;
+
+      margin-top: 25px;
+    }
+
+    .social a {
+
+      text-decoration: none;
+
+      border: 1px solid var(--line);
+
+      padding: 9px 16px;
+
+      border-radius: 50px;
+
+      color: var(--muted);
+
+      font-size: .78rem;
+
+      transition:
+        color .2s ease,
+        border-color .2s ease;
+    }
+
+    .social a:hover {
+
+      color: var(--champagne-light);
+
+      border-color:
+        var(--champagne);
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    footer {
+
+      border-top: 1px solid var(--line);
+
+      padding: 30px 20px;
+
+      text-align: center;
+
+      color: #777970;
+
+      font-size: .75rem;
+    }
+
+
+    /* =====================================================
+       FLOATING WHATSAPP
+    ===================================================== */
+
+    .floating-whatsapp {
+
+      position: fixed;
+
+      right: 20px;
+
+      bottom: 20px;
+
+      z-index: 100;
+
+      width: 55px;
+
+      height: 55px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      border-radius: 50%;
+
+      background: var(--whatsapp);
+
+      color: #08130b;
+
+      text-decoration: none;
+
+      font-size: 1.35rem;
+
+      box-shadow:
+        0 10px 30px rgba(0,0,0,.3);
+
+      transition:
+        transform .25s ease;
+    }
+
+    .floating-whatsapp:hover {
+
+      transform:
+        translateY(-4px)
+        scale(1.04);
+    }
+
+
+    /* =====================================================
+       FINISHED EVENT
+    ===================================================== */
+
+    .finished {
+
+      display: none;
+
+      max-width: 650px;
+
+      margin: 80px auto;
+
+      text-align: center;
+
+      padding: 40px 25px;
+
+      border: 1px solid var(--line);
+
+      background: var(--dark-2);
+    }
+
+    .finished h2 {
+
+      color: var(--champagne-light);
+
+      margin-bottom: 15px;
+    }
+
+    .finished p {
+
+      color: var(--muted);
+    }
+
+
+    /* =====================================================
+       MOBILE
+    ===================================================== */
+
+    @media (max-width: 850px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .experience-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      .payment-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      .tickets {
+        grid-template-columns: 1fr;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+    }
+
+
+    @media (max-width: 600px) {
+
+      header {
+        padding: 15px 18px;
+      }
+
+      .nav-logo img {
+        width: 90px;
+      }
+
+      .hero {
+
+        min-height: 95vh;
+
+        padding:
+          120px
+          18px
+          60px;
+
+        background-attachment:
+          scroll;
+      }
+
+      .hero-logo {
+        width: 180px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .hero-meta {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .meta-item {
+        width: max-content;
+        max-width: 100%;
+      }
+
+      section.content-section {
+        padding:
+          75px
+          18px;
+      }
+
+      .experience-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .experience-card {
+        min-height: auto;
+      }
+
+      .countdown {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      .time-box:nth-child(2) {
+        border-right: 0;
+      }
+
+      .time-box:nth-child(1),
+      .time-box:nth-child(2) {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .tickets {
+        gap: 15px;
+      }
+
+      .ticket {
+        padding: 28px 22px;
+      }
+
+      .included-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .payment-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      .payment-card {
+        padding:
+          22px
+          12px;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-section {
+        padding:
+          80px
+          18px;
+      }
+
+      .final-cta {
+        padding:
+          75px
+          18px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .floating-whatsapp {
+
+        width: 52px;
+        height: 52px;
+
+        right: 15px;
+        bottom: 15px;
+      }
+
+    }
+
+
+    @media (max-width: 380px) {
+
+      .payment-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .number {
+        font-size: 2.3rem;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+
+  <header>
+
+    <nav class="nav">
+
+      <a
+        href="#top"
+        class="nav-logo"
+      >
+
+        <img
+          src="images/logo.png"
+          alt="Fatih Boutique"
+        >
+
+      </a>
+
+
+      <div class="nav-links">
+
+        <a href="#experience"
+           data-fr="L'expérience"
+           data-en="The experience">
+          L'expérience
+        </a>
+
+        <a href="#tickets"
+           data-fr="Billets"
+           data-en="Tickets">
+          Billets
+        </a>
+
+        <a href="#payment"
+           data-fr="Paiement"
+           data-en="Payment">
+          Paiement
+        </a>
+
+        <a href="#faq"
+           data-fr="FAQ"
+           data-en="FAQ">
+          FAQ
+        </a>
+
+      </div>
+
+
+      <div class="language-switch">
+
+        <button
+          id="frBtn"
+          class="active"
+          onclick="setLanguage('fr')"
+        >
+          FR
+        </button>
+
+        <button
+          id="enBtn"
+          onclick="setLanguage('en')"
+        >
+          EN
+        </button>
+
+      </div>
+
+    </nav>
+
+  </header>
+
+
+
+  <!-- =====================================================
+       HERO
+  ====================================================== -->
+
+  <main id="top">
+
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <img
+          src="images/logo.png"
+          alt="Fatih Boutique"
+          class="hero-logo"
+        >
+
+
+        <div
+          class="eyebrow"
+          data-fr="2ème édition"
+          data-en="2nd edition"
+        >
+          2ème édition
+        </div>
+
+
+        <h1>
+
+          Canon Beach
+
+          <span
+            data-fr="07 Novembre 2026"
+            data-en="November 7, 2026"
+          >
+            07 Novembre 2026
+          </span>
+
+        </h1>
+
+
+        <p
+          class="hero-subtitle"
+          data-fr="Une journée d'évasion, de partage et de beaux souvenirs avec Fatih Boutique."
+          data-en="A day of escape, connection and unforgettable memories with Fatih Boutique."
+        >
+          Une journée d'évasion, de partage et de beaux souvenirs avec Fatih Boutique.
+        </p>
+
+
+        <div class="hero-meta">
+
+          <div class="meta-item">
+
+            📅
+
+            <strong
+              data-fr="07 Novembre"
+              data-en="November 7"
+            >
+              07 Novembre
+            </strong>
+
+          </div>
+
+          <div class="meta-item">
+
+            🕗
+
+            <strong>
+              08:00
+            </strong>
+
+          </div>
+
+          <div class="meta-item">
+
+            📍
+
+            <strong>
+              Canon Beach
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <a
+          href="#tickets"
+          class="btn btn-primary"
+          data-fr="Voir les billets"
+          data-en="View tickets"
+        >
+          Voir les billets
+        </a>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         COUNTDOWN
+    ==================================================== -->
+
+    <section class="content-section countdown-section">
+
+      <div class="section-heading"
+           style="margin-left:auto;margin-right:auto;text-align:center;">
+
+        <div
+          class="section-label"
+          data-fr="Le compte à rebours"
+          data-en="The countdown"
+        >
+          Le compte à rebours
+        </div>
+
+        <h2
+          data-fr="L'aventure approche."
+          data-en="The adventure is coming."
+        >
+          L'aventure approche.
+        </h2>
+
+      </div>
+
+
+      <div
+        class="countdown"
+        id="countdown"
+      >
+
+        <div class="time-box">
+
+          <span
+            class="number"
+            id="days"
+          >
+            00
+          </span>
+
+          <span
+            class="label"
+            data-fr="Jours"
+            data-en="Days"
+          >
+            Jours
+          </span>
+
+        </div>
+
+
+        <div class="time-box">
+
+          <span
+            class="number"
+            id="hours"
+          >
+            00
+          </span>
+
+          <span
+            class="label"
+            data-fr="Heures"
+            data-en="Hours"
+          >
+            Heures
+          </span>
+
+        </div>
+
+
+        <div class="time-box">
+
+          <span
+            class="number"
+            id="minutes"
+          >
+            00
+          </span>
+
+          <span
+            class="label"
+            data-fr="Minutes"
+            data-en="Minutes"
+          >
+            Minutes
+          </span>
+
+        </div>
+
+
+        <div class="time-box">
+
+          <span
+            class="number"
+            id="seconds"
+          >
+            00
+          </span>
+
+          <span
+            class="label"
+            data-fr="Secondes"
+            data-en="Seconds"
+          >
+            Secondes
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         EXPERIENCE
+    ==================================================== -->
+
+    <section
+      class="content-section"
+      id="experience"
+    >
+
+      <div class="section-heading">
+
+        <div
+          class="section-label"
+          data-fr="L'expérience"
+          data-en="The experience"
+        >
+          L'expérience
+        </div>
+
+        <h2
+          data-fr="Une journée pensée pour profiter."
+          data-en="A day designed to enjoy."
+        >
+          Une journée pensée pour profiter.
+        </h2>
+
+        <p
+          data-fr="Une escapade à Canon Beach autour de la détente, du partage, de la bonne ambiance et des souvenirs à garder."
+          data-en="A getaway to Canon Beach centered around relaxation, connection, good vibes and memories worth keeping."
+        >
+          Une escapade à Canon Beach autour de la détente, du partage, de la bonne ambiance et des souvenirs à garder.
+        </p>
+
+      </div>
+
+
+      <div class="experience-grid">
+
+        <article class="experience-card">
+
+          <div class="experience-number">
+            01
+          </div>
+
+          <h3
+            data-fr="Canon Beach"
+            data-en="Canon Beach"
+          >
+            Canon Beach
+          </h3>
+
+          <p
+            data-fr="Une destination pour changer d'air et profiter pleinement de la journée."
+            data-en="A destination to disconnect, relax and make the most of the day."
+          >
+            Une destination pour changer d'air et profiter pleinement de la journée.
+          </p>
+
+        </article>
+
+
+        <article class="experience-card">
+
+          <div class="experience-number">
+            02
+          </div>
+
+          <h3
+            data-fr="Partage"
+            data-en="Connection"
+          >
+            Partage
+          </h3>
+
+          <p
+            data-fr="Un moment à vivre ensemble dans une ambiance conviviale."
+            data-en="A shared experience in a warm and friendly atmosphere."
+          >
+            Un moment à vivre ensemble dans une ambiance conviviale.
+          </p>
+
+        </article>
+
+
+        <article class="experience-card">
+
+          <div class="experience-number">
+            03
+          </div>
+
+          <h3
+            data-fr="Gourmandise"
+            data-en="Food"
+          >
+            Gourmandise
+          </h3>
+
+          <p
+            data-fr="Des formules pensées pour accompagner votre journée."
+            data-en="Food options designed to complement your day."
+          >
+            Des formules pensées pour accompagner votre journée.
+          </p>
+
+        </article>
+
+
+        <article class="experience-card">
+
+          <div class="experience-number">
+            04
+          </div>
+
+          <h3
+            data-fr="Souvenirs"
+            data-en="Memories"
+          >
+            Souvenirs
+          </h3>
+
+          <p
+            data-fr="Photos, moments partagés et souvenirs à emporter."
+            data-en="Photos, shared moments and memories to take home."
+          >
+            Photos, moments partagés et souvenirs à emporter.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         TICKETS
+    ==================================================== -->
+
+    <section
+      class="content-section"
+      id="tickets"
+    >
+
+      <div class="section-heading">
+
+        <div
+          class="section-label"
+          data-fr="Vos billets"
+          data-en="Your tickets"
+        >
+          Vos billets
+        </div>
+
+        <h2
+          data-fr="Choisissez votre expérience."
+          data-en="Choose your experience."
+        >
+          Choisissez votre expérience.
+        </h2>
+
+        <p
+          data-fr="Deux formules pour profiter de l'excursion du 07 Novembre."
+          data-en="Two options for the November 7 excursion."
+        >
+          Deux formules pour profiter de l'excursion du 07 Novembre.
+        </p>
+
+      </div>
+
+
+      <div class="tickets">
+
+
+        <!-- ESSENTIAL -->
+
+        <article class="ticket">
+
+          <div class="ticket-name">
+            Essential
+          </div>
+
+          <h3>
+            Essential
+          </h3>
+
+          <p
+            class="ticket-description"
+            data-fr="L'essentiel pour savourer la journée."
+            data-en="The essentials for enjoying the day."
+          >
+            L'essentiel pour savourer la journée.
+          </p>
+
+          <div class="price">
+            25 <small>$</small>
+          </div>
+
+
+          <ul class="ticket-list">
+
+            <li
+              data-fr="Plat complet + Salade"
+              data-en="Full meal + Salad"
+            >
+              Plat complet + Salade
+            </li>
+
+            <li
+              data-fr="Accompagnement"
+              data-en="Side dish"
+            >
+              Accompagnement
+            </li>
+
+            <li
+              data-fr="Boisson offerte"
+              data-en="Free drink"
+            >
+              Boisson offerte
+            </li>
+
+            <li
+              data-fr="Shooting photo"
+              data-en="Photo shoot"
+            >
+              Shooting photo
+            </li>
+
+          </ul>
+
+
+          <a
+            class="btn btn-primary"
+            href="https://wa.me/243825247502?text=Bonjour%20Fatih%20Boutique%2C%20je%20souhaite%20r%C3%A9server%20une%20formule%20Essential%20%C3%A0%2025%20%24%20pour%20l%27excursion%20du%207%20Novembre%20%C3%A0%20Canon%20Beach."
+            target="_blank"
+            rel="noopener noreferrer"
+            data-fr="Réserver — 25 $"
+            data-en="Book — $25"
+          >
+            Réserver — 25 $
+          </a>
+
+        </article>
+
+
+
+        <!-- VIP -->
+
+        <article class="ticket vip">
+
+          <div class="vip-badge">
+            V.I.P
+          </div>
+
+          <div class="ticket-name">
+            Gourmand V.I.P
+          </div>
+
+          <h3>
+            Gourmand V.I.P
+          </h3>
+
+          <p
+            class="ticket-description"
+            data-fr="L'expérience complète et festive."
+            data-en="The complete and festive experience."
+          >
+            L'expérience complète et festive.
+          </p>
+
+          <div class="price">
+            30 <small>$</small>
+          </div>
+
+
+          <ul class="ticket-list">
+
+            <li
+              data-fr="Plat complet + Salade"
+              data-en="Full meal + Salad"
+            >
+              Plat complet + Salade
+            </li>
+
+            <li
+              data-fr="Accompagnement"
+              data-en="Side dish"
+            >
+              Accompagnement
+            </li>
+
+            <li
+              data-fr="Special Miami Liboke + Accompagnement"
+              data-en="Special Miami Liboke + Side dish"
+            >
+              Special Miami Liboke + Accompagnement
+            </li>
+
+            <li
+              data-fr="Boisson offerte"
+              data-en="Free drink"
+            >
+              Boisson offerte
+            </li>
+
+            <li
+              data-fr="Shooting photo"
+              data-en="Photo shoot"
+            >
+              Shooting photo
+            </li>
+
+          </ul>
+
+
+          <a
+            class="btn btn-primary"
+            href="https://wa.me/243825247502?text=Bonjour%20Fatih%20Boutique%2C%20je%20souhaite%20r%C3%A9server%20une%20formule%20Gourmand%20V.I.P%20%C3%A0%2030%20%24%20pour%20l%27excursion%20du%207%20Novembre%20%C3%A0%20Canon%20Beach."
+            target="_blank"
+            rel="noopener noreferrer"
+            data-fr="Réserver — 30 $"
+            data-en="Book — $30"
+          >
+            Réserver — 30 $
+          </a>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         WHAT'S INCLUDED
+    ==================================================== -->
+
+    <section class="content-section">
+
+      <div class="section-heading">
+
+        <div
+          class="section-label"
+          data-fr="Ce qui est inclus"
+          data-en="What's included"
+        >
+          Ce qui est inclus
+        </div>
+
+        <h2
+          data-fr="Votre formule, clairement."
+          data-en="Your package, clearly."
+        >
+          Votre formule, clairement.
+        </h2>
+
+      </div>
+
+
+      <div class="included-grid">
+
+
+        <div class="included-card">
+
+          <h3>
+            Essential — 25 $
+          </h3>
+
+          <ul>
+
+            <li
+              data-fr="Plat complet + Salade"
+              data-en="Full meal + Salad"
+            >
+              Plat complet + Salade
+            </li>
+
+            <li
+              data-fr="Accompagnement"
+              data-en="Side dish"
+            >
+              Accompagnement
+            </li>
+
+            <li
+              data-fr="Boisson offerte"
+              data-en="Free drink"
+            >
+              Boisson offerte
+            </li>
+
+            <li
+              data-fr="Shooting photo"
+              data-en="Photo shoot"
+            >
+              Shooting photo
+            </li>
+
+          </ul>
+
+        </div>
+
+
+        <div class="included-card">
+
+          <h3>
+            Gourmand V.I.P — 30 $
+          </h3>
+
+          <ul>
+
+            <li
+              data-fr="Plat complet + Salade"
+              data-en="Full meal + Salad"
+            >
+              Plat complet + Salade
+            </li>
+
+            <li
+              data-fr="Accompagnement"
+              data-en="Side dish"
+            >
+              Accompagnement
+            </li>
+
+            <li
+              data-fr="Special Miami Liboke + Accompagnement"
+              data-en="Special Miami Liboke + Side dish"
+            >
+              Special Miami Liboke + Accompagnement
+            </li>
+
+            <li
+              data-fr="Boisson offerte"
+              data-en="Free drink"
+            >
+              Boisson offerte
+            </li>
+
+            <li
+              data-fr="Shooting photo"
+              data-en="Photo shoot"
+            >
+              Shooting photo
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         HOW TO RESERVE
+    ==================================================== -->
+
+    <section class="content-section">
+
+      <div class="section-heading">
+
+        <div
+          class="section-label"
+          data-fr="Réservation"
+          data-en="Booking"
+        >
+          Réservation
+        </div>
+
+        <h2
+          data-fr="Réserver en 3 étapes."
+          data-en="Book in 3 steps."
+        >
+          Réserver en 3 étapes.
+        </h2>
+
+      </div>
+
+
+      <div class="steps">
+
+
+        <div class="step">
+
+          <div class="step-number">
+            01
+          </div>
+
+          <h3
+            data-fr="Choisissez votre formule"
+            data-en="Choose your package"
+          >
+            Choisissez votre formule
+          </h3>
+
+          <p
+            data-fr="Essential à 25 $ ou Gourmand V.I.P à 30 $."
+            data-en="Essential at $25 or Gourmand V.I.P at $30."
+          >
+            Essential à 25 $ ou Gourmand V.I.P à 30 $.
+          </p>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-number">
+            02
+          </div>
+
+          <h3
+            data-fr="Effectuez le paiement"
+            data-en="Make your payment"
+          >
+            Effectuez le paiement
+          </h3>
+
+          <p
+            data-fr="M-Pesa USD, Illico Cash, Airtel Money ou paiement en espèces."
+            data-en="M-Pesa USD, Illico Cash, Airtel Money or cash."
+          >
+            M-Pesa USD, Illico Cash, Airtel Money ou paiement en espèces.
+          </p>
+
+        </div>
+
+
+        <div class="step">
+
+          <div class="step-number">
+            03
+          </div>
+
+          <h3
+            data-fr="Confirmez votre réservation"
+            data-en="Confirm your booking"
+          >
+            Confirmez votre réservation
+          </h3>
+
+          <p
+            data-fr="Envoyez votre preuve de paiement sur WhatsApp afin de confirmer votre place."
+            data-en="Send your payment proof on WhatsApp to confirm your place."
+          >
+            Envoyez votre preuve de paiement sur WhatsApp afin de confirmer votre place.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         PAYMENT
+    ==================================================== -->
+
+    <section
+      class="content-section"
+      id="payment"
+    >
+
+      <div class="section-heading">
+
+        <div
+          class="section-label"
+          data-fr="Paiement"
+          data-en="Payment"
+        >
+          Paiement
+        </div>
+
+        <h2
+          data-fr="Choisissez votre moyen de paiement."
+          data-en="Choose your payment method."
+        >
+          Choisissez votre moyen de paiement.
+        </h2>
+
+        <p
+          data-fr="Après paiement, envoyez votre preuve sur WhatsApp pour confirmer votre réservation."
+          data-en="After payment, send your proof on WhatsApp to confirm your booking."
+        >
+          Après paiement, envoyez votre preuve sur WhatsApp pour confirmer votre réservation.
+        </p>
+
+      </div>
+
+
+      <div class="payment-grid">
+
+
+        <div class="payment-card">
+
+          <div class="payment-icon">
+            M
+          </div>
+
+          <h3>
+            M-Pesa
+          </h3>
+
+          <p
+            data-fr="USD uniquement"
+            data-en="USD only"
+          >
+            USD uniquement
+          </p>
+
+          <p class="payment-number">
+            +243 825 247 502
+          </p>
+
+        </div>
+
+
+        <div class="payment-card">
+
+          <div class="payment-icon">
+            IC
+          </div>
+
+          <h3>
+            Illico Cash
+          </h3>
+
+          <p
+            data-fr="Paiement mobile"
+            data-en="Mobile payment"
+          >
+            Paiement mobile
+          </p>
+
+          <p class="payment-number">
+            +243 825 247 502
+          </p>
+
+        </div>
+
+
+        <div class="payment-card">
+
+          <div class="payment-icon">
+            A
+          </div>
+
+          <h3>
+            Airtel Money
+          </h3>
+
+          <p
+            data-fr="Paiement mobile"
+            data-en="Mobile payment"
+          >
+            Paiement mobile
+          </p>
+
+          <p class="payment-number">
+            +243 990 977 844
+          </p>
+
+        </div>
+
+
+        <div class="payment-card">
+
+          <div class="payment-icon">
+            $
+          </div>
+
+          <h3
+            data-fr="Espèces"
+            data-en="Cash"
+          >
+            Espèces
+          </h3>
+
+          <p
+            data-fr="Paiement accepté"
+            data-en="Payment accepted"
+          >
+            Paiement accepté
+          </p>
+
+          <p class="payment-number">
+            Cash
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <p
+        class="payment-note"
+        data-fr="Une fois le paiement effectué, contactez Fatih Boutique sur WhatsApp et envoyez votre preuve de paiement."
+        data-en="Once payment is completed, contact Fatih Boutique on WhatsApp and send your payment proof."
+      >
+        Une fois le paiement effectué, contactez Fatih Boutique sur WhatsApp et envoyez votre preuve de paiement.
+      </p>
+
+
+      <div
+        style="
+          text-align:center;
+          margin-top:25px;
+        "
+      >
+
+        <a
+          href="https://wa.me/243825247502?text=Bonjour%20Fatih%20Boutique%2C%20je%20viens%20d%27effectuer%20mon%20paiement%20pour%20l%27excursion%20du%207%20Novembre%20%C3%A0%20Canon%20Beach.%20Je%20vous%20envoie%20ma%20preuve%20de%20paiement."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-whatsapp"
+          data-fr="Envoyer ma preuve de paiement"
+          data-en="Send my payment proof"
+        >
+          💬 Envoyer ma preuve de paiement
+        </a>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         PRACTICAL INFORMATION
+    ==================================================== -->
+
+    <section class="content-section">
+
+      <div class="section-heading">
+
+        <div
+          class="section-label"
+          data-fr="Informations pratiques"
+          data-en="Practical information"
+        >
+          Informations pratiques
+        </div>
+
+        <h2
+          data-fr="Préparez votre journée."
+          data-en="Prepare for your day."
+        >
+          Préparez votre journée.
+        </h2>
+
+      </div>
+
+
+      <div class="info-grid">
+
+
+        <div class="info-card">
+
+          <div
+            class="info-label"
+            data-fr="Départ"
+            data-en="Departure"
+          >
+            Départ
+          </div>
+
+          <h3>
+            08:00
+          </h3>
+
+          <p
+            data-fr="Point de rendez-vous — communiqué prochainement"
+            data-en="Meeting point — to be announced soon"
+          >
+            Point de rendez-vous — communiqué prochainement
+          </p>
+
+        </div>
+
+
+        <div class="info-card">
+
+          <div
+            class="info-label"
+            data-fr="Destination"
+            data-en="Destination"
+          >
+            Destination
+          </div>
+
+          <h3>
+            Canon Beach
+          </h3>
+
+          <p
+            data-fr="07 Novembre 2026"
+            data-en="November 7, 2026"
+          >
+            07 Novembre 2026
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div
+        style="
+          text-align:center;
+          margin-top:25px;
+        "
+      >
+
+        <a
+          href="#"
+          class="btn btn-secondary"
+          onclick="showLocationMessage(event)"
+          data-fr="📍 Voir le point de rendez-vous"
+          data-en="📍 View meeting point"
+        >
+          📍 Voir le point de rendez-vous
+        </a>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         FAQ
+    ==================================================== -->
+
+    <section
+      class="content-section"
+      id="faq"
+    >
+
+      <div class="section-heading">
+
+        <div class="section-label">
+          FAQ
+        </div>
+
+        <h2
+          data-fr="Questions fréquentes."
+          data-en="Frequently asked questions."
+        >
+          Questions fréquentes.
+        </h2>
+
+      </div>
+
+
+      <div class="faq">
+
+
+        <div class="faq-item">
+
+          <button
+            class="faq-question"
+            onclick="toggleFaq(this)"
+          >
+
+            <span
+              data-fr="Quels sont les prix des billets ?"
+              data-en="What are the ticket prices?"
+            >
+              Quels sont les prix des billets ?
+            </span>
+
+            <span>
+              +
+            </span>
+
+          </button>
+
+          <div
+            class="faq-answer"
+            data-fr="La formule Essential est à 25 $ et la formule Gourmand V.I.P est à 30 $."
+            data-en="The Essential package is $25 and the Gourmand V.I.P package is $30."
+          >
+            La formule Essential est à 25 $ et la formule Gourmand V.I.P est à 30 $.
+          </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+          <button
+            class="faq-question"
+            onclick="toggleFaq(this)"
+          >
+
+            <span
+              data-fr="Quels moyens de paiement sont acceptés ?"
+              data-en="Which payment methods are accepted?"
+            >
+              Quels moyens de paiement sont acceptés ?
+            </span>
+
+            <span>
+              +
+            </span>
+
+          </button>
+
+          <div
+            class="faq-answer"
+            data-fr="M-Pesa en USD uniquement, Illico Cash, Airtel Money et paiement en espèces."
+            data-en="M-Pesa in USD only, Illico Cash, Airtel Money and cash."
+          >
+            M-Pesa en USD uniquement, Illico Cash, Airtel Money et paiement en espèces.
+          </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+          <button
+            class="faq-question"
+            onclick="toggleFaq(this)"
+          >
+
+            <span
+              data-fr="Comment confirmer ma réservation ?"
+              data-en="How do I confirm my booking?"
+            >
+              Comment confirmer ma réservation ?
+            </span>
+
+            <span>
+              +
+            </span>
+
+          </button>
+
+          <div
+            class="faq-answer"
+            data-fr="Après le paiement, envoyez votre preuve de paiement sur WhatsApp au +243 825 247 502."
+            data-en="After payment, send your payment proof on WhatsApp to +243 825 247 502."
+          >
+            Après le paiement, envoyez votre preuve de paiement sur WhatsApp au +243 825 247 502.
+          </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+          <button
+            class="faq-question"
+            onclick="toggleFaq(this)"
+          >
+
+            <span
+              data-fr="À quelle heure est le départ ?"
+              data-en="What time is departure?"
+            >
+              À quelle heure est le départ ?
+            </span>
+
+            <span>
+              +
+            </span>
+
+          </button>
+
+          <div
+            class="faq-answer"
+            data-fr="Le départ est prévu à 08:00. Le point de rendez-vous sera communiqué prochainement."
+            data-en="Departure is scheduled for 08:00. The meeting point will be announced soon."
+          >
+            Le départ est prévu à 08:00. Le point de rendez-vous sera communiqué prochainement.
+          </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+          <button
+            class="faq-question"
+            onclick="toggleFaq(this)"
+          >
+
+            <span
+              data-fr="Puis-je réserver plusieurs places ?"
+              data-en="Can I book several places?"
+            >
+              Puis-je réserver plusieurs places ?
+            </span>
+
+            <span>
+              +
+            </span>
+
+          </button>
+
+          <div
+            class="faq-answer"
+            data-fr="Oui. Pour une réservation de groupe, contactez directement Fatih Boutique sur WhatsApp."
+            data-en="Yes. For group bookings, contact Fatih Boutique directly on WhatsApp."
+          >
+            Oui. Pour une réservation de groupe, contactez directement Fatih Boutique sur WhatsApp.
+          </div>
+
+        </div>
+
+
+        <div class="faq-item">
+
+          <button
+            class="faq-question"
+            onclick="toggleFaq(this)"
+          >
+
+            <span
+              data-fr="Où puis-je voir les photos ?"
+              data-en="Where can I see the photos?"
+            >
+              Où puis-je voir les photos ?
+            </span>
+
+            <span>
+              +
+            </span>
+
+          </button>
+
+          <div
+            class="faq-answer"
+            data-fr="Vous pouvez consulter notre galerie de souvenirs directement depuis le site."
+            data-en="You can view our memories gallery directly from the website."
+          >
+            Vous pouvez consulter notre galerie de souvenirs directement depuis le site.
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         GALLERY
+    ==================================================== -->
+
+    <section class="gallery-section">
+
+      <div class="gallery-content">
+
+        <div
+          class="section-label"
+          data-fr="Nos souvenirs"
+          data-en="Our memories"
+        >
+          Nos souvenirs
+        </div>
+
+        <h2
+          data-fr="Quelques moments à découvrir."
+          data-en="Moments worth discovering."
+        >
+          Quelques moments à découvrir.
+        </h2>
+
+        <p
+          data-fr="Découvrez notre galerie et plongez dans l'univers Fatih Boutique."
+          data-en="Explore our gallery and discover the Fatih Boutique experience."
+        >
+          Découvrez notre galerie et plongez dans l'univers Fatih Boutique.
+        </p>
+
+
+        <a
+          href="gallery.html"
+          class="btn btn-primary"
+          data-fr="Voir la galerie"
+          data-en="View gallery"
+        >
+          📸 Voir la galerie
+        </a>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         FINAL CTA
+    ==================================================== -->
+
+    <section class="final-cta">
+
+      <div
+        class="section-label"
+        data-fr="Canon Beach • 07 Novembre"
+        data-en="Canon Beach • November 7"
+      >
+        Canon Beach • 07 Novembre
+      </div>
+
+      <h2
+        data-fr="Prêt pour l'aventure ?"
+        data-en="Ready for the adventure?"
+      >
+        Prêt pour l'aventure ?
+      </h2>
+
+      <p
+        data-fr="Réservez votre formule et préparez-vous à vivre une journée spéciale avec Fatih Boutique."
+        data-en="Book your package and get ready for a special day with Fatih Boutique."
+      >
+        Réservez votre formule et préparez-vous à vivre une journée spéciale avec Fatih Boutique.
+      </p>
+
+
+      <a
+        href="https://wa.me/243825247502?text=Bonjour%20Fatih%20Boutique%2C%20je%20souhaite%20avoir%20plus%20d%27informations%20sur%20les%20billets%20de%20l%27excursion%20du%207%20Novembre%20%C3%A0%20Canon%20Beach."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-whatsapp"
+        data-fr="💬 Réserver via WhatsApp"
+        data-en="💬 Book via WhatsApp"
+      >
+        💬 Réserver via WhatsApp
+      </a>
+
+
+      <div class="social">
+
+        <a
+          href="https://chat.whatsapp.com/KhP6900A1910Hkmkbttcsa"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-fr="Groupe WhatsApp"
+          data-en="WhatsApp Group"
+        >
+          Groupe WhatsApp
+        </a>
+
+        <a
+          href="https://www.instagram.com/fatihboutique01?stkn=N2ppaGRxY2l1cjVt"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Instagram
+        </a>
+
+        <a
+          href="https://www.facebook.com/share/18WRLsjThe/?mibextid=wwXIfr"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Facebook
+        </a>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         FINISHED EVENT
+    ==================================================== -->
+
+    <div
+      class="finished"
+      id="finished"
+    >
+
+      <h2
+        data-fr="🎉 C'est le grand jour !"
+        data-en="🎉 The big day is here!"
+      >
+        🎉 C'est le grand jour !
+      </h2>
+
+      <p
+        data-fr="L'attente est terminée. Préparez-vous pour vivre une excursion inoubliable avec Fatih Boutique."
+        data-en="The wait is over. Get ready for an unforgettable excursion with Fatih Boutique."
+      >
+        L'attente est terminée.
+        Préparez-vous pour vivre une excursion inoubliable avec Fatih Boutique.
+      </p>
+
+    </div>
+
+
+
+  </main>
+
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer>
+
+    <p>
+      © 2026 Fatih Boutique —
+      <span
+        data-fr="Canon Beach"
+        data-en="Canon Beach"
+      >
+        Canon Beach
+      </span>
+    </p>
+
+  </footer>
+
+
+
+  <!-- =====================================================
+       FLOATING WHATSAPP
+  ====================================================== -->
+
+  <a
+    href="https://wa.me/243825247502?text=Bonjour%20Fatih%20Boutique%2C%20je%20souhaite%20avoir%20des%20informations%20sur%20l%27excursion%20du%207%20Novembre%20%C3%A0%20Canon%20Beach."
+    target="_blank"
+    rel="noopener noreferrer"
+    class="floating-whatsapp"
+    aria-label="WhatsApp"
+  >
+    ☎
+  </a>
+
+
+
+  <script>
+
+    /* =====================================================
+       EVENT CONFIGURATION
+    ===================================================== */
+
+    const eventDate =
+      new Date(
+        "2026-11-07T08:00:00+01:00"
+      ).getTime();
+
+
+    /*
+      Beginning of the countdown progress.
+
+      This is only used for the visual countdown
+      progress indicator.
+    */
+
+    const startDate =
+      new Date(
+        "2026-10-01T00:00:00+01:00"
+      ).getTime();
+
+
+
+    /* =====================================================
+       COUNTDOWN
+    ===================================================== */
+
+    function formatNumber(number) {
+
+      return String(number)
+        .padStart(2, "0");
+
+    }
+
+
+    function updateCountdown() {
+
+      const now =
+        new Date().getTime();
+
+      const remaining =
+        eventDate - now;
+
+
+      if (remaining <= 0) {
+
+        document.getElementById("countdown")
+          .style.display = "none";
+
+        document.querySelector(".countdown-section")
+          .style.display = "none";
+
+        document.getElementById("finished")
+          .style.display = "block";
+
+        return;
+
+      }
+
+
+      const days =
+        Math.floor(
+          remaining /
+          (1000 * 60 * 60 * 24)
+        );
+
+
+      const hours =
+        Math.floor(
+          (
+            remaining %
+            (1000 * 60 * 60 * 24)
+          ) /
+          (1000 * 60 * 60)
+        );
+
+
+      const minutes =
+        Math.floor(
+          (
+            remaining %
+            (1000 * 60 * 60)
+          ) /
+          (1000 * 60)
+        );
+
+
+      const seconds =
+        Math.floor(
+          (
+            remaining %
+            (1000 * 60)
+          ) /
+          1000
+        );
+
+
+      document.getElementById("days")
+        .textContent =
+        formatNumber(days);
+
+
+      document.getElementById("hours")
+        .textContent =
+        formatNumber(hours);
+
+
+      document.getElementById("minutes")
+        .textContent =
+        formatNumber(minutes);
+
+
+      document.getElementById("seconds")
+        .textContent =
+        formatNumber(seconds);
+
+    }
+
+
+    updateCountdown();
+
+    setInterval(
+      updateCountdown,
+      1000
+    );
+
+
+
+    /* =====================================================
+       FAQ
+    ===================================================== */
+
+    function toggleFaq(button) {
+
+      const item =
+        button.parentElement;
+
+      const isOpen =
+        item.classList.contains("open");
+
+
+      document
+        .querySelectorAll(".faq-item")
+        .forEach(
+          faq => {
+
+            faq.classList.remove("open");
+
+            const icon =
+              faq.querySelector(
+                ".faq-question span:last-child"
+              );
+
+            if (icon) {
+              icon.textContent = "+";
+            }
+
+          }
+        );
+
+
+      if (!isOpen) {
+
+        item.classList.add("open");
+
+        const icon =
+          button.querySelector(
+            "span:last-child"
+          );
+
+        if (icon) {
+          icon.textContent = "−";
+        }
+
+      }
+
+    }
+
+
+
+    /* =====================================================
+       LOCATION MESSAGE
+    ===================================================== */
+
+    function showLocationMessage(event) {
+
+      event.preventDefault();
+
+      const language =
+        document.documentElement.lang;
+
+
+      if (language === "en") {
+
+        alert(
+          "The meeting point will be announced soon."
+        );
+
+      } else {
+
+        alert(
+          "Le point de rendez-vous sera communiqué prochainement."
+        );
+
+      }
+
+    }
+
+
+
+    /* =====================================================
+       LANGUAGE SWITCH
+    ===================================================== */
+
+    let currentLanguage = "fr";
+
+
+    function setLanguage(language) {
+
+      currentLanguage = language;
+
+      document.documentElement.lang =
+        language;
+
+
+      document.querySelectorAll(
+        "[data-fr][data-en]"
+      ).forEach(
+        element => {
+
+          element.textContent =
+            element.dataset[language];
+
+        }
+      );
+
+
+      document.getElementById("frBtn")
+        .classList.toggle(
+          "active",
+          language === "fr"
+        );
+
+
+      document.getElementById("enBtn")
+        .classList.toggle(
+          "active",
+          language === "en"
+        );
+
+    }
+
+
+  </script>
+
+
+</body>
+</html>
