@@ -2198,29 +2198,38 @@ async function startCheckout(plan, button) {
   button.disabled = true;
   button.textContent = "⏳ Préparation du paiement...";
 
+  const controller = new AbortController();
+
+  const timeout = setTimeout(() => {
+    controller.abort();
+  }, 15000);
+
   try {
     const response = await fetch(
       "https://canon-beach-7-novembre-2026.vercel.app/api/create-checkout",
       {
         method: "POST",
-
         headers: {
           "Content-Type": "application/json"
         },
-
         body: JSON.stringify({
           plan: plan
-        })
+        }),
+        signal: controller.signal
       }
     );
 
+    clearTimeout(timeout);
+
     const data = await response.json();
+
+    console.log("Checkout response:", response.status, data);
 
     if (!response.ok || !data.url) {
       throw new Error(
         data.details ||
         data.error ||
-        "Impossible de créer le paiement."
+        `Erreur serveur HTTP ${response.status}`
       );
     }
 
@@ -2229,12 +2238,22 @@ async function startCheckout(plan, button) {
     window.location.href = data.url;
 
   } catch (error) {
+
+    clearTimeout(timeout);
+
     console.error("Checkout error:", error);
 
-    alert(
-      "Le paiement n'a pas pu être lancé.\n\n" +
-      "Veuillez réessayer ou réserver directement sur WhatsApp."
-    );
+    if (error.name === "AbortError") {
+      alert(
+        "Le serveur de paiement ne répond pas.\n\n" +
+        "Le service a dépassé 15 secondes d'attente."
+      );
+    } else {
+      alert(
+        "Erreur de paiement :\n\n" +
+        error.message
+      );
+    }
 
     button.disabled = false;
     button.textContent = originalText;
