@@ -1,3 +1,4 @@
+import crypto from "node:crypto";
 const ALLOWED_ORIGIN = 'https://blackpanthere1209.github.io';
 
 const PLANS = {
