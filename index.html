@@ -2217,6 +2217,22 @@ async function startCheckout(plan, button) {
   button.disabled = true;
   button.textContent = "⏳ Préparation du paiement...";
 
+  // Open the new tab immediately so the browser doesn't block it
+  const paymentWindow = window.open("about:blank", "_blank");
+
+  if (!paymentWindow) {
+    alert(
+      "Le navigateur a bloqué l'ouverture du paiement.\n\n" +
+      "Veuillez autoriser les fenêtres pop-up pour ce site."
+    );
+
+    button.disabled = false;
+    button.textContent = originalText;
+    return;
+  }
+
+  paymentWindow.document.title = "Paiement — Fatih Boutique";
+
   const controller = new AbortController();
 
   const timeout = setTimeout(() => {
@@ -2252,15 +2268,25 @@ async function startCheckout(plan, button) {
       );
     }
 
-    button.textContent = "↗ Ouverture du paiement...";
+    button.textContent = "↗ Paiement ouvert";
 
-    window.location.href = data.url;
+    // Send the new tab to OPTGateway
+    paymentWindow.location.href = data.url;
+
+    // Keep the original website open
+    setTimeout(() => {
+      button.disabled = false;
+      button.textContent = originalText;
+    }, 2000);
 
   } catch (error) {
 
     clearTimeout(timeout);
 
     console.error("Checkout error:", error);
+
+    // Close the blank tab if payment creation failed
+    paymentWindow.close();
 
     if (error.name === "AbortError") {
       alert(
