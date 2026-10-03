@@ -14,31 +14,30 @@ function safeEqualHex(a, b) {
   }
 }
 
-export default async function handler(request) {
+export default async function handler(request, response) {
   if (request.method !== "POST") {
-    return new Response(
-      JSON.stringify({ error: "Method not allowed" }),
-      {
-        status: 405,
-        headers: { "Content-Type": "application/json" },
-      }
-    );
+    return response.status(405).json({
+      error: "Method not allowed",
+    });
   }
 
   const secret = process.env.OPTGATEWAY_WEBHOOK_SECRET;
 
   if (!secret) {
-    return new Response(
-      JSON.stringify({ error: "Webhook is not configured." }),
-      {
-        status: 500,
-        headers: { "Content-Type": "application/json" },
-      }
-    );
+    return response.status(500).json({
+      error: "Webhook is not configured.",
+    });
   }
 
   const signatureHeader =
-    request.headers.get("OPGateway-Signature") || "";
+    request.headers["opgateway-signature"] ||
+    request.headers["OPGateway-Signature"];
+
+  if (!signatureHeader) {
+    return response.status(400).json({
+      error: "Missing webhook signature.",
+    });
+  }
 
   const parts = signatureHeader
     .split(",")
@@ -57,44 +56,36 @@ export default async function handler(request) {
     : "";
 
   if (!timestamp || signatureParts.length === 0) {
-    return new Response(
-      JSON.stringify({ error: "Invalid signature." }),
-      {
-        status: 400,
-        headers: { "Content-Type": "application/json" },
-      }
-    );
+    return response.status(400).json({
+      error: "Invalid signature.",
+    });
   }
 
   const timestampNumber = Number(timestamp);
 
   if (!Number.isFinite(timestampNumber)) {
-    return new Response(
-      JSON.stringify({
-        error: "Invalid signature timestamp.",
-      }),
-      {
-        status: 400,
-        headers: { "Content-Type": "application/json" },
-      }
-    );
+    return response.status(400).json({
+      error: "Invalid signature timestamp.",
+    });
   }
 
   const now = Math.floor(Date.now() / 1000);
 
   if (Math.abs(now - timestampNumber) > 300) {
-    return new Response(
-      JSON.stringify({
-        error: "Expired webhook signature.",
-      }),
-      {
-        status: 400,
-        headers: { "Content-Type": "application/json" },
-      }
-    );
+    return response.status(400).json({
+      error: "Expired webhook signature.",
+    });
   }
 
-  const rawBody = await request.text();
+  /*
+   * Vercel's Node.js handler provides the raw request body
+   * through req.body. For signature verification we need
+   * the exact raw JSON string.
+   */
+  const rawBody =
+    typeof request.body === "string"
+      ? request.body
+      : JSON.stringify(request.body);
 
   const signedPayload = `${timestamp}.${rawBody}`;
 
@@ -108,15 +99,9 @@ export default async function handler(request) {
   );
 
   if (!valid) {
-    return new Response(
-      JSON.stringify({
-        error: "Invalid webhook signature.",
-      }),
-      {
-        status: 400,
-        headers: { "Content-Type": "application/json" },
-      }
-    );
+    return response.status(400).json({
+      error: "Invalid webhook signature.",
+    });
   }
 
   let event;
@@ -124,15 +109,9 @@ export default async function handler(request) {
   try {
     event = JSON.parse(rawBody);
   } catch {
-    return new Response(
-      JSON.stringify({
-        error: "Invalid JSON payload.",
-      }),
-      {
-        status: 400,
-        headers: { "Content-Type": "application/json" },
-      }
-    );
+    return response.status(400).json({
+      error: "Invalid JSON payload.",
+    });
   }
 
   console.log(
@@ -141,11 +120,7 @@ export default async function handler(request) {
     event.id
   );
 
-  return new Response(
-    JSON.stringify({ received: true }),
-    {
-      status: 200,
-      headers: { "Content-Type": "application/json" },
-    }
-  );
+  return response.status(200).json({
+    received: true,
+  });
 }
