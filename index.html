@@ -60,12 +60,12 @@ h1{font-size:clamp(3.2rem,8vw,6.5rem);line-height:.95;text-align:center;text-tra
 .bring-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.bring-card{padding:16px 10px}.bring-icon{font-size:1.7rem}
 .ticket-card{display:flex;flex-direction:column}.ticket-actions{margin-top:auto;padding-top:16px}.quantity-row{display:flex;align-items:center;justify-content:center;gap:10px;margin:15px 0 5px}.qty-btn{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.08);color:#fff;font-size:1.25rem;font-weight:900;cursor:pointer}.qty-value{min-width:42px;font-size:1.1rem;font-weight:950}.total-line{text-align:center;color:#dce9e2;font-size:.84rem;margin-bottom:10px}.total-line strong{color:#ffd21f;font-size:1.05rem}.pay-btn{display:block;width:100%;margin-top:10px;padding:14px 18px;background:linear-gradient(135deg,#ffd21f,#ff8c00);color:#061a13!important;text-align:center;font-weight:950;font-size:15px;border-radius:12px;border:1px solid rgba(255,255,255,.25);box-shadow:0 8px 25px rgba(255,210,31,.22);cursor:pointer;transition:transform .25s ease,box-shadow .25s ease,filter .25s ease}.pay-btn:hover{transform:translateY(-3px);filter:brightness(1.08);box-shadow:0 12px 30px rgba(255,210,31,.38)}.pay-btn:disabled{opacity:.65;cursor:wait;transform:none}
 .calendar-btn,.share-btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 20px;border-radius:999px;border:1px solid rgba(255,255,255,.14);color:#fff;text-decoration:none;font-weight:850;cursor:pointer;background:linear-gradient(135deg,#7c4dff,#512da8);transition:.25s}.calendar-btn:hover,.share-btn:hover{transform:translateY(-3px);filter:brightness(1.08)}.share-btn{background:linear-gradient(135deg,#00a86b,#007c55)}
-.gallery-preview{display:grid;grid-template-columns:1.25fr 1fr 1fr;grid-template-rows:105px 105px;gap:8px;margin:16px auto 0;max-width:560px}.gallery-preview a{display:block;overflow:hidden;border-radius:14px;min-height:0;height:100%;background:#03130d;border:1px solid rgba(255,255,255,.1);box-shadow:0 8px 20px rgba(0,0,0,.18)}.gallery-preview a:first-child{grid-row:1 / 3}.gallery-preview img{width:100%;height:100%;min-height:0;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.2,.8,.2,1),filter .5s ease}.gallery-preview a:hover img{transform:scale(1.045);filter:saturate(1.05) contrast(1.03)}.gallery-preview a:active img{transform:scale(1.015)}.gallery-caption{text-align:center;color:#dce9e2;font-size:.82rem;margin-top:9px}
+.gallery-preview{display:grid;grid-template-columns:2fr 1fr 1fr;gap:10px;margin-top:16px}.gallery-preview a{display:block;overflow:hidden;border-radius:18px;min-height:150px;background:#03130d;border:1px solid rgba(255,255,255,.1)}.gallery-preview img{width:100%;height:100%;min-height:150px;object-fit:cover;display:block;transition:transform .35s ease}.gallery-preview a:hover img{transform:scale(1.06)}.gallery-caption{text-align:center;color:#dce9e2;font-size:.85rem;margin-top:10px}
 .faq-list{display:grid;gap:10px;text-align:left}.faq-item{border:1px solid rgba(255,255,255,.11);border-radius:16px;background:rgba(0,0,0,.2);overflow:hidden}.faq-question{width:100%;border:0;background:transparent;color:#fff;text-align:left;padding:16px 18px;font-weight:900;cursor:pointer;display:flex;justify-content:space-between;gap:12px}.faq-answer{max-height:0;overflow:hidden;transition:max-height .3s ease;padding:0 18px;color:#dce9e2;line-height:1.55}.faq-item.open .faq-answer{max-height:180px;padding:0 18px 16px}.faq-item.open .faq-question span:last-child{transform:rotate(45deg)}
 .final-cta{margin:34px auto 0;padding:34px 22px;border-radius:28px;background:linear-gradient(135deg,rgba(0,168,107,.18),rgba(255,210,31,.14),rgba(255,123,0,.12));border:1px solid rgba(255,210,31,.28);box-shadow:0 18px 45px rgba(0,0,0,.25)}.final-cta h2{font-size:clamp(2rem,6vw,3.7rem);color:#ffd21f;margin-bottom:10px}.final-cta p{color:#e8f6ef;line-height:1.65;max-width:700px;margin:0 auto 18px}.final-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:10px}.final-actions .reserve-btn{min-width:220px}
 .mobile-booking-bar{display:none;position:fixed;left:10px;right:10px;bottom:10px;z-index:50;padding:8px;border-radius:18px;background:rgba(3,22,15,.92);border:1px solid rgba(255,210,31,.3);box-shadow:0 12px 35px rgba(0,0,0,.45);backdrop-filter:blur(12px)}.mobile-booking-bar a{display:block;text-align:center;text-decoration:none;color:#061a13;font-weight:950;background:linear-gradient(135deg,#ffd21f,#ff8c00);padding:13px;border-radius:12px}
-@media(max-width:800px){.steps-grid,.dashboard-grid{grid-template-columns:1fr}.bring-grid{grid-template-columns:repeat(2,1fr)}.gallery-preview{grid-template-columns:1.25fr 1fr 1fr;grid-template-rows:92px 92px;gap:7px}.gallery-preview a:first-child{grid-column:auto;grid-row:1 / 3}.mobile-booking-bar{display:block}.page{padding-bottom:90px}}
-@media(max-width:420px){.section-card{padding:18px 12px}.bring-grid{gap:8px}.bring-card{padding:13px 7px}.gallery-preview{grid-template-rows:82px 82px;gap:6px}.gallery-preview a{min-height:0;border-radius:12px}.gallery-preview img{min-height:0}.lang-btn{padding:6px 10px}}
+@media(max-width:800px){.steps-grid,.dashboard-grid{grid-template-columns:1fr}.bring-grid{grid-template-columns:repeat(2,1fr)}.gallery-preview{grid-template-columns:1fr 1fr}.gallery-preview a:first-child{grid-column:1/-1}.mobile-booking-bar{display:block}.page{padding-bottom:90px}}
+@media(max-width:420px){.section-card{padding:18px 12px}.bring-grid{gap:8px}.bring-card{padding:13px 7px}.gallery-preview{gap:7px}.gallery-preview a{min-height:120px}.gallery-preview img{min-height:120px}.lang-btn{padding:6px 10px}}
 
 
 /* PREMIUM EXPERIENCE PACK */
@@ -420,44 +420,6 @@ h1{animation:heroReveal 1s cubic-bezier(.2,.8,.2,1) both;transform-origin:center
 @media(max-width:380px){.journey-grid{gap:7px}.journey-step{padding:14px 8px}.journey-step span{font-size:.7rem}}
 @media(prefers-reduced-motion:reduce){.presents-inner,.destination-reveal img,.trailer-card img{animation:none;transition:none}}
 
-</style>
-
-
-<style id="photo-library-upgrade">
-/* 65-photo visual library — opening screen intentionally untouched */
-.photo-story{margin-top:18px}
-.photo-story-grid{display:grid;grid-template-columns:1.35fr .8fr .8fr;gap:10px}
-.photo-story-card{position:relative;min-height:210px;overflow:hidden;border-radius:18px;border:1px solid rgba(255,255,255,.1);background:#03130d}
-.photo-story-card:first-child{min-height:310px;grid-row:span 2}
-.photo-story-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s ease,filter .7s ease}
-.photo-story-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(0,0,0,.76));pointer-events:none}
-.photo-story-card:hover img{transform:scale(1.06);filter:saturate(1.08)}
-.photo-story-copy{position:absolute;z-index:2;left:14px;right:14px;bottom:13px;color:#fff}
-.photo-story-copy strong{display:block;color:#ffd21f;font-size:.95rem}
-.photo-story-copy span{display:block;margin-top:3px;color:#dce9e2;font-size:.75rem;line-height:1.35}
-.visual-strip{display:flex;gap:8px;overflow-x:auto;padding:3px 1px 8px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
-.visual-strip img{flex:0 0 150px;width:150px;height:105px;object-fit:cover;border-radius:14px;border:1px solid rgba(255,255,255,.1);scroll-snap-align:start}
-.visual-caption{text-align:center;color:#9fb7ab;font-size:.74rem;margin:7px 0 0}
-.photo-stage{position:relative;overflow:hidden}
-.photo-stage::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.5));z-index:1;pointer-events:none}
-.photo-stage .photo-stage-img{transition:opacity .45s ease,transform .9s ease}
-.photo-stage.is-changing .photo-stage-img{opacity:.18;transform:scale(1.03)}
-.cinematic-ending.photo-stage{background-size:cover;background-position:center}
-@media(max-width:800px){
-  .photo-story-grid{grid-template-columns:1fr 1fr}
-  .photo-story-card:first-child{grid-column:1/-1;grid-row:auto;min-height:250px}
-  .photo-story-card{min-height:165px}
-  .visual-strip img{flex-basis:135px;width:135px;height:96px}
-}
-@media(max-width:420px){
-  .photo-story-grid{gap:7px}
-  .photo-story-card:first-child{min-height:225px}
-  .photo-story-card{min-height:135px;border-radius:14px}
-  .photo-story-copy{left:10px;right:10px;bottom:9px}
-  .photo-story-copy strong{font-size:.82rem}
-  .photo-story-copy span{font-size:.67rem}
-}
-@media(prefers-reduced-motion:reduce){.photo-story-card img,.photo-stage .photo-stage-img{transition:none}.photo-story-card:hover img{transform:none}}
 </style>
 
 </head>
@@ -866,16 +828,274 @@ h1{animation:heroReveal 1s cubic-bezier(.2,.8,.2,1) both;transform-origin:center
            GALLERY PREVIEW
       ================================================== -->
       <section class="section-card" id="souvenirs">
-        <h2 class="section-title">📸 Quelques souvenirs</h2>
-        <p class="section-subtitle">Un petit aperçu de l’univers Fatih Boutique. Découvrez les 65 souvenirs dans notre galerie dédiée.</p>
-        <div class="gallery-preview">
-          <a href="gallery.html"><img src="images/memory-08.jpg" alt="Souvenir Fatih Boutique" loading="lazy" onerror="this.onerror=null;this.src='images/memory-08.jpeg';"></a>
-          <a href="gallery.html"><img src="images/staff.jpeg" alt="Équipe Fatih Boutique" loading="lazy"></a>
-          <a href="gallery.html"><img src="images/memory-37.jpg" alt="Souvenir Fatih Boutique" loading="lazy" onerror="this.onerror=null;this.src='images/memory-37.jpeg';"></a>
-          <a href="gallery.html"><img src="images/memory-58.jpg" alt="Souvenir Fatih Boutique" loading="lazy" onerror="this.onerror=null;this.src='images/memory-58.jpeg';"></a>
+        <h2 class="section-title">📸 Nos 65 souvenirs</h2>
+        <p class="section-subtitle">Retrouvez les moments de Fatih Boutique dans une galerie pensée pour le téléphone.</p>
+        <div class="memory-gallery" id="memoryGallery">
+          <a class="memory-card" href="images/memory-01.jpg" data-memory="01" aria-label="Ouvrir le souvenir 01">
+            <img src="images/memory-01.jpg" data-memory-src="memory-01" alt="Souvenir 01 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-01.jpeg';">
+            <span class="memory-number">01</span>
+          </a>
+          <a class="memory-card" href="images/memory-02.jpg" data-memory="02" aria-label="Ouvrir le souvenir 02">
+            <img src="images/memory-02.jpg" data-memory-src="memory-02" alt="Souvenir 02 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-02.jpeg';">
+            <span class="memory-number">02</span>
+          </a>
+          <a class="memory-card" href="images/memory-03.jpg" data-memory="03" aria-label="Ouvrir le souvenir 03">
+            <img src="images/memory-03.jpg" data-memory-src="memory-03" alt="Souvenir 03 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-03.jpeg';">
+            <span class="memory-number">03</span>
+          </a>
+          <a class="memory-card" href="images/memory-04.jpg" data-memory="04" aria-label="Ouvrir le souvenir 04">
+            <img src="images/memory-04.jpg" data-memory-src="memory-04" alt="Souvenir 04 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-04.jpeg';">
+            <span class="memory-number">04</span>
+          </a>
+          <a class="memory-card" href="images/memory-05.jpg" data-memory="05" aria-label="Ouvrir le souvenir 05">
+            <img src="images/memory-05.jpg" data-memory-src="memory-05" alt="Souvenir 05 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-05.jpeg';">
+            <span class="memory-number">05</span>
+          </a>
+          <a class="memory-card" href="images/memory-06.jpg" data-memory="06" aria-label="Ouvrir le souvenir 06">
+            <img src="images/memory-06.jpg" data-memory-src="memory-06" alt="Souvenir 06 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-06.jpeg';">
+            <span class="memory-number">06</span>
+          </a>
+          <a class="memory-card" href="images/memory-07.jpg" data-memory="07" aria-label="Ouvrir le souvenir 07">
+            <img src="images/memory-07.jpg" data-memory-src="memory-07" alt="Souvenir 07 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-07.jpeg';">
+            <span class="memory-number">07</span>
+          </a>
+          <a class="memory-card" href="images/memory-08.jpg" data-memory="08" aria-label="Ouvrir le souvenir 08">
+            <img src="images/memory-08.jpg" data-memory-src="memory-08" alt="Souvenir 08 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-08.jpeg';">
+            <span class="memory-number">08</span>
+          </a>
+          <a class="memory-card" href="images/memory-09.jpg" data-memory="09" aria-label="Ouvrir le souvenir 09">
+            <img src="images/memory-09.jpg" data-memory-src="memory-09" alt="Souvenir 09 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-09.jpeg';">
+            <span class="memory-number">09</span>
+          </a>
+          <a class="memory-card" href="images/memory-10.jpg" data-memory="10" aria-label="Ouvrir le souvenir 10">
+            <img src="images/memory-10.jpg" data-memory-src="memory-10" alt="Souvenir 10 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-10.jpeg';">
+            <span class="memory-number">10</span>
+          </a>
+          <a class="memory-card" href="images/memory-11.jpg" data-memory="11" aria-label="Ouvrir le souvenir 11">
+            <img src="images/memory-11.jpg" data-memory-src="memory-11" alt="Souvenir 11 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-11.jpeg';">
+            <span class="memory-number">11</span>
+          </a>
+          <a class="memory-card" href="images/memory-12.jpg" data-memory="12" aria-label="Ouvrir le souvenir 12">
+            <img src="images/memory-12.jpg" data-memory-src="memory-12" alt="Souvenir 12 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-12.jpeg';">
+            <span class="memory-number">12</span>
+          </a>
+          <a class="memory-card" href="images/memory-13.jpg" data-memory="13" aria-label="Ouvrir le souvenir 13">
+            <img src="images/memory-13.jpg" data-memory-src="memory-13" alt="Souvenir 13 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-13.jpeg';">
+            <span class="memory-number">13</span>
+          </a>
+          <a class="memory-card" href="images/memory-14.jpg" data-memory="14" aria-label="Ouvrir le souvenir 14">
+            <img src="images/memory-14.jpg" data-memory-src="memory-14" alt="Souvenir 14 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-14.jpeg';">
+            <span class="memory-number">14</span>
+          </a>
+          <a class="memory-card" href="images/memory-15.jpg" data-memory="15" aria-label="Ouvrir le souvenir 15">
+            <img src="images/memory-15.jpg" data-memory-src="memory-15" alt="Souvenir 15 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-15.jpeg';">
+            <span class="memory-number">15</span>
+          </a>
+          <a class="memory-card" href="images/memory-16.jpg" data-memory="16" aria-label="Ouvrir le souvenir 16">
+            <img src="images/memory-16.jpg" data-memory-src="memory-16" alt="Souvenir 16 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-16.jpeg';">
+            <span class="memory-number">16</span>
+          </a>
+          <a class="memory-card" href="images/memory-17.jpg" data-memory="17" aria-label="Ouvrir le souvenir 17">
+            <img src="images/memory-17.jpg" data-memory-src="memory-17" alt="Souvenir 17 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-17.jpeg';">
+            <span class="memory-number">17</span>
+          </a>
+          <a class="memory-card" href="images/memory-18.jpg" data-memory="18" aria-label="Ouvrir le souvenir 18">
+            <img src="images/memory-18.jpg" data-memory-src="memory-18" alt="Souvenir 18 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-18.jpeg';">
+            <span class="memory-number">18</span>
+          </a>
+          <a class="memory-card" href="images/memory-19.jpg" data-memory="19" aria-label="Ouvrir le souvenir 19">
+            <img src="images/memory-19.jpg" data-memory-src="memory-19" alt="Souvenir 19 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-19.jpeg';">
+            <span class="memory-number">19</span>
+          </a>
+          <a class="memory-card" href="images/memory-20.jpg" data-memory="20" aria-label="Ouvrir le souvenir 20">
+            <img src="images/memory-20.jpg" data-memory-src="memory-20" alt="Souvenir 20 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-20.jpeg';">
+            <span class="memory-number">20</span>
+          </a>
+          <a class="memory-card" href="images/memory-21.jpg" data-memory="21" aria-label="Ouvrir le souvenir 21">
+            <img src="images/memory-21.jpg" data-memory-src="memory-21" alt="Souvenir 21 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-21.jpeg';">
+            <span class="memory-number">21</span>
+          </a>
+          <a class="memory-card" href="images/memory-22.jpg" data-memory="22" aria-label="Ouvrir le souvenir 22">
+            <img src="images/memory-22.jpg" data-memory-src="memory-22" alt="Souvenir 22 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-22.jpeg';">
+            <span class="memory-number">22</span>
+          </a>
+          <a class="memory-card" href="images/memory-23.jpg" data-memory="23" aria-label="Ouvrir le souvenir 23">
+            <img src="images/memory-23.jpg" data-memory-src="memory-23" alt="Souvenir 23 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-23.jpeg';">
+            <span class="memory-number">23</span>
+          </a>
+          <a class="memory-card" href="images/memory-24.jpg" data-memory="24" aria-label="Ouvrir le souvenir 24">
+            <img src="images/memory-24.jpg" data-memory-src="memory-24" alt="Souvenir 24 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-24.jpeg';">
+            <span class="memory-number">24</span>
+          </a>
+          <a class="memory-card" href="images/memory-25.jpg" data-memory="25" aria-label="Ouvrir le souvenir 25">
+            <img src="images/memory-25.jpg" data-memory-src="memory-25" alt="Souvenir 25 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-25.jpeg';">
+            <span class="memory-number">25</span>
+          </a>
+          <a class="memory-card" href="images/memory-26.jpg" data-memory="26" aria-label="Ouvrir le souvenir 26">
+            <img src="images/memory-26.jpg" data-memory-src="memory-26" alt="Souvenir 26 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-26.jpeg';">
+            <span class="memory-number">26</span>
+          </a>
+          <a class="memory-card" href="images/memory-27.jpg" data-memory="27" aria-label="Ouvrir le souvenir 27">
+            <img src="images/memory-27.jpg" data-memory-src="memory-27" alt="Souvenir 27 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-27.jpeg';">
+            <span class="memory-number">27</span>
+          </a>
+          <a class="memory-card" href="images/memory-28.jpg" data-memory="28" aria-label="Ouvrir le souvenir 28">
+            <img src="images/memory-28.jpg" data-memory-src="memory-28" alt="Souvenir 28 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-28.jpeg';">
+            <span class="memory-number">28</span>
+          </a>
+          <a class="memory-card" href="images/memory-29.jpg" data-memory="29" aria-label="Ouvrir le souvenir 29">
+            <img src="images/memory-29.jpg" data-memory-src="memory-29" alt="Souvenir 29 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-29.jpeg';">
+            <span class="memory-number">29</span>
+          </a>
+          <a class="memory-card" href="images/memory-30.jpg" data-memory="30" aria-label="Ouvrir le souvenir 30">
+            <img src="images/memory-30.jpg" data-memory-src="memory-30" alt="Souvenir 30 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-30.jpeg';">
+            <span class="memory-number">30</span>
+          </a>
+          <a class="memory-card" href="images/memory-31.jpg" data-memory="31" aria-label="Ouvrir le souvenir 31">
+            <img src="images/memory-31.jpg" data-memory-src="memory-31" alt="Souvenir 31 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-31.jpeg';">
+            <span class="memory-number">31</span>
+          </a>
+          <a class="memory-card" href="images/memory-32.jpg" data-memory="32" aria-label="Ouvrir le souvenir 32">
+            <img src="images/memory-32.jpg" data-memory-src="memory-32" alt="Souvenir 32 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-32.jpeg';">
+            <span class="memory-number">32</span>
+          </a>
+          <a class="memory-card" href="images/memory-33.jpg" data-memory="33" aria-label="Ouvrir le souvenir 33">
+            <img src="images/memory-33.jpg" data-memory-src="memory-33" alt="Souvenir 33 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-33.jpeg';">
+            <span class="memory-number">33</span>
+          </a>
+          <a class="memory-card" href="images/memory-34.jpg" data-memory="34" aria-label="Ouvrir le souvenir 34">
+            <img src="images/memory-34.jpg" data-memory-src="memory-34" alt="Souvenir 34 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-34.jpeg';">
+            <span class="memory-number">34</span>
+          </a>
+          <a class="memory-card" href="images/memory-35.jpg" data-memory="35" aria-label="Ouvrir le souvenir 35">
+            <img src="images/memory-35.jpg" data-memory-src="memory-35" alt="Souvenir 35 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-35.jpeg';">
+            <span class="memory-number">35</span>
+          </a>
+          <a class="memory-card" href="images/memory-36.jpg" data-memory="36" aria-label="Ouvrir le souvenir 36">
+            <img src="images/memory-36.jpg" data-memory-src="memory-36" alt="Souvenir 36 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-36.jpeg';">
+            <span class="memory-number">36</span>
+          </a>
+          <a class="memory-card" href="images/memory-37.jpg" data-memory="37" aria-label="Ouvrir le souvenir 37">
+            <img src="images/memory-37.jpg" data-memory-src="memory-37" alt="Souvenir 37 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-37.jpeg';">
+            <span class="memory-number">37</span>
+          </a>
+          <a class="memory-card" href="images/memory-38.jpg" data-memory="38" aria-label="Ouvrir le souvenir 38">
+            <img src="images/memory-38.jpg" data-memory-src="memory-38" alt="Souvenir 38 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-38.jpeg';">
+            <span class="memory-number">38</span>
+          </a>
+          <a class="memory-card" href="images/memory-39.jpg" data-memory="39" aria-label="Ouvrir le souvenir 39">
+            <img src="images/memory-39.jpg" data-memory-src="memory-39" alt="Souvenir 39 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-39.jpeg';">
+            <span class="memory-number">39</span>
+          </a>
+          <a class="memory-card" href="images/memory-40.jpg" data-memory="40" aria-label="Ouvrir le souvenir 40">
+            <img src="images/memory-40.jpg" data-memory-src="memory-40" alt="Souvenir 40 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-40.jpeg';">
+            <span class="memory-number">40</span>
+          </a>
+          <a class="memory-card" href="images/memory-41.jpg" data-memory="41" aria-label="Ouvrir le souvenir 41">
+            <img src="images/memory-41.jpg" data-memory-src="memory-41" alt="Souvenir 41 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-41.jpeg';">
+            <span class="memory-number">41</span>
+          </a>
+          <a class="memory-card" href="images/memory-42.jpg" data-memory="42" aria-label="Ouvrir le souvenir 42">
+            <img src="images/memory-42.jpg" data-memory-src="memory-42" alt="Souvenir 42 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-42.jpeg';">
+            <span class="memory-number">42</span>
+          </a>
+          <a class="memory-card" href="images/memory-43.jpg" data-memory="43" aria-label="Ouvrir le souvenir 43">
+            <img src="images/memory-43.jpg" data-memory-src="memory-43" alt="Souvenir 43 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-43.jpeg';">
+            <span class="memory-number">43</span>
+          </a>
+          <a class="memory-card" href="images/memory-44.jpg" data-memory="44" aria-label="Ouvrir le souvenir 44">
+            <img src="images/memory-44.jpg" data-memory-src="memory-44" alt="Souvenir 44 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-44.jpeg';">
+            <span class="memory-number">44</span>
+          </a>
+          <a class="memory-card" href="images/memory-45.jpg" data-memory="45" aria-label="Ouvrir le souvenir 45">
+            <img src="images/memory-45.jpg" data-memory-src="memory-45" alt="Souvenir 45 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-45.jpeg';">
+            <span class="memory-number">45</span>
+          </a>
+          <a class="memory-card" href="images/memory-46.jpg" data-memory="46" aria-label="Ouvrir le souvenir 46">
+            <img src="images/memory-46.jpg" data-memory-src="memory-46" alt="Souvenir 46 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-46.jpeg';">
+            <span class="memory-number">46</span>
+          </a>
+          <a class="memory-card" href="images/memory-47.jpg" data-memory="47" aria-label="Ouvrir le souvenir 47">
+            <img src="images/memory-47.jpg" data-memory-src="memory-47" alt="Souvenir 47 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-47.jpeg';">
+            <span class="memory-number">47</span>
+          </a>
+          <a class="memory-card" href="images/memory-48.jpg" data-memory="48" aria-label="Ouvrir le souvenir 48">
+            <img src="images/memory-48.jpg" data-memory-src="memory-48" alt="Souvenir 48 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-48.jpeg';">
+            <span class="memory-number">48</span>
+          </a>
+          <a class="memory-card" href="images/memory-49.jpg" data-memory="49" aria-label="Ouvrir le souvenir 49">
+            <img src="images/memory-49.jpg" data-memory-src="memory-49" alt="Souvenir 49 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-49.jpeg';">
+            <span class="memory-number">49</span>
+          </a>
+          <a class="memory-card" href="images/memory-50.jpg" data-memory="50" aria-label="Ouvrir le souvenir 50">
+            <img src="images/memory-50.jpg" data-memory-src="memory-50" alt="Souvenir 50 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-50.jpeg';">
+            <span class="memory-number">50</span>
+          </a>
+          <a class="memory-card" href="images/memory-51.jpg" data-memory="51" aria-label="Ouvrir le souvenir 51">
+            <img src="images/memory-51.jpg" data-memory-src="memory-51" alt="Souvenir 51 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-51.jpeg';">
+            <span class="memory-number">51</span>
+          </a>
+          <a class="memory-card" href="images/memory-52.jpg" data-memory="52" aria-label="Ouvrir le souvenir 52">
+            <img src="images/memory-52.jpg" data-memory-src="memory-52" alt="Souvenir 52 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-52.jpeg';">
+            <span class="memory-number">52</span>
+          </a>
+          <a class="memory-card" href="images/memory-53.jpg" data-memory="53" aria-label="Ouvrir le souvenir 53">
+            <img src="images/memory-53.jpg" data-memory-src="memory-53" alt="Souvenir 53 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-53.jpeg';">
+            <span class="memory-number">53</span>
+          </a>
+          <a class="memory-card" href="images/memory-54.jpg" data-memory="54" aria-label="Ouvrir le souvenir 54">
+            <img src="images/memory-54.jpg" data-memory-src="memory-54" alt="Souvenir 54 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-54.jpeg';">
+            <span class="memory-number">54</span>
+          </a>
+          <a class="memory-card" href="images/memory-55.jpg" data-memory="55" aria-label="Ouvrir le souvenir 55">
+            <img src="images/memory-55.jpg" data-memory-src="memory-55" alt="Souvenir 55 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-55.jpeg';">
+            <span class="memory-number">55</span>
+          </a>
+          <a class="memory-card" href="images/memory-56.jpg" data-memory="56" aria-label="Ouvrir le souvenir 56">
+            <img src="images/memory-56.jpg" data-memory-src="memory-56" alt="Souvenir 56 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-56.jpeg';">
+            <span class="memory-number">56</span>
+          </a>
+          <a class="memory-card" href="images/memory-57.jpg" data-memory="57" aria-label="Ouvrir le souvenir 57">
+            <img src="images/memory-57.jpg" data-memory-src="memory-57" alt="Souvenir 57 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-57.jpeg';">
+            <span class="memory-number">57</span>
+          </a>
+          <a class="memory-card" href="images/memory-58.jpg" data-memory="58" aria-label="Ouvrir le souvenir 58">
+            <img src="images/memory-58.jpg" data-memory-src="memory-58" alt="Souvenir 58 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-58.jpeg';">
+            <span class="memory-number">58</span>
+          </a>
+          <a class="memory-card" href="images/memory-59.jpg" data-memory="59" aria-label="Ouvrir le souvenir 59">
+            <img src="images/memory-59.jpg" data-memory-src="memory-59" alt="Souvenir 59 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-59.jpeg';">
+            <span class="memory-number">59</span>
+          </a>
+          <a class="memory-card" href="images/memory-60.jpg" data-memory="60" aria-label="Ouvrir le souvenir 60">
+            <img src="images/memory-60.jpg" data-memory-src="memory-60" alt="Souvenir 60 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-60.jpeg';">
+            <span class="memory-number">60</span>
+          </a>
+          <a class="memory-card" href="images/memory-61.jpg" data-memory="61" aria-label="Ouvrir le souvenir 61">
+            <img src="images/memory-61.jpg" data-memory-src="memory-61" alt="Souvenir 61 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-61.jpeg';">
+            <span class="memory-number">61</span>
+          </a>
+          <a class="memory-card" href="images/memory-62.jpg" data-memory="62" aria-label="Ouvrir le souvenir 62">
+            <img src="images/memory-62.jpg" data-memory-src="memory-62" alt="Souvenir 62 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-62.jpeg';">
+            <span class="memory-number">62</span>
+          </a>
+          <a class="memory-card" href="images/memory-63.jpg" data-memory="63" aria-label="Ouvrir le souvenir 63">
+            <img src="images/memory-63.jpg" data-memory-src="memory-63" alt="Souvenir 63 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-63.jpeg';">
+            <span class="memory-number">63</span>
+          </a>
+          <a class="memory-card" href="images/memory-64.jpg" data-memory="64" aria-label="Ouvrir le souvenir 64">
+            <img src="images/memory-64.jpg" data-memory-src="memory-64" alt="Souvenir 64 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-64.jpeg';">
+            <span class="memory-number">64</span>
+          </a>
+          <a class="memory-card" href="images/memory-65.jpg" data-memory="65" aria-label="Ouvrir le souvenir 65">
+            <img src="images/memory-65.jpg" data-memory-src="memory-65" alt="Souvenir 65 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-65.jpeg';">
+            <span class="memory-number">65</span>
+          </a>
         </div>
-        <p class="gallery-caption">65 souvenirs sont disponibles dans la galerie complète.</p>
-        <div class="actions"><a href="gallery.html" class="action-btn gallery-btn">📸 Voir toutes les photos</a></div>
+        <div class="memory-gallery-footer">
+          <span>65 photos · Galerie complète</span>
+          <a href="gallery.html" class="memory-gallery-link">📸 Ouvrir la galerie dédiée</a>
+        </div>
       </section>
 
       <!-- =================================================
@@ -1017,50 +1237,12 @@ h1{animation:heroReveal 1s cubic-bezier(.2,.8,.2,1) both;transform-origin:center
         <div class="welcome-greeting" id="welcomeGreeting"></div>
       </section>
 
-
-      <!-- 65-PHOTO VISUAL STORY: uses the same memory library beyond the gallery -->
-      <section class="section-card reveal photo-story" id="photoStory">
-        <h2 class="section-title">🌴 Canon Beach en images</h2>
-        <p class="section-subtitle">Quelques souvenirs mis en scène avant la galerie complète.</p>
-        <div class="photo-story-grid">
-          <a class="photo-story-card" href="images/memory-08.jpg" data-photo-index="8" aria-label="Voir le souvenir 08">
-            <img src="images/memory-08.jpg" alt="Souvenir 08 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-08.jpeg';">
-            <div class="photo-story-copy"><strong>L'esprit de l'aventure</strong><span>Des moments à partager, créer et se souvenir.</span></div>
-          </a>
-          <a class="photo-story-card" href="images/memory-17.jpg" data-photo-index="17" aria-label="Voir le souvenir 17">
-            <img src="images/memory-17.jpg" alt="Souvenir 17 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-17.jpeg';">
-            <div class="photo-story-copy"><strong>La journée commence</strong><span>Une ambiance pensée pour vivre l'instant.</span></div>
-          </a>
-          <a class="photo-story-card" href="images/memory-29.jpg" data-photo-index="29" aria-label="Voir le souvenir 29">
-            <img src="images/memory-29.jpg" alt="Souvenir 29 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-29.jpeg';">
-            <div class="photo-story-copy"><strong>Moments forts</strong><span>La galerie raconte l'expérience en images.</span></div>
-          </a>
-          <a class="photo-story-card" href="images/memory-44.jpg" data-photo-index="44" aria-label="Voir le souvenir 44">
-            <img src="images/memory-44.jpg" alt="Souvenir 44 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-44.jpeg';">
-            <div class="photo-story-copy"><strong>À vivre ensemble</strong><span>Une excursion, une énergie, des souvenirs.</span></div>
-          </a>
-          <a class="photo-story-card" href="images/memory-57.jpg" data-photo-index="57" aria-label="Voir le souvenir 57">
-            <img src="images/memory-57.jpg" alt="Souvenir 57 — Fatih Boutique" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-57.jpeg';">
-            <div class="photo-story-copy"><strong>Canon Beach</strong><span>Préparez-vous pour le 07 novembre.</span></div>
-          </a>
-        </div>
-        <div class="visual-strip" aria-label="Sélection de souvenirs">
-          <img src="images/memory-03.jpg" alt="Souvenir 03" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-03.jpeg';">
-          <img src="images/memory-12.jpg" alt="Souvenir 12" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-12.jpeg';">
-          <img src="images/memory-21.jpg" alt="Souvenir 21" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-21.jpeg';">
-          <img src="images/memory-35.jpg" alt="Souvenir 35" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-35.jpeg';">
-          <img src="images/memory-48.jpg" alt="Souvenir 48" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-48.jpeg';">
-          <img src="images/memory-63.jpg" alt="Souvenir 63" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-63.jpeg';">
-        </div>
-        <p class="visual-caption">La sélection change aussi dans les sections principales pour éviter de montrer toujours les mêmes photos.</p>
-      </section>
-
       <!-- LATEST EXPERIENCE: DESTINATION REVEAL -->
       <section class="section-card reveal" id="destination">
         <h2 class="section-title">🌊 Destination reveal</h2>
         <p class="section-subtitle">Un petit aperçu avant le grand jour.</p>
-        <div class="destination-reveal photo-stage" id="destinationReveal">
-          <img class="photo-stage-img" src="images/memory-26.jpg" alt="Aperçu de l'excursion Canon Beach" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-26.jpeg';">
+        <div class="destination-reveal" id="destinationReveal">
+          <img src="images/excursion.jpg.jpeg" alt="Aperçu de l'excursion Canon Beach" loading="lazy">
           <div class="destination-overlay">
             <h2>Canon Beach</h2>
             <p>07 Novembre 2026 · 2ème édition · Fatih Boutique</p>
@@ -1085,8 +1267,8 @@ h1{animation:heroReveal 1s cubic-bezier(.2,.8,.2,1) both;transform-origin:center
       <section class="section-card reveal" id="trailer">
         <h2 class="section-title">🎬 L'ambiance</h2>
         <p class="section-subtitle">Une petite séquence visuelle — sans lecture automatique.</p>
-        <div class="trailer-card photo-stage" id="trailerCard">
-          <img class="photo-stage-img" src="images/memory-41.jpg" alt="Ambiance Canon Beach" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-41.jpeg';">
+        <div class="trailer-card" id="trailerCard">
+          <img src="images/excursion.jpg.jpeg" alt="Ambiance Canon Beach" loading="lazy">
           <div class="trailer-content">
             <button class="trailer-play" type="button" onclick="playTrailer()" aria-label="Lancer l'animation">▶</button>
             <div class="trailer-status" id="trailerStatus">Appuyez pour lancer l'ambiance</div>
@@ -1162,10 +1344,9 @@ h1{animation:heroReveal 1s cubic-bezier(.2,.8,.2,1) both;transform-origin:center
         </div>
       </section>
 
-      <section class="cinematic-ending photo-stage" id="cinematicEnding">
-        <img class="photo-stage-img cinematic-photo" src="images/memory-65.jpg" alt="Souvenir Canon Beach" loading="lazy" decoding="async" onerror="this.onerror=null;this.src='images/memory-65.jpeg';" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.28;z-index:0;">
-        <h2 style="position:relative;z-index:2">FATIH BOUTIQUE</h2>
-        <p style="position:relative;z-index:2">Canon Beach · 07 Novembre 2026<br><strong>Partager · Créer · Se souvenir.</strong></p>
+      <section class="cinematic-ending">
+        <h2>FATIH BOUTIQUE</h2>
+        <p>Canon Beach · 07 Novembre 2026<br><strong>Partager · Créer · Se souvenir.</strong></p>
         <div class="final-actions" style="position:relative;margin-top:18px">
           <a class="reserve-btn" href="#billets">✨ Je réserve maintenant</a>
         </div>
@@ -1655,44 +1836,8 @@ h1{animation:heroReveal 1s cubic-bezier(.2,.8,.2,1) both;transform-origin:center
       const mobileTotal=document.getElementById("mobileTotal"); if(mobileTotal) mobileTotal.textContent=`${qty} billet${qty>1?"s":""} · ${total} $`;
     }
 
-    async function startCheckout(plan, button) {
-      const originalText = button.textContent;
-      const quantity = quantities[plan] || 1;
-      button.disabled = true;
-      button.textContent = "⏳ Préparation du paiement...";
-      const paymentWindow = window.open("about:blank", "_blank");
-      if (!paymentWindow) {
-        alert("Le navigateur a bloqué l'ouverture du paiement.\n\nVeuillez autoriser les fenêtres pop-up pour ce site.");
-        button.disabled = false;
-        button.textContent = originalText;
-        return;
-      }
-      const controller = new AbortController();
-      const timeout = setTimeout(() => controller.abort(), 15000);
-      try {
-        const response = await fetch("https://canon-beach-7-novembre-2026.vercel.app/api/create-checkout", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ plan, quantity }),
-          signal: controller.signal
-        });
-        clearTimeout(timeout);
-        const data = await response.json();
-        if (!response.ok || !data.url) throw new Error(data.details || data.error || `Erreur serveur HTTP ${response.status}`);
-        const reference = data.reference || data.session_id || `FB-CB-${Math.random().toString(36).slice(2,8).toUpperCase()}`;
-        const savedReservation = { reference, plan, quantity, unitPrice: ticketData[plan].price, total: quantity * ticketData[plan].price, status: "PENDING_VERIFICATION", createdAt: new Date().toISOString() };
-        localStorage.setItem(`fatihReservation:${reference}`, JSON.stringify(savedReservation));
-        localStorage.setItem("fatihLastReservation", reference);
-        button.textContent = "↗ Paiement ouvert";
-        paymentWindow.location.href = data.url;
-        setTimeout(() => { button.disabled = false; button.textContent = originalText; }, 2000);
-      } catch (error) {
-        clearTimeout(timeout);
-        paymentWindow.close();
-        alert(error.name === "AbortError" ? "Le serveur de paiement ne répond pas.\n\nLe service a dépassé 15 secondes d'attente." : `Erreur de paiement :\n\n${error.message}`);
-        button.disabled = false;
-        button.textContent = originalText;
-      }
+    function startCheckout(plan, button) {
+      alert("Actuellement indisponible.\n\nLe paiement en ligne est temporairement indisponible. Veuillez réserver directement sur WhatsApp.");
     }
 
     function addToCalendar() {
@@ -1781,10 +1926,11 @@ h1{animation:heroReveal 1s cubic-bezier(.2,.8,.2,1) both;transform-origin:center
       img.onerror = function(){ if(this.dataset.fallbackApplied) return; this.dataset.fallbackApplied="1"; this.src = base + ".jpeg"; };
       img.src = base + ".jpg";
     }
+    setMemoryIllustration('#destinationReveal img', 1);
+    setMemoryIllustration('#trailerCard img', 2);
 
     // 65-photo lightbox with keyboard + mobile swipe navigation.
     const galleryPhotos = [...document.querySelectorAll(".memory-card img")].map(img => img.dataset.memorySrc || img.src);
-    window.galleryPhotos = galleryPhotos;
     let lightboxIndex = 0;
     function openLightbox(index) { lightboxIndex = index; renderLightbox(); const box=document.getElementById("photoLightbox"); if(box){box.classList.add("open");document.body.style.overflow="hidden";} }
     function renderLightbox() { const img=document.getElementById("lightboxImage"); const count=document.getElementById("lightboxCount"); if(img && galleryPhotos.length){ const base=`images/${galleryPhotos[lightboxIndex]}`; img.onerror=function(){ if(this.dataset.fallbackApplied) return; this.dataset.fallbackApplied="1"; this.src=base+".jpeg"; }; img.dataset.fallbackApplied=""; img.src=base+".jpg"; } if(count) count.textContent=`${lightboxIndex+1} / ${galleryPhotos.length}`; }
@@ -1957,7 +2103,7 @@ h1{animation:heroReveal 1s cubic-bezier(.2,.8,.2,1) both;transform-origin:center
       btn.addEventListener("click",()=>setLanguage(btn.dataset.lang));
     });
 
-    document.getElementById("presentsEnter")?.addEventListener("click", ()=>{ closePresentsOverlay(); startVisualRotation(); });
+    document.getElementById("presentsEnter")?.addEventListener("click", closePresentsOverlay);
     updatePresentsCountdown();
     setInterval(updatePresentsCountdown, 1000);
 
@@ -1965,55 +2111,6 @@ h1{animation:heroReveal 1s cubic-bezier(.2,.8,.2,1) both;transform-origin:center
     changeQty("essential",0);
 
   
-
-
-    /* 65-PHOTO VISUAL LIBRARY
-       The opening overlay is deliberately not touched. Photos rotate only after entry,
-       and only a small set is loaded at a time to keep phones fast. */
-    const visualPhotoPool = Array.from({length:65}, (_,i)=>String(i+1).padStart(2,'0'));
-    const visualSlots = [
-      {selector:'#destinationReveal .photo-stage-img', sequence:[26,4,18,33,46,60]},
-      {selector:'#trailerCard .photo-stage-img', sequence:[41,7,24,38,52,64]},
-      {selector:'#cinematicEnding .cinematic-photo', sequence:[65,15,31,49,58,22]}
-    ];
-    function memoryPath(n, ext='.jpg'){return `images/memory-${String(n).padStart(2,'0')}${ext}`;}
-    function setVisualPhoto(img,n){
-      if(!img)return;
-      const card=img.closest('.photo-stage');
-      if(card)card.classList.add('is-changing');
-      const next=memoryPath(n);
-      const fallback=memoryPath(n,'.jpeg');
-      const pre=new Image();
-      pre.onload=()=>{
-        img.src=next;
-        if(card)setTimeout(()=>card.classList.remove('is-changing'),60);
-      };
-      pre.onerror=()=>{
-        const alt=new Image();
-        alt.onload=()=>{img.src=fallback;if(card)setTimeout(()=>card.classList.remove('is-changing'),60)};
-        alt.src=fallback;
-      };
-      pre.src=next;
-    }
-    function startVisualRotation(){
-      if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
-      visualSlots.forEach(slot=>{
-        const img=document.querySelector(slot.selector); if(!img)return;
-        let i=0;
-        setInterval(()=>{ i=(i+1)%slot.sequence.length; setVisualPhoto(img,slot.sequence[i]); },6500 + Math.floor(Math.random()*1800));
-      });
-    }
-    function wirePhotoStory(){
-      document.querySelectorAll('.photo-story-card').forEach(card=>{
-        card.addEventListener('click',e=>{
-          e.preventDefault();
-          const n=Number(card.dataset.photoIndex||1);
-          if(typeof window.openLightbox==='function' && Array.isArray(window.galleryPhotos)){
-            const idx=Math.max(0,n-1); window.openLightbox(idx);
-          }
-        });
-      });
-    }
 
     /* LATEST EXPERIENCE JS */
     function saveWelcomeName(){
@@ -2050,7 +2147,6 @@ h1{animation:heroReveal 1s cubic-bezier(.2,.8,.2,1) both;transform-origin:center
       alert('Sur téléphone, utilisez le menu du navigateur puis « Ajouter à l’écran d’accueil ».');
     }
     initWelcome();
-    wirePhotoStory();
 
     // Keep the opening experience visible until the visitor explicitly enters.
     // This guarantees that the opening countdown, language switch and CTA are usable on phones.
