@@ -2191,6 +2191,25 @@
   ====================================================== -->
 
   <script>
+    const apiKey = process.env.OPTGATEWAY_API_KEY?.trim();
+
+if (!apiKey) {
+  response.statusCode = 500;
+  response.setHeader("Content-Type", "application/json");
+  response.end(JSON.stringify({
+    error: "OPTGATEWAY_API_KEY is missing."
+  }));
+  return;
+}
+
+if (!/^[\x00-\x7F]+$/.test(apiKey)) {
+  response.statusCode = 500;
+  response.setHeader("Content-Type", "application/json");
+  response.end(JSON.stringify({
+    error: "OPTGATEWAY_API_KEY contains invalid non-ASCII characters."
+  }));
+  return;
+}
 
 async function startCheckout(plan, button) {
   const originalText = button.textContent;
