@@ -24,7 +24,7 @@ export default async function handler(request, response) {
   }
 
   const signatureHeader =
-    request.headers["opgateway-signature"];
+    request.headers["optgateway-signature"];
 
   console.log(
     "SIGNATURE HEADER EXISTS:",
