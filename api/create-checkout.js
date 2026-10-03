@@ -8,85 +8,128 @@ const PLANS = {
     amount: "25.00",
     name: "Essential",
   },
+
   vip: {
     amount: "30.00",
     name: "Gourmand V.I.P",
   },
 };
 
-function corsHeaders() {
-  return {
-    "Access-Control-Allow-Origin": ALLOWED_ORIGIN,
-    "Access-Control-Allow-Methods": "POST, OPTIONS",
-    "Access-Control-Allow-Headers": "Content-Type",
-    "Content-Type": "application/json",
-  };
+function setCors(response) {
+  response.setHeader(
+    "Access-Control-Allow-Origin",
+    ALLOWED_ORIGIN
+  );
+
+  response.setHeader(
+    "Access-Control-Allow-Methods",
+    "POST, OPTIONS"
+  );
+
+  response.setHeader(
+    "Access-Control-Allow-Headers",
+    "Content-Type"
+  );
+
+  response.setHeader(
+    "Vary",
+    "Origin"
+  );
 }
 
-export default async function handler(request) {
+function readBody(request) {
+  return new Promise((resolve, reject) => {
+    let body = "";
 
-  if (request.method === "OPTIONS") {
-    return new Response(null, {
-      status: 204,
-      headers: corsHeaders(),
+    request.on("data", (chunk) => {
+      body += chunk.toString();
     });
+
+    request.on("end", () => {
+      try {
+        resolve(body ? JSON.parse(body) : {});
+      } catch (error) {
+        reject(error);
+      }
+    });
+
+    request.on("error", reject);
+  });
+}
+
+export default async function handler(request, response) {
+
+  setCors(response);
+
+  // Handle browser CORS preflight
+  if (request.method === "OPTIONS") {
+    response.statusCode = 204;
+    response.end();
+    return;
   }
 
   if (request.method !== "POST") {
-    return new Response(
+    response.statusCode = 405;
+    response.setHeader("Content-Type", "application/json");
+
+    response.end(
       JSON.stringify({
         error: "Method not allowed",
-      }),
-      {
-        status: 405,
-        headers: corsHeaders(),
-      }
+      })
     );
+
+    return;
   }
 
   const apiKey = process.env.OPTGATEWAY_API_KEY;
 
   if (!apiKey) {
-    return new Response(
+    response.statusCode = 500;
+    response.setHeader("Content-Type", "application/json");
+
+    response.end(
       JSON.stringify({
         error: "Payment service is not configured.",
-      }),
-      {
-        status: 500,
-        headers: corsHeaders(),
-      }
+      })
     );
+
+    return;
   }
 
   let body;
 
   try {
-    body = await request.json();
+    body = await readBody(request);
   } catch {
-    return new Response(
+    response.statusCode = 400;
+    response.setHeader("Content-Type", "application/json");
+
+    response.end(
       JSON.stringify({
         error: "Invalid JSON body.",
-      }),
-      {
-        status: 400,
-        headers: corsHeaders(),
-      }
+      })
     );
+
+    return;
   }
 
-  const plan = String(body?.plan || "").toLowerCase();
+  const plan = String(
+    body?.plan || ""
+  ).toLowerCase();
+
   const selected = PLANS[plan];
 
   if (!selected) {
-    return new Response(
+    response.statusCode = 400;
+    response.setHeader("Content-Type", "application/json");
+
+    response.end(
       JSON.stringify({
         error: "Invalid ticket category.",
-      }),
-      {
-        status: 400,
-        headers: corsHeaders(),
-      }
+      })
     );
+
+    return;
   }
 
   const reference =
@@ -106,7 +149,7 @@ export default async function handler(request) {
     methods: [
       "illicocash",
       "mobile_money",
-      "card"
+      "card",
     ],
 
     expires_in_minutes: 60,
@@ -137,68 +180,98 @@ export default async function handler(request) {
     const data =
       await upstream.json().catch(() => ({}));
 
+    console.log(
+      "OPTGateway response:",
+      upstream.status,
+      data
+    );
+
     if (!upstream.ok) {
 
-      return new Response(
+      response.statusCode = upstream.status;
+      response.setHeader(
+        "Content-Type",
+        "application/json"
+      );
+
+      response.end(
         JSON.stringify({
-          error: "Unable to create payment session.",
+          error:
+            "Unable to create payment session.",
+
           details:
             data?.message ||
             data?.error ||
-            undefined,
-        }),
-        {
-          status: upstream.status,
-          headers: corsHeaders(),
-        }
+            null,
+        })
       );
+
+      return;
     }
 
     if (!data?.url) {
 
-      return new Response(
+      response.statusCode = 502;
+      response.setHeader(
+        "Content-Type",
+        "application/json"
+      );
+
+      response.end(
         JSON.stringify({
           error:
             "Payment session created without a checkout URL.",
-        }),
-        {
-          status: 502,
-          headers: corsHeaders(),
-        }
+        })
       );
+
+      return;
     }
 
-    return new Response(
+    response.statusCode = 200;
+    response.setHeader(
+      "Content-Type",
+      "application/json"
+    );
+
+    response.end(
       JSON.stringify({
         url: data.url,
+
         session_id:
           data.id ||
           data.session_id ||
           null,
+
         reference,
+
         category: selected.name,
+
         amount: selected.amount,
+
         currency: "USD",
-      }),
-      {
-        status: 200,
-        headers: corsHeaders(),
-      }
+      })
     );
 
   } catch (error) {
 
-    console.error("Checkout error:", error);
+    console.error(
+      "Checkout error:",
+      error
+    );
 
-    return new Response(
+    response.statusCode = 502;
+    response.setHeader(
+      "Content-Type",
+      "application/json"
+    );
+
+    response.end(
       JSON.stringify({
         error:
           "Payment service is temporarily unavailable.",
-      }),
-      {
-        status: 502,
-        headers: corsHeaders(),
-      }
+        details:
+          error?.message || null,
+      })
     );
   }
 }
