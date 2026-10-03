@@ -100,12 +100,311 @@ h1{animation:heroReveal 1s cubic-bezier(.2,.8,.2,1) both;transform-origin:center
 @media(max-width:800px){.page{background-attachment:scroll;animation:none}}
 @media(prefers-reduced-motion:reduce){.page,.container,.edition{animation:none!important}}
 
+
+
+    /* =====================================================
+       PHONE COMFORT LAYER — VISUAL/TOUCH ONLY
+       Keeps all existing event, ticket and payment parameters unchanged.
+    ===================================================== */
+    html {
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+      scroll-padding-top: 16px;
+    }
+
+    body {
+      -webkit-tap-highlight-color: transparent;
+      overscroll-behavior-x: none;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    button, a, input {
+      touch-action: manipulation;
+    }
+
+    @media (max-width: 800px) {
+      .page {
+        min-height: 100svh;
+        padding: 14px 10px calc(92px + env(safe-area-inset-bottom));
+        align-items: flex-start;
+        background-attachment: scroll;
+      }
+
+      .container {
+        width: 100%;
+        max-width: none;
+        padding: 22px 12px 28px;
+        border-radius: 20px;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+      }
+
+      .logo {
+        width: min(145px, 42vw);
+        margin-bottom: 9px;
+      }
+
+      .edition {
+        padding: 7px 13px;
+        margin-bottom: 9px;
+        font-size: .72rem;
+        letter-spacing: 1.4px;
+      }
+
+      h1 {
+        font-size: clamp(2.65rem, 15vw, 4.4rem);
+        line-height: .92;
+      }
+
+      .subtitle {
+        font-size: .94rem;
+        line-height: 1.45;
+        margin: 10px auto 7px;
+        max-width: 31rem;
+      }
+
+      .location {
+        font-size: .86rem;
+        line-height: 1.4;
+      }
+
+      .countdown {
+        gap: 8px;
+        margin: 20px 0 15px;
+      }
+
+      .time-box {
+        min-width: 0;
+        padding: 14px 6px 12px;
+        border-radius: 14px;
+      }
+
+      .number {
+        font-size: clamp(2rem, 10vw, 3rem);
+        line-height: 1;
+      }
+
+      .label {
+        margin-top: 5px;
+        font-size: .62rem;
+        letter-spacing: .8px;
+      }
+
+      .progress-section {
+        margin: 14px 0 16px;
+      }
+
+      .progress-header {
+        gap: 8px;
+        font-size: .72rem;
+      }
+
+      .event-date {
+        padding: 10px 12px;
+        font-size: .82rem;
+        line-height: 1.35;
+      }
+
+      .message {
+        font-size: .92rem;
+        line-height: 1.55;
+        margin: 15px auto 18px;
+      }
+
+      .actions {
+        gap: 9px;
+      }
+
+      .action-btn, .reserve-btn, .pay-btn, .utility-btn {
+        min-height: 50px;
+        width: 100%;
+        max-width: none;
+        padding: 13px 15px;
+        font-size: .9rem;
+        border-radius: 13px;
+      }
+
+      .section-card, .ticket-payment-section, .payment-section, .final-cta {
+        border-radius: 18px;
+      }
+
+      .section-title {
+        font-size: 1.35rem;
+        line-height: 1.2;
+      }
+
+      .section-subtitle {
+        font-size: .84rem;
+        line-height: 1.5;
+      }
+
+      .ticket-grid, .payment-grid {
+        gap: 12px;
+      }
+
+      .ticket-card {
+        padding: 17px 14px;
+        border-radius: 17px;
+      }
+
+      .ticket-card ul {
+        text-align: left;
+        padding-left: 18px;
+        line-height: 1.5;
+      }
+
+      .ticket-name {
+        font-size: 1.15rem;
+      }
+
+      .ticket-price {
+        font-size: 2rem;
+      }
+
+      .ticket-description {
+        font-size: .83rem;
+        line-height: 1.45;
+      }
+
+      .quantity-row {
+        gap: 12px;
+        margin: 14px 0 7px;
+      }
+
+      .qty-btn {
+        width: 44px;
+        height: 44px;
+        flex: 0 0 44px;
+      }
+
+      .qty-value {
+        min-width: 34px;
+        font-size: 1.08rem;
+      }
+
+      .payment-card {
+        min-width: 0;
+        padding: 13px 8px;
+        border-radius: 14px;
+      }
+
+      .payment-card img {
+        width: 52px;
+        height: 36px;
+        object-fit: contain;
+      }
+
+      .payment-name, .phone-number, .payment-card span {
+        font-size: .74rem;
+        line-height: 1.35;
+        overflow-wrap: anywhere;
+      }
+
+      .gallery-preview {
+        gap: 8px;
+      }
+
+      .gallery-preview img {
+        border-radius: 13px;
+      }
+
+      .faq-question {
+        min-height: 50px;
+        padding: 13px 14px;
+        text-align: left;
+      }
+
+      .faq-answer {
+        font-size: .84rem;
+        line-height: 1.55;
+      }
+
+      .lang-switch {
+        margin-bottom: 12px;
+      }
+
+      .lang-btn {
+        min-width: 48px;
+        min-height: 38px;
+      }
+
+      .mobile-booking-bar {
+        left: 8px;
+        right: 8px;
+        bottom: max(8px, env(safe-area-inset-bottom));
+        padding: 7px;
+        border-radius: 16px;
+        grid-template-columns: minmax(0, 1fr) auto;
+      }
+
+      .mobile-booking-bar .mobile-total {
+        min-width: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: .75rem;
+      }
+
+      .mobile-booking-bar a {
+        min-height: 46px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 13px;
+        border-radius: 11px;
+        white-space: nowrap;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .page { padding-left: 7px; padding-right: 7px; }
+      .container { padding-left: 9px; padding-right: 9px; }
+      .countdown { gap: 6px; }
+      .time-box { padding-left: 4px; padding-right: 4px; }
+      .payment-grid { gap: 7px; }
+      .payment-card { padding-left: 5px; padding-right: 5px; }
+      .mobile-booking-bar .mobile-total { font-size: .7rem; }
+      .mobile-booking-bar a { padding-left: 10px; padding-right: 10px; font-size: .78rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+
+/* LATEST EXPERIENCE UPGRADES */
+.presents-overlay{position:fixed;inset:0;z-index:3000;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 45%,rgba(0,168,107,.18),transparent 42%),#03110b;transition:opacity .7s ease,visibility .7s ease}.presents-overlay.hide{opacity:0;visibility:hidden;pointer-events:none}.presents-inner{text-align:center;padding:30px;animation:presentsIn 1s cubic-bezier(.2,.8,.2,1)}.presents-logo{width:min(180px,45vw);margin:0 auto 20px}.presents-kicker{color:#9dc5b3;font-size:.72rem;letter-spacing:4px;font-weight:900;text-transform:uppercase}.presents-title{margin:10px 0;color:#ffd21f;font-size:clamp(2rem,9vw,4.5rem);font-weight:950;letter-spacing:-2px}.presents-sub{color:#fff;opacity:.85}.presents-skip{margin-top:25px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.06);color:#fff;border-radius:999px;padding:11px 18px;font-weight:800;cursor:pointer}@keyframes presentsIn{from{opacity:0;transform:scale(.9) translateY(20px)}to{opacity:1;transform:none}}
+.destination-reveal{position:relative;overflow:hidden;text-align:center;min-height:250px;border-radius:22px;border:1px solid rgba(255,210,31,.2);background:#061a13;margin:24px auto}.destination-reveal img{width:100%;height:250px;object-fit:cover;filter:brightness(.55) saturate(.85);transition:transform 1s ease,filter .7s ease}.destination-reveal.revealed img{transform:scale(1.05);filter:brightness(.8) saturate(1.05)}.destination-overlay{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;background:linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.65))}.destination-overlay h2{font-size:clamp(2rem,8vw,3.5rem);color:#fff;margin-bottom:8px}.destination-overlay p{color:#f4f7f5;max-width:560px}.reveal-destination-btn{margin-top:16px;border:1px solid rgba(255,210,31,.5);background:rgba(255,210,31,.12);color:#ffe58a;border-radius:999px;padding:12px 20px;font-weight:950;cursor:pointer}.destination-reveal.revealed .reveal-destination-btn{display:none}.destination-detail{display:none;margin-top:10px;color:#ffd21f;font-weight:900;letter-spacing:1px}.destination-reveal.revealed .destination-detail{display:block}
+.experience-picker{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin:12px auto 20px}.experience-picker button{border:1px solid rgba(255,255,255,.16);background:rgba(0,0,0,.25);color:#fff;border-radius:999px;padding:10px 15px;font-weight:900;cursor:pointer}.experience-picker button.active{background:#ffd21f;color:#062016;border-color:#ffd21f}.group-booking{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;margin-top:18px;padding:17px;border-radius:18px;background:rgba(0,168,107,.1);border:1px solid rgba(0,168,107,.25)}.group-booking input{width:100%;min-width:0;padding:13px;border-radius:12px;border:1px solid rgba(255,255,255,.18);background:rgba(0,0,0,.25);color:#fff;font-size:1rem}.group-booking a{white-space:nowrap}.journey-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.journey-step{position:relative;padding:18px 12px;border-radius:16px;background:rgba(0,0,0,.22);border:1px solid rgba(255,255,255,.1);text-align:center}.journey-step .big{font-size:1.8rem}.journey-step strong{display:block;color:#fff;margin-top:8px}.journey-step span{display:block;color:#a9c5b8;font-size:.76rem;line-height:1.4;margin-top:5px}.trailer-card{position:relative;overflow:hidden;border-radius:22px;min-height:270px;background:#03110b;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;text-align:center}.trailer-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.35);transition:transform .7s ease}.trailer-card.playing img{transform:scale(1.08);filter:brightness(.25)}.trailer-content{position:relative;z-index:2;padding:25px}.trailer-play{width:72px;height:72px;border-radius:50%;border:1px solid rgba(255,255,255,.45);background:rgba(255,210,31,.9);color:#062016;font-size:1.8rem;cursor:pointer;box-shadow:0 12px 35px rgba(0,0,0,.35)}.trailer-status{margin-top:12px;color:#fff;font-weight:900}.welcome-box{display:grid;grid-template-columns:1fr auto;gap:10px;max-width:650px;margin:14px auto}.welcome-box input{min-width:0;padding:13px 15px;border-radius:12px;border:1px solid rgba(255,255,255,.18);background:rgba(0,0,0,.25);color:#fff;font-size:1rem}.welcome-box button,.install-btn{border:0;border-radius:12px;background:linear-gradient(135deg,#ffd21f,#ff8c00);color:#062016;font-weight:950;padding:12px 18px;cursor:pointer}.welcome-greeting{display:none;color:#ffe58a;font-weight:900;text-align:center;margin-top:12px}.welcome-greeting.show{display:block}.install-card{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:17px;border-radius:18px;background:rgba(255,210,31,.08);border:1px solid rgba(255,210,31,.18)}.install-card p{margin:0;color:#dce9e2;font-size:.84rem;line-height:1.45}.cinematic-ending{position:relative;overflow:hidden;margin-top:25px;padding:48px 22px;border-radius:24px;text-align:center;background:radial-gradient(circle at 50% 0,rgba(255,210,31,.15),transparent 45%),linear-gradient(145deg,#071d14,#020b07);border:1px solid rgba(255,210,31,.2)}.cinematic-ending:before{content:"";position:absolute;inset:auto -10% -55%;height:120px;background:rgba(0,168,107,.12);filter:blur(25px)}.cinematic-ending h2{position:relative;color:#ffd21f;font-size:clamp(2rem,8vw,3.7rem);margin-bottom:10px}.cinematic-ending p{position:relative;color:#fff;line-height:1.7}.atmosphere-btn{margin-top:12px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);color:#fff;border-radius:999px;padding:10px 15px;font-weight:800;cursor:pointer}
+@media(max-width:700px){.journey-grid{grid-template-columns:repeat(2,1fr)}.group-booking{grid-template-columns:1fr}.group-booking a{width:100%}.welcome-box{grid-template-columns:1fr}.destination-reveal,.destination-reveal img{min-height:235px;height:235px}.trailer-card{min-height:240px}.install-card{align-items:stretch;flex-direction:column}.install-btn{width:100%;min-height:48px}}
+@media(max-width:380px){.journey-grid{gap:7px}.journey-step{padding:14px 8px}.journey-step span{font-size:.7rem}}
+@media(prefers-reduced-motion:reduce){.presents-inner,.destination-reveal img,.trailer-card img{animation:none;transition:none}}
+
 </style>
 
 </head>
 
 
 <body>
+
+  <div class="presents-overlay" id="presentsOverlay" aria-label="Fatih Boutique présente">
+    <div class="presents-inner">
+      <img class="presents-logo" src="images/logo.png" alt="Fatih Boutique">
+      <div class="presents-kicker">Fatih Boutique présente</div>
+      <div class="presents-title">CANON BEACH</div>
+      <div class="presents-sub">07 Novembre 2026 · 2ème édition</div>
+      <button class="presents-skip" type="button" onclick="document.getElementById('presentsOverlay').classList.add('hide');sessionStorage.setItem('fatihPresentsSeen','1')">Entrer dans l’expérience</button>
+    </div>
+  </div>
+
 
 
   <main class="page">
@@ -620,6 +919,78 @@ h1{animation:heroReveal 1s cubic-bezier(.2,.8,.2,1) both;transform-origin:center
 
 
 
+
+
+      <!-- LATEST EXPERIENCE: PERSONAL WELCOME -->
+      <section class="section-card reveal" id="welcome">
+        <h2 class="section-title">✨ Bienvenue chez Fatih Boutique</h2>
+        <p class="section-subtitle">Personnalisez simplement votre accueil sur ce téléphone.</p>
+        <div class="welcome-box">
+          <input id="welcomeName" type="text" maxlength="30" placeholder="Votre prénom (facultatif)" autocomplete="given-name">
+          <button type="button" onclick="saveWelcomeName()">Continuer</button>
+        </div>
+        <div class="welcome-greeting" id="welcomeGreeting"></div>
+      </section>
+
+      <!-- LATEST EXPERIENCE: DESTINATION REVEAL -->
+      <section class="section-card reveal" id="destination">
+        <h2 class="section-title">🌊 Destination reveal</h2>
+        <p class="section-subtitle">Un petit aperçu avant le grand jour.</p>
+        <div class="destination-reveal" id="destinationReveal">
+          <img src="images/excursion.jpg.jpeg" alt="Aperçu de l'excursion Canon Beach" loading="lazy">
+          <div class="destination-overlay">
+            <h2>Canon Beach</h2>
+            <p>07 Novembre 2026 · 2ème édition · Fatih Boutique</p>
+            <button class="reveal-destination-btn" type="button" onclick="revealDestination()">✨ Révéler l'expérience</button>
+            <div class="destination-detail">🌴 Préparez-vous à vivre la journée avec nous.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- LATEST EXPERIENCE: JOURNEY -->
+      <section class="section-card reveal" id="parcours">
+        <h2 class="section-title">🗺️ Votre expérience</h2>
+        <div class="journey-grid">
+          <div class="journey-step"><div class="big">🎟️</div><strong>Choisissez</strong><span>Votre formule Essential ou Gourmand V.I.P.</span></div>
+          <div class="journey-step"><div class="big">📲</div><strong>Réservez</strong><span>Confirmez votre réservation facilement.</span></div>
+          <div class="journey-step"><div class="big">🌴</div><strong>Profitez</strong><span>Rendez-vous pour l'excursion du 7 novembre.</span></div>
+          <div class="journey-step"><div class="big">📸</div><strong>Souvenez-vous</strong><span>Partagez les moments et gardez vos souvenirs.</span></div>
+        </div>
+      </section>
+
+      <!-- LATEST EXPERIENCE: TRAILER / ATMOSPHERE -->
+      <section class="section-card reveal" id="trailer">
+        <h2 class="section-title">🎬 L'ambiance</h2>
+        <p class="section-subtitle">Une petite séquence visuelle — sans lecture automatique.</p>
+        <div class="trailer-card" id="trailerCard">
+          <img src="images/excursion.jpg.jpeg" alt="Ambiance Canon Beach" loading="lazy">
+          <div class="trailer-content">
+            <button class="trailer-play" type="button" onclick="playTrailer()" aria-label="Lancer l'animation">▶</button>
+            <div class="trailer-status" id="trailerStatus">Appuyez pour lancer l'ambiance</div>
+          </div>
+        </div>
+        <button class="atmosphere-btn" type="button" id="atmosphereBtn" onclick="toggleAmbience()">🔊 Activer une ambiance légère</button>
+      </section>
+
+      <!-- LATEST EXPERIENCE: GROUP BOOKING -->
+      <section class="section-card reveal" id="groupe">
+        <h2 class="section-title">👥 Venez avec votre groupe</h2>
+        <p class="section-subtitle">Indiquez combien de personnes vous accompagnez et ouvrez directement WhatsApp.</p>
+        <div class="group-booking">
+          <input id="groupCount" type="number" min="2" max="50" value="2" inputmode="numeric" aria-label="Nombre de personnes">
+          <a class="reserve-btn" href="#billets" onclick="prepareGroupBooking(event)">📲 Organiser mon groupe</a>
+        </div>
+      </section>
+
+      <!-- LATEST EXPERIENCE: APP-LIKE -->
+      <section class="section-card reveal" id="mobile-app">
+        <h2 class="section-title">📱 Gardez Fatih Boutique à portée de main</h2>
+        <div class="install-card">
+          <p>Ajoutez cette page à l'écran d'accueil de votre téléphone pour y revenir rapidement.</p>
+          <button class="install-btn" type="button" id="installBtn" onclick="installSite()">＋ Ajouter à l'accueil</button>
+        </div>
+      </section>
+
       <!-- =================================================
            EVENT DASHBOARD
       ================================================== -->
@@ -665,6 +1036,14 @@ h1{animation:heroReveal 1s cubic-bezier(.2,.8,.2,1) both;transform-origin:center
         <div class="final-actions">
           <a class="reserve-btn" href="#billets">🎟️ Réserver ma place</a>
           <button type="button" class="share-btn" onclick="shareExcursion()">📤 Partager</button>
+        </div>
+      </section>
+
+      <section class="cinematic-ending">
+        <h2>FATIH BOUTIQUE</h2>
+        <p>Canon Beach · 07 Novembre 2026<br><strong>Partager · Créer · Se souvenir.</strong></p>
+        <div class="final-actions" style="position:relative;margin-top:18px">
+          <a class="reserve-btn" href="#billets">✨ Je réserve maintenant</a>
         </div>
       </section>
 
@@ -1343,34 +1722,6 @@ h1{animation:heroReveal 1s cubic-bezier(.2,.8,.2,1) both;transform-origin:center
       }
     };
 
-    function translateExtras(lang) {
-      const en = lang === "en";
-      const set = (selector, values) => document.querySelectorAll(selector).forEach((el,i)=>{ if(values[i] !== undefined) el.textContent=values[i]; });
-      set(".hero-kicker", [en ? "🌴 CANON BEACH · 07 NOVEMBER 2026" : "🌴 CANON BEACH · 07 NOVEMBRE 2026"]);
-      set(".utility-row .utility-btn", en ? ["🔊 Ambience OFF","📲 Share the excursion"] : ["🔊 Ambiance OFF","📲 Partager l’excursion"]);
-      set("#pourquoi .section-title", [en ? "✨ Why join us?" : "✨ Pourquoi venir avec nous ?"]);
-      set("#pourquoi .section-subtitle", [en ? "A day to reconnect, unwind and create memories." : "Une journée pensée pour se retrouver, profiter et créer des souvenirs."]);
-      set(".why-card h3", en ? ["Canon Beach","Food","Memories","Atmosphere"] : ["Canon Beach","Food","Memories","Ambiance"]);
-      set(".why-card p", en ? ["A destination to get away and enjoy the setting.","Gourmet options to enjoy throughout the day.","Photos and moments to keep as memories.","An adventure to share with the Fatih Boutique community."] : ["Une destination pour changer d’air et profiter du cadre.","Des formules gourmandes pour savourer la journée.","Des photos et des moments à garder en souvenir.","Une aventure à partager avec la communauté Fatih Boutique."]);
-      set("#ma-reservation .section-title", [en ? "🎫 My reservation" : "🎫 Ma réservation"]);
-      set("#ma-reservation .section-subtitle", [en ? "Retrieve the details saved on this device using your reservation reference." : "Retrouvez les détails enregistrés sur cet appareil avec votre référence de réservation."]);
-      const input=document.getElementById("reservationRefInput"); if(input) input.placeholder=en?"e.g. FB-CB-ABC123":"Ex. FB-CB-ABC123";
-      const lookup=document.querySelector(".reservation-lookup button"); if(lookup) lookup.textContent=en?"Look up":"Consulter";
-      set("#experience .step-card h3", en ? ["1. Choose","2. Book","3. Enjoy"] : ["1. Choisissez","2. Réservez","3. Profitez"]);
-      set("#experience .step-card p", en ? ["Choose Essential or Gourmand V.I.P and the number of seats.","Pay online or use WhatsApp to confirm your booking.","Join us on 07 November 2026 for the Canon Beach experience."] : ["Choisissez Essential ou Gourmand V.I.P et le nombre de places.","Payez en ligne ou utilisez WhatsApp pour confirmer votre réservation.","Rendez-vous le 07 novembre 2026 pour vivre l'expérience Canon Beach."]);
-      set("#a-prevoir .bring-card h3", en ? ["Sunscreen","Sunglasses","Comfortable outfit","Charged phone"] : ["Crème solaire","Lunettes","Tenue confortable","Téléphone chargé"]);
-      set("#a-prevoir .bring-card p", en ? ["Enjoy the sun comfortably.","For your time outdoors.","Dress for a relaxed day.","For photos and memories."] : ["Pour profiter du soleil confortablement.","Pour les moments en plein air.","Une tenue adaptée à une journée détente.","Pour les photos et les souvenirs."]);
-      set(".ticket-price-label", [en?"From":"À partir de",en?"From":"À partir de"]);
-      set(".ticket-stub-title", [en?"Your booking":"Votre réservation",en?"Your booking":"Votre réservation"]);
-      set(".ticket-reserve-btn", en ? ["📲 Book — Essential","📲 Book — Gourmand V.I.P"] : ["📲 Réserver — Essential","📲 Réserver — Gourmand V.I.P"]);
-      document.querySelectorAll(".pay-btn").forEach(btn=>{const total=btn.closest(".ticket-card")?.querySelector(".total-line strong")?.textContent||"";btn.textContent=(en?"💳 Pay online — ":"💳 Payer en ligne — ")+total;});
-      set("#paiement .payment-note", [en?"M-Pesa is available in USD only. Cash is also accepted.":"M-Pesa est disponible en USD uniquement. Le cash est également accepté."]);
-      set(".gallery-caption", en ? ["Tap a photo to preview it.","Note: this reference is saved locally. Final payment confirmation depends on the provider’s secure notification."] : ["Cliquez sur une photo pour voir toute la galerie.","Note : le statut affiché ici est celui enregistré localement. La confirmation officielle du paiement dépend du retour sécurisé du prestataire."]);
-      set("#faq .faq-question", en ? ["What is the difference between Essential and Gourmand V.I.P ?＋","Which payment methods are available?＋","Can I book multiple seats?＋","What happens after online payment?＋"] : ["Quelle est la différence entre Essential et Gourmand V.I.P ?＋","Quels sont les moyens de paiement ?＋","Puis-je réserver plusieurs places ?＋","Que se passe-t-il après un paiement en ligne ?＋"]);
-      set("#faq .faq-answer", en ? ["Essential is the $25 option. Gourmand V.I.P costs $30 and also includes Special Miami Liboke with a side.","Pay online using the button, or use M-Pesa, Illico Cash, Airtel Money or cash.","Yes. Choose the quantity on the ticket, then confirm on WhatsApp or pay online.","The payment opens in a new tab, while the Fatih Boutique website stays open."] : ["Essential est la formule à 25 $. Gourmand V.I.P est à 30 $ et ajoute notamment le Special Miami Liboke + accompagnement.","Vous pouvez payer en ligne via le bouton ou utiliser M-Pesa, Illico Cash, Airtel Money ou le cash.","Oui. Utilisez le sélecteur de quantité sur la formule choisie, puis confirmez sur WhatsApp ou procédez au paiement.","Le paiement s'ouvre dans un nouvel onglet. Votre site Fatih Boutique reste ouvert dans l'onglet d'origine."]);
-      const mobile=document.querySelector(".mobile-booking-bar a"); if(mobile) mobile.textContent=en?"🎟️ Book your ticket":"🎟️ Réserver ma place";
-    }
-
     function setLanguage(lang) {
       const t = translations[lang] || translations.fr;
       document.querySelector(".subtitle").textContent = t.subtitle;
@@ -1409,11 +1760,53 @@ h1{animation:heroReveal 1s cubic-bezier(.2,.8,.2,1) both;transform-origin:center
       document.documentElement.lang = lang;
       document.querySelectorAll(".lang-btn").forEach(btn=>btn.classList.toggle("active", btn.dataset.lang===lang));
       localStorage.setItem("fatihLang", lang);
-      translateExtras(lang);
     }
     document.querySelectorAll(".lang-btn").forEach(btn=>btn.addEventListener("click",()=>setLanguage(btn.dataset.lang)));
     setLanguage(localStorage.getItem("fatihLang") || "fr");
     changeQty("essential",0);
+
+  
+
+    /* LATEST EXPERIENCE JS */
+    function saveWelcomeName(){
+      const input=document.getElementById('welcomeName');
+      const name=(input?.value||'').trim();
+      if(name){localStorage.setItem('fatihWelcomeName',name);showWelcome(name)}
+      else showWelcome('');
+    }
+    function showWelcome(name){
+      const box=document.getElementById('welcomeGreeting');
+      if(!box)return;
+      box.textContent=name?`✨ Bienvenue ${name} ! On se retrouve à Canon Beach le 7 novembre. 🌴`:`✨ Bienvenue ! Profitez de votre préparation avec Fatih Boutique. 🌴`;
+      box.classList.add('show');
+    }
+    function initWelcome(){const n=localStorage.getItem('fatihWelcomeName');if(n){const i=document.getElementById('welcomeName');if(i)i.value=n;showWelcome(n)}}
+    function revealDestination(){document.getElementById('destinationReveal')?.classList.add('revealed')}
+    function prepareGroupBooking(e){
+      e.preventDefault();
+      const n=Math.max(2,Math.min(50,parseInt(document.getElementById('groupCount')?.value||2,10)));
+      const msg=encodeURIComponent(`Bonjour Fatih Boutique, nous sommes un groupe de ${n} personnes et nous souhaitons organiser notre réservation pour l'excursion à Canon Beach du 7 novembre 2026.`);
+      window.open(`https://wa.me/243825247502?text=${msg}`,'_blank','noopener,noreferrer');
+    }
+    function playTrailer(){
+      const card=document.getElementById('trailerCard'),status=document.getElementById('trailerStatus');
+      if(!card||!status)return;
+      card.classList.toggle('playing');
+      status.textContent=card.classList.contains('playing')?'🌴 Imaginez la journée... Canon Beach, Fatih Boutique, 7 novembre.':'Appuyez pour lancer l’ambiance';
+      if(card.classList.contains('playing')) setTimeout(()=>{card.classList.remove('playing');status.textContent='Appuyez pour relancer l’ambiance';},4500);
+    }
+    let deferredInstallPrompt=null;
+    window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredInstallPrompt=e;const b=document.getElementById('installBtn');if(b)b.textContent='＋ Installer l’expérience';});
+    async function installSite(){
+      if(deferredInstallPrompt){deferredInstallPrompt.prompt();await deferredInstallPrompt.userChoice;deferredInstallPrompt=null;return;}
+      alert('Sur téléphone, utilisez le menu du navigateur puis « Ajouter à l’écran d’accueil ».');
+    }
+    initWelcome();
+    window.addEventListener('load',()=>{
+      const overlay=document.getElementById('presentsOverlay');
+      if(overlay && !sessionStorage.getItem('fatihPresentsSeen')){setTimeout(()=>overlay.classList.add('hide'),2200);sessionStorage.setItem('fatihPresentsSeen','1');}
+      else if(overlay)overlay.classList.add('hide');
+    });
 
   </script>
 
