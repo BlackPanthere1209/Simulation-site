@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Paiement — Canon Beach</title>
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;background:#07130e;color:#fff;font-family:Arial,Helvetica,sans-serif}
+    .card{width:min(560px,100%);padding:36px 28px;border:1px solid rgba(255,255,255,.14);border-radius:24px;background:rgba(255,255,255,.06);text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+    h1{margin:0 0 14px;font-size:clamp(1.8rem,6vw,2.8rem)}
+    p{line-height:1.65;color:rgba(255,255,255,.82)}
+    .status{margin:24px 0;padding:16px;border-radius:14px;background:rgba(255,255,255,.07)}
+    a{display:inline-block;margin-top:12px;padding:13px 22px;border-radius:999px;background:#25d366;color:#fff;text-decoration:none;font-weight:800}
+    .small{font-size:.85rem;opacity:.65;word-break:break-word}
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1 id="title">Vérification du paiement…</h1>
+    <div class="status" id="status">Nous vérifions les informations retournées par OPTGateway.</div>
+    <p id="message">Ne fermez pas cette page.</p>
+    <a href="https://blackpanthere1209.github.io/Canon-Beach-7-novembre/">Retour au site</a>
+    <p class="small" id="reference"></p>
+  </main>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const status = params.get('status');
+    const reference = params.get('reference');
+    const sessionId = params.get('session_id');
+
+    const title = document.getElementById('title');
+    const box = document.getElementById('status');
+    const message = document.getElementById('message');
+    const referenceEl = document.getElementById('reference');
+
+    if (reference) referenceEl.textContent = `Référence : ${reference}`;
+
+    if (status === 'succeeded') {
+      title.textContent = '✅ Paiement reçu';
+      box.textContent = 'OPGateway a indiqué que le paiement a été effectué.';
+      message.textContent = 'Votre confirmation définitive doit être basée sur la notification serveur OPTGateway. Gardez votre référence de paiement.';
+    } else if (status === 'cancelled' || status === 'canceled') {
+      title.textContent = 'Paiement annulé';
+      box.textContent = 'La session de paiement n’a pas été finalisée.';
+      message.textContent = 'Vous pouvez revenir au site et choisir une autre méthode de paiement.';
+    } else {
+      title.textContent = 'Paiement en cours';
+      box.textContent = 'Le statut final du paiement n’est pas encore confirmé sur cette page.';
+      message.textContent = 'Si vous avez validé le paiement, conservez votre référence et attendez la confirmation serveur.';
+    }
+
+    // sessionId is intentionally displayed nowhere; it is only read here so the page
+    // can be extended later with a secure server-side verification endpoint.
+    void sessionId;
+  </script>
+</body>
+</html>
