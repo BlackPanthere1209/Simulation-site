@@ -1664,13 +1664,14 @@ h1{animation:heroReveal 1s cubic-bezier(.2,.8,.2,1) both;transform-origin:center
     // Photo lightbox with keyboard and swipe navigation.
     const galleryPhotos = [...document.querySelectorAll(".gallery-preview img")].map(img => img.src);
     let lightboxIndex = 0;
-    function openLightbox(index) { lightboxIndex = index; renderLightbox(); document.getElementById("photoLightbox").classList.add("open"); document.body.style.overflow="hidden"; }
-    function renderLightbox() { const img=document.getElementById("lightboxImage"); img.src=galleryPhotos[lightboxIndex]; document.getElementById("lightboxCount").textContent=`${lightboxIndex+1} / ${galleryPhotos.length}`; }
-    function closeLightbox() { document.getElementById("photoLightbox").classList.remove("open"); document.body.style.overflow=""; }
-    function moveLightbox(delta) { lightboxIndex=(lightboxIndex+delta+galleryPhotos.length)%galleryPhotos.length; renderLightbox(); }
+    function openLightbox(index) { lightboxIndex = index; renderLightbox(); const box=document.getElementById("photoLightbox"); if(box){box.classList.add("open");document.body.style.overflow="hidden";} }
+    function renderLightbox() { const img=document.getElementById("lightboxImage"); const count=document.getElementById("lightboxCount"); if(img && galleryPhotos.length) img.src=galleryPhotos[lightboxIndex]; if(count) count.textContent=`${lightboxIndex+1} / ${galleryPhotos.length}`; }
+    function closeLightbox() { const box=document.getElementById("photoLightbox"); if(box) box.classList.remove("open"); document.body.style.overflow=""; }
+    function moveLightbox(delta) { if(!galleryPhotos.length)return; lightboxIndex=(lightboxIndex+delta+galleryPhotos.length)%galleryPhotos.length; renderLightbox(); }
     document.querySelectorAll(".gallery-preview a").forEach((a,i)=>a.addEventListener("click",e=>{e.preventDefault();openLightbox(i);}));
-    document.addEventListener("keydown",e=>{if(!document.getElementById("photoLightbox").classList.contains("open"))return;if(e.key==="Escape")closeLightbox();if(e.key==="ArrowRight")moveLightbox(1);if(e.key==="ArrowLeft")moveLightbox(-1);});
-    let touchX=0; document.getElementById("photoLightbox").addEventListener("touchstart",e=>touchX=e.changedTouches[0].screenX,{passive:true}); document.getElementById("photoLightbox").addEventListener("touchend",e=>{const dx=e.changedTouches[0].screenX-touchX;if(Math.abs(dx)>45)moveLightbox(dx<0?1:-1);},{passive:true});
+    document.addEventListener("keydown",e=>{const box=document.getElementById("photoLightbox"); if(!box || !box.classList.contains("open"))return;if(e.key==="Escape")closeLightbox();if(e.key==="ArrowRight")moveLightbox(1);if(e.key==="ArrowLeft")moveLightbox(-1);});
+    let touchX=0; const photoLightbox=document.getElementById("photoLightbox");
+    if(photoLightbox){ photoLightbox.addEventListener("touchstart",e=>touchX=e.changedTouches[0].screenX,{passive:true}); photoLightbox.addEventListener("touchend",e=>{const dx=e.changedTouches[0].screenX-touchX;if(Math.abs(dx)>45)moveLightbox(dx<0?1:-1);},{passive:true}); }
 
     // Reveal sections as they enter the viewport.
     document.querySelectorAll(".section-card,.ticket-card,.final-cta").forEach(el=>el.classList.add("reveal"));
